@@ -1,18 +1,22 @@
-import React from 'react';
-import PropTypes from "prop-types"
-import {Link} from "react-router-dom";
-
+import React from "react";
+import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
 const Btn = (props) => {
-    return (
-        <React.Fragment>
-            <Link to={process.env.PUBLIC_URL + "/"} className="btn btn-light btn-hover-primary">{props.name}</Link>
-        </React.Fragment>
-    )
-}
+  return (
+    <React.Fragment>
+      <Link
+        to={process.env.PUBLIC_URL + "/"}
+        className="btn btn-outline-white btn-hover-primary"
+      >
+        {props.name}
+      </Link>
+    </React.Fragment>
+  );
+};
 
 Btn.propTypes = {
-    name: PropTypes.string
-}
+  name: PropTypes.string,
+};
 
-export default Btn
+export default Btn;
