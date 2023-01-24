@@ -1,0 +1,32 @@
+.text-color {
+  color: rgb(255, 255, 255) !important;
+}
+
+.text-color-1 {
+  color: rgb(255, 255, 255) !important;
+}
+
+.Typewriter__wrapper {
+  color: #0095b7;
+  text-decoration: underline white 2px;
+  text-align: center;
+}
+
+a:hover {
+  color: #dadada !important;
+}
+
+.header-section {
+  border-bottom: none !important;
+}
+
+/* .overlay-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  filter: brightness(50%) contrast(100%) saturate(150%) hue-rotate(20deg);
+  background-color: rgba(3, 3, 3, 0.568);
+} */
