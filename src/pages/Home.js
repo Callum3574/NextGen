@@ -19,14 +19,13 @@ import ScrollToTop from "../components/ScrollToTop.jsx";
 const Home = () => {
   return (
     <React.Fragment>
-      <SEO title="Exomac || Home Three" />
+      <SEO title="Nextgen || Home Three" />
       <Header />
       <IntroThree />
       {/* <HomeAboutThree /> */}
-      <Funfact classOption="section-padding bg-primary-blue" />
+      {/* <Funfact classOption="section-padding bg-primary-blue" /> */}
       <ServiceIconBox />
       <Faq />
-      <PortfolioTwo />
       {/* <Team /> */}
       <TestimonialContainer />
       <CallToAction />

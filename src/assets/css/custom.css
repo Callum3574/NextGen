@@ -1,0 +1,19 @@
+.text-color {
+  color: rgb(255, 255, 255) !important;
+}
+
+.text-color-1 {
+  color: rgb(255, 255, 255) !important;
+}
+
+.Typewriter__wrapper {
+  color: #3ca5a2;
+}
+
+a:hover {
+  color: #a3a7a7 !important;
+}
+
+.header-section {
+  border-bottom: none !important;
+}

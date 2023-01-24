@@ -9,10 +9,7 @@ const Service = lazy(() => import("./pages/Service"));
 const Work = lazy(() => import("./pages/Work"));
 const WorkDetails = lazy(() => import("./pages/WorkDetails"));
 const BlogGrid = lazy(() => import("./pages/BlogGrid"));
-const BlogClassic = lazy(() => import("./pages/BlogClassic"));
-const BlogDetails = lazy(() => import("./pages/BlogDetails"));
-const BlogCategories = lazy(() => import("./pages/BlogCategories"));
-const BlogTag = lazy(() => import("./pages/BlogTag"));
+
 const Contact = lazy(() => import("./pages/Contact"));
 
 function App() {
@@ -39,36 +36,20 @@ function App() {
               element={<About />}
             />
             <Route
-              path={`${process.env.PUBLIC_URL + "/service"}`}
+              path={`${process.env.PUBLIC_URL + "/job-search"}`}
               element={<Service />}
             />
             <Route
-              path={`${process.env.PUBLIC_URL + "/work"}`}
+              path={`${process.env.PUBLIC_URL + "/job-sectors"}`}
               element={<Work />}
             />
             <Route
-              path={`${process.env.PUBLIC_URL + "/work-details/:id"}`}
+              path={`${process.env.PUBLIC_URL + "/sectors/:id"}`}
               element={<WorkDetails />}
             />
             <Route
-              path={`${process.env.PUBLIC_URL + "/blog-grid"}`}
+              path={`${process.env.PUBLIC_URL + "/blog"}`}
               element={<BlogGrid />}
-            />
-            <Route
-              path={`${process.env.PUBLIC_URL + "/blog-classic"}`}
-              element={<BlogClassic />}
-            />
-            <Route
-              path={`${process.env.PUBLIC_URL + "/tag/:slug"}`}
-              element={<BlogTag />}
-            />
-            <Route
-              path={`${process.env.PUBLIC_URL + "/category/:slug"}`}
-              element={<BlogCategories />}
-            />
-            <Route
-              path={`${process.env.PUBLIC_URL + "/blog-details/:id"}`}
-              element={<BlogDetails />}
             />
             <Route
               path={`${process.env.PUBLIC_URL + "/contact"}`}

@@ -1,6 +1,7 @@
 import React from "react";
 import Typewriter from "typewriter-effect";
 import { Link } from "react-router-dom";
+import "../../assets/css/custom.css";
 
 const IntroThree = () => {
   return (
@@ -14,15 +15,13 @@ const IntroThree = () => {
       <div className="container">
         <div className="row row-cols-lg-1 row-cols-1">
           <div className="col align-self-center">
-            <div className="intro-content-two headline-active text-start mt-xl-8 mt-lg-8 mt-md-8 mt-sm-8 mt-xs-8">
+            <div className="intro-content-two headline-active text-start mt-xl-8 mt-lg-8 mt-md-8 mt-sm-8 mt-xs-9">
               <div className="mt-40">
-                <h2
-                  className="headline display-4 mt-25"
-                  style={{ color: "white" }}
-                >
-                  Recruiting for top talent in the fields of{" "}
+                <h2 className="headline display-4 mt-25 text-color">
+                  Recruiting Top Talent In The Fields Of{" "}
                   {/* RECRUITING FOR TOP TALENT IN THE FIELDS OF{" "} */}
                   <Typewriter
+                    style={{ color: "white" }}
                     options={{
                       strings: [
                         "Software",
@@ -53,22 +52,24 @@ const IntroThree = () => {
 
               <div>
                 <br />
-                <Link
-                  to={process.env.PUBLIC_URL + "/"}
-                  className="btn btn-outline-white btn-hover-primary w-50"
-                  style={{ backgroundColor: "#3CA5A2" }}
-                >
-                  Find me a candidate
-                </Link>
+                <div>
+                  <Link
+                    to={process.env.PUBLIC_URL + "/"}
+                    className="btn btn-outline-white btn-hover-primary w-50"
+                    style={{ backgroundColor: "#3CA5A2" }}
+                  >
+                    Find me a candidate
+                  </Link>
 
-                <Link
-                  to={process.env.PUBLIC_URL + "/"}
-                  className="btn btn-outline-white btn-hover-primary w-50 mb-20"
-                  style={{ backgroundColor: "white", color: "black" }}
-                >
-                  {" "}
-                  Find me a role{" "}
-                </Link>
+                  <Link
+                    to={process.env.PUBLIC_URL + "/"}
+                    className="btn btn-outline-white btn-hover-primary w-50 mb-20"
+                    style={{ backgroundColor: "white", color: "black" }}
+                  >
+                    {" "}
+                    Find me a role{" "}
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
