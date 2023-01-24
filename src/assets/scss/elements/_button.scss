@@ -39,24 +39,24 @@
     opacity: 0.65;
   }
   &-primary {
-    --bs-btn-bg: var(--clr-primary);
+    --bs-btn-bg: #0f1b33;
     --bs-btn-border-color: var(--clr-primary);
   }
   &-light {
-    --bs-btn-bg: var(--clr-white);
+    --bs-btn-bg: #0f1b33;
     --bs-btn-border-color: var(--clr-white);
-    --bs-btn-color: var(--clr-primary);
+    --bs-btn-color: #0f1b33;
   }
   &-hover {
     &-secondary {
       --bs-btn-hover-bg: var(--clr-black);
       --bs-btn-hover-border-color: transparent;
-      --bs-btn-hover-color: var(--clr-white);
+      --bs-btn-hover-color: #0f1b33;
     }
     &-primary {
       --bs-btn-hover-bg: var(--clr-white);
       --bs-btn-hover-border-color: transparent;
-      --bs-btn-hover-color: var(--clr-white);
+      --bs-btn-hover-color: #0f1b33;
     }
   }
   &-outline {

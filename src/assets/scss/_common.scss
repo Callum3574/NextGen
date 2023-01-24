@@ -195,8 +195,8 @@ svg:not(:root) {
     z-index: -1;
     background: linear-gradient(
       to right,
-      rgba(55, 72, 70, 0.7) 0%,
-      rgba(4, 48, 41, 0) 100%
+      rgba(11, 12, 12, 0.7) 50%,
+      rgba(33, 35, 35, 0) 100%
     );
   }
 }
@@ -257,7 +257,7 @@ svg:not(:root) {
   cursor: pointer;
   opacity: 0;
   visibility: hidden;
-  background-color: #3ca5a2;
+  background-color: #0f1b33;
   background-size: 200% auto;
   background-position: left center;
   color: var(--clr-white);

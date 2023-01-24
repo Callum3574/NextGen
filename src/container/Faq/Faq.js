@@ -3,6 +3,7 @@ import SectionTitleTwo from "../../components/SectionTitles/SectionTitleTwo";
 import AccordionWrap from "../../components/Accordion/AccordionWrap.jsx";
 import Tilt from "react-parallax-tilt";
 import Parallax from "parallax-js";
+import "../../assets/css/custom.css";
 
 const Faq = () => {
   const [scale] = useState(1.04);
@@ -43,6 +44,7 @@ const Faq = () => {
             <div className="about-image-area faq-image-area">
               <div className="about-image right-n50">
                 <Tilt scale={scale} transitionSpeed={4000}>
+                  <div className="overlay-img"></div>
                   <img
                     src={process.env.PUBLIC_URL + "/images/faq/faq-2.jpg"}
                     alt=""
@@ -51,6 +53,8 @@ const Faq = () => {
               </div>
               <div className="about-image">
                 <Tilt scale={scale} transitionSpeed={4000}>
+                  <div className="overlay-img"></div>
+
                   <img
                     src={process.env.PUBLIC_URL + "/images/faq/faq-1.jpg"}
                     alt=""

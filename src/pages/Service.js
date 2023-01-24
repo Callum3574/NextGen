@@ -10,6 +10,7 @@ import ContactInformationThree from "../container/ContactInformation/ContactInfo
 import Footer from "../container/Footer/Footer";
 import ScrollToTop from "../components/ScrollToTop.jsx";
 import PortfolioTwo from "../container/Portfolio/PortfolioTwo";
+import SearchFilter from "../components/Search/SearchFilter";
 
 const Service = () => {
   return (
@@ -18,16 +19,20 @@ const Service = () => {
       <Header />
       <Breadcrumb
         image="images/bg/breadcrumb-bg-three.jpg"
-        title="We work with bold brands that we believe in"
+        title="Browse Current Vacancies"
         content="Home"
         contentTwo="Job-search"
       />
-      <PortfolioTwo />
+
+      <SearchFilter />
+
+      {/* <PortfolioTwo /> */}
+
       {/* <ServiceIconBoxTwo /> */}
-      <ServiceSkill />
-      <AboutSix />
-      <FunfactTwo />
-      <ContactInformationThree />
+      {/* <ServiceSkill /> */}
+      {/* <AboutSix /> */}
+      {/* <FunfactTwo /> */}
+      {/* <ContactInformationThree /> */}
       <Footer />
       <ScrollToTop />
     </React.Fragment>
