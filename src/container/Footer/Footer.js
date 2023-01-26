@@ -25,7 +25,7 @@ const Footer = () => {
                   </p>
                   <p>
                     <Link to={process.env.PUBLIC_URL + "/"}>
-                      hello@hasagency.com
+                      hello@nextgentalentsolutions.com
                     </Link>{" "}
                   </p>
                 </div>
@@ -44,7 +44,7 @@ const Footer = () => {
             </div>
           </div>
 
-          {FooterData &&
+          {/* {FooterData &&
             FooterData.map((single, key) => {
               return (
                 <div
@@ -54,7 +54,7 @@ const Footer = () => {
                   <FooterLinkItem data={single} key={key} />
                 </div>
               );
-            })}
+            })} */}
         </div>
 
         <div className="row">

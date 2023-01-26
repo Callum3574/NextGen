@@ -11,6 +11,9 @@ function AddJob() {
     description: "",
     salary: "",
     client_id: "",
+    category: "",
+    industry: "",
+    consultant: "",
   });
 
   const handleInputs = (e) => {
@@ -72,6 +75,25 @@ function AddJob() {
         name="client_id"
         placeholder="client_id"
         type="text"
+      ></input>
+      <input
+        onChange={handleInputs}
+        name="category"
+        placeholder="category"
+        type="category"
+      ></input>
+
+      <input
+        onChange={handleInputs}
+        name="industry"
+        placeholder="industry"
+        type="industry"
+      ></input>
+      <input
+        onChange={handleInputs}
+        name="consultant"
+        placeholder="consultant"
+        type="consultant"
       ></input>
       <button onClick={postJobs} className="btn btn-primary"></button>
     </div>

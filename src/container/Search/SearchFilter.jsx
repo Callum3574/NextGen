@@ -13,6 +13,12 @@ import JobCard from "../../components/JobCard/JobCard.jsx";
 
 function SearchFilter() {
   const [allJobs, setAllJobs] = useState([]);
+  const [searchInput, setSearchInput] = useState({
+    jobTitle: "",
+    location: "",
+  });
+  const [filteredJobs, setFilteredJobs] = useState([]);
+
   const baseURL = "http://localhost:8000";
 
   const fetchPosts = async () => {
@@ -27,7 +33,25 @@ function SearchFilter() {
     fetchPosts();
   }, []);
 
-  console.log(allJobs);
+  const handleSearchInput = (e) => {
+    setSearchInput({ ...searchInput, [e.target.name]: e.target.value });
+    console.log(searchInput);
+  };
+
+  const handleFilter = () => {
+    console.log(searchInput.jobTitle, searchInput.location);
+    setFilteredJobs(
+      allJobs.filter((job) => {
+        return (
+          job.role.toLowerCase().includes(searchInput.jobTitle.toLowerCase()) &&
+          job.location
+            .toLowerCase()
+            .includes(searchInput.location.toLowerCase())
+        );
+      })
+    );
+    console.log(filteredJobs);
+  };
 
   return (
     <div className="bg-primary-blue">
@@ -40,9 +64,25 @@ function SearchFilter() {
           noValidate
           autoComplete="off"
         >
-          <TextField id="outlined-basic" label="Job title" variant="filled" />
-          <TextField id="filled-basic" label="Location" variant="filled" />
-          <Button style={{ height: "4.1rem" }} variant="outlined">
+          <TextField
+            onChange={handleSearchInput}
+            id="outlined-basic"
+            label="jobTitle"
+            variant="filled"
+            name="jobTitle"
+          />
+          <TextField
+            onChange={handleSearchInput}
+            id="filled-basic"
+            label="location"
+            variant="filled"
+            name="location"
+          />
+          <Button
+            onClick={handleFilter}
+            style={{ height: "4.1rem" }}
+            variant="outlined"
+          >
             SEARCH
           </Button>
         </Box>
@@ -141,16 +181,39 @@ function SearchFilter() {
             </div>
           </div>
           <div className="d-flex flex-column justify-content-center jobs-container container-sm m-5 p-5">
-            {allJobs.map((job) => {
-              return (
-                <JobCard
-                  role={job.role}
-                  description={job.description}
-                  salary={job.salary}
-                  location={job.location}
-                />
-              );
-            })}
+            {filteredJobs.length === 0
+              ? allJobs.map((job) => {
+                  return (
+                    <JobCard
+                      role={job.role}
+                      description={job.job_description}
+                      salary={job.salary}
+                      location={job.location}
+                      category={job.category}
+                      industry={job.industry}
+                      consultant={job.consultant}
+                      type={job.type}
+                      job_category={job.job_category}
+                      post_date={job.post_date}
+                    />
+                  );
+                })
+              : filteredJobs.map((job) => {
+                  return (
+                    <JobCard
+                      role={job.role}
+                      description={job.job_description}
+                      salary={job.salary}
+                      location={job.location}
+                      category={job.category}
+                      industry={job.industry}
+                      consultant={job.consultant}
+                      type={job.type}
+                      job_category={job.job_category}
+                      post_date={job.post_date}
+                    />
+                  );
+                })}
           </div>
         </div>
       </div>
