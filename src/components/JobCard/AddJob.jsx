@@ -76,12 +76,21 @@ function AddJob() {
         placeholder="client_id"
         type="text"
       ></input>
-      <input
-        onChange={handleInputs}
-        name="category"
-        placeholder="category"
-        type="category"
-      ></input>
+      <select onChange={handleInputs} name="category">
+        <option value="Software & Web Development">
+          Software & Web Development
+        </option>
+        <option value="Networking & Info Security">
+          Networking & Info Security
+        </option>
+        <option value="IT Support & Infrastructure">
+          IT Support & Infrastructure
+        </option>
+        <option value="QA & Testing">QA & Testing</option>
+        <option value="Business Change & Transformation">
+          Business Change & Transformation
+        </option>
+      </select>
 
       <input
         onChange={handleInputs}

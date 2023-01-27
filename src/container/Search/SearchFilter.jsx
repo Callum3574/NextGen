@@ -17,6 +17,12 @@ function SearchFilter() {
     jobTitle: "",
     location: "",
   });
+
+  const [filterTypeAndCategory, setFilterTypeAndCategory] = useState({
+    type: "Contract",
+    job_category: "Software & Web Development",
+  });
+
   const [filteredJobs, setFilteredJobs] = useState([]);
 
   const baseURL = "http://localhost:8000";
@@ -38,8 +44,8 @@ function SearchFilter() {
     console.log(searchInput);
   };
 
-  const handleFilter = () => {
-    console.log(searchInput.jobTitle, searchInput.location);
+  //* handles the search button click
+  const handleSearchFilter = () => {
     setFilteredJobs(
       allJobs.filter((job) => {
         return (
@@ -47,6 +53,33 @@ function SearchFilter() {
           job.location
             .toLowerCase()
             .includes(searchInput.location.toLowerCase())
+        );
+      })
+    );
+    console.log(filteredJobs);
+  };
+
+  const handleFilterTypeAndCategory = (e) => {
+    setFilterTypeAndCategory({
+      ...filterTypeAndCategory,
+      [e.target.name]: e.target.value,
+    });
+    console.log(filterTypeAndCategory);
+  };
+  //* handles the apply button click
+  const handleFilterTypeAndCategorySearch = () => {
+    setFilteredJobs(
+      allJobs.filter((job) => {
+        console.log(job.job_category, job.type, 1);
+
+        console.log(
+          filterTypeAndCategory.job_category,
+          filterTypeAndCategory.type
+        );
+        return (
+          job.type.toLowerCase() === filterTypeAndCategory.type.toLowerCase() &&
+          job.job_category.toLowerCase() ===
+            filterTypeAndCategory.job_category.toLowerCase()
         );
       })
     );
@@ -79,7 +112,7 @@ function SearchFilter() {
             name="location"
           />
           <Button
-            onClick={handleFilter}
+            onClick={handleSearchFilter}
             style={{ height: "4.1rem" }}
             variant="outlined"
           >
@@ -104,7 +137,8 @@ function SearchFilter() {
                 <RadioGroup
                   aria-labelledby="demo-radio-buttons-group-label"
                   defaultValue="Contract"
-                  name="radio-buttons-group"
+                  name="type"
+                  onChange={handleFilterTypeAndCategory}
                 >
                   <FormControlLabel
                     value="Contract"
@@ -132,7 +166,8 @@ function SearchFilter() {
                 <RadioGroup
                   aria-labelledby="demo-radio-buttons-group-label"
                   defaultValue="Software & Web Development"
-                  name="radio-buttons-group"
+                  name="job_category"
+                  onChange={handleFilterTypeAndCategory}
                 >
                   <FormControlLabel
                     value="Software & Web Development"
@@ -167,6 +202,7 @@ function SearchFilter() {
                   className="m-2"
                   style={{ height: "4.1rem" }}
                   variant="outlined"
+                  onClick={handleFilterTypeAndCategorySearch}
                 >
                   APPLY
                 </Button>
