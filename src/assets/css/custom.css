@@ -20,13 +20,6 @@ a:hover {
   border-bottom: none !important;
 }
 
-/* .overlay-img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 1;
-  filter: brightness(50%) contrast(100%) saturate(150%) hue-rotate(20deg);
-  background-color: rgba(3, 3, 3, 0.568);
-} */
+.jobs-container {
+  border: solid 1px black;
+}
