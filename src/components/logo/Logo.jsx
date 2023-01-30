@@ -6,12 +6,12 @@ const Logo = ({ image }) => {
   return (
     <div className="header-logo ">
       <Link to={process.env.PUBLIC_URL + "/"}>
-        {/* <img
+        <img
           className="dark-logo"
           src={process.env.PUBLIC_URL + image}
           alt="Agency Logo"
-        /> */}
-        <h2 style={{ color: "white" }}>Nextgen</h2>
+        />
+        {/* <h2 style={{ color: "white" }}>Nextgen</h2> */}
       </Link>
     </div>
   );

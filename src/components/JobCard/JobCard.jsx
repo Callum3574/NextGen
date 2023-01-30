@@ -78,7 +78,7 @@ function JobCard({
         <hr />
         <div className="d-flex">
           <div>
-            <h5 style={{ color: "#85bdbf" }} s>
+            <h5 style={{ color: "#0f1e32" }} s>
               {type}
             </h5>
           </div>
@@ -90,7 +90,7 @@ function JobCard({
           </div>
 
           <div className="px-4">
-            <h5 style={{ color: "#85bdbf" }}>{job_category}</h5>
+            <h5 style={{ color: "#0f1e32" }}>{job_category}</h5>
           </div>
         </div>
         <div className="d-flex mt-1">

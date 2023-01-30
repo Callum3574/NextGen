@@ -4,8 +4,23 @@ import Form from "react-bootstrap/Form";
 import Modal from "react-bootstrap/Modal";
 import ReactVivus from "react-vivus";
 import PropTypes from "prop-types";
+import "../../assets/css/animations.css";
+import { storage } from "../../firebase";
+import { ref, uploadBytes } from "firebase/storage";
+import { v4 } from "uuid";
 
 function ApplyJob({ show, setShow, handleClose, handleShow, classOption }) {
+  const [fileUpload, setFileUpload] = useState(null);
+
+  const uploadCV = () => {
+    if (fileUpload == null) return;
+
+    const fileRef = ref(storage, `CVs/${fileUpload.name}`);
+
+    uploadBytes(fileRef, fileUpload).then(() => {
+      alert("Uploaded file!");
+    });
+  };
   return (
     <div>
       <Modal
@@ -54,17 +69,22 @@ function ApplyJob({ show, setShow, handleClose, handleShow, classOption }) {
               controlId="exampleForm.ControlTextarea1"
             ></Form.Group>
 
-            <div>
-              <input type="file" name="cv" id="cv" />
-            </div>
+            <Form.Group>
+              <input
+                onChange={(e) => setFileUpload(e.target.files[0])}
+                type="file"
+                name="cv"
+                id="cv"
+              />
+            </Form.Group>
           </Form>
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
             Close
           </Button>
-          <Button variant="primary" onClick={handleClose}>
-            Save Changes
+          <Button variant="primary" onClick={uploadCV}>
+            Apply
           </Button>
         </Modal.Footer>
       </Modal>
