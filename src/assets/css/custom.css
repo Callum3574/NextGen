@@ -7,7 +7,7 @@
 }
 
 .Typewriter__wrapper {
-  color: #0095b7;
+  color: #c49e00;
   text-decoration: underline white 2px;
   text-align: center;
 }
@@ -20,6 +20,16 @@ a:hover {
   border-bottom: none !important;
 }
 
-.jobs-container {
-  border: solid 1px black;
+.text-container {
+  opacity: 0;
+  transition: opacity 1s;
+}
+
+.text-container.loaded {
+  opacity: 1;
+}
+
+.headline {
+  font-family: "Audiowide", cursive;
+  font-size: 2.5rem;
 }

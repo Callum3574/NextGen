@@ -244,7 +244,7 @@ svg:not(:root) {
   right: 30px;
   bottom: -60px;
   z-index: 999;
-  box-shadow: 0 30px 50px rgba(0, 0, 0, 0.03);
+  box-shadow: 0 30px 50px black (0, 0, 0, 0.03);
   display: block;
   padding: 0;
   width: 60px;
@@ -257,7 +257,7 @@ svg:not(:root) {
   cursor: pointer;
   opacity: 0;
   visibility: hidden;
-  background-color: #0f1b33;
+  background-color: #0f1e32;
   background-size: 200% auto;
   background-position: left center;
   color: var(--clr-white);

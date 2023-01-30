@@ -18,16 +18,16 @@ const IntroThree = () => {
             <div className="intro-content-two headline-active text-center mt-xl-8 mt-lg-8 mt-md-8 mt-sm-8 mt-xs-9">
               <div className="mt-1">
                 <h2 className="headline display-4 text-color ">
-                  Recruiting Top Talent In The Fields Of{" "}
-                  {/* RECRUITING FOR TOP TALENT IN THE FIELDS OF{" "} */}
+                  {/* Recruiting Top Talent In The Fields Of{" "} */}
+                  RECRUITING FOR TOP TALENT IN THE FIELDS OF{" "}
                   <Typewriter
                     options={{
                       strings: [
-                        "Software",
-                        "Infrastructure",
-                        "Analytics",
-                        "Cloud",
-                        "Data",
+                        "SOFTWARE",
+                        "INFRASTRUCTURE",
+                        "ANALYTICS",
+                        "CLOUD",
+                        "DATA",
                       ],
                       autoStart: true,
                       loop: true,
@@ -54,14 +54,14 @@ const IntroThree = () => {
                   <Link
                     to={process.env.PUBLIC_URL + "/"}
                     className="btn btn-outline-white btn-hover-primary w-50"
-                    style={{ backgroundColor: "#c49e00" }}
+                    style={{ backgroundColor: "#1e96be" }}
                   >
                     Find me a candidate
                   </Link>
                   <Link
-                    to={process.env.PUBLIC_URL + "/"}
+                    to={process.env.PUBLIC_URL + "/job-search"}
                     className="btn btn-outline-white btn-hover-primary w-50 mb-20"
-                    style={{ backgroundColor: "#0095b7", color: "white" }}
+                    style={{ backgroundColor: "#c49e00", color: "white" }}
                   >
                     {" "}
                     Find me a role{" "}
