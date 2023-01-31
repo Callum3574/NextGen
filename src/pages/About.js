@@ -15,17 +15,17 @@ const AboutUs = () => {
     <React.Fragment>
       <SEO title="Nextgen || About" />
       <Header />
-      <Breadcrumb
+      {/* <Breadcrumb
         image="images/bg/breadcrumb-bg.jpg"
         title="We are an agency located in New York"
         content="Home"
         contentTwo="About Us"
-      />
-      <AboutFour />
-      <Video />
-      <AboutFive />
+      /> */}
+      {/* <AboutFour />
+      <Video /> */}
+      {/* <AboutFive /> */}
       {/* <TestimonialContainer classOption="bg-primary-blue" /> */}
-      <CallToActionTwo />
+      {/* <CallToActionTwo /> */}
       <Footer />
       <ScrollToTop />
     </React.Fragment>

@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Networking from "../../networking/Networking.jsx";
 
 function AddJob() {
   const baseURL = "http://localhost:8000";
@@ -23,8 +22,6 @@ function AddJob() {
     setJobDetails((prev) => {
       return { ...prev, [name]: value };
     });
-
-    console.log(jobDetails);
   };
 
   const postJobs = async () => {

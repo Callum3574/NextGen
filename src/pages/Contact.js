@@ -13,7 +13,7 @@ const Contact = () => {
     <React.Fragment>
       <SEO title="Nextgen || Contact" />
       <Header />
-      <Breadcrumb
+      {/* <Breadcrumb
         image="images/bg/breadcrumb-bg-five.jpg"
         title="We are an agency located in New York"
         content="Home"
@@ -21,7 +21,7 @@ const Contact = () => {
       />
       <ContactInformation />
       <GoogleMap />
-      <ContactFromContainer />
+      <ContactFromContainer /> */}
       <Footer />
       <ScrollToTop />
     </React.Fragment>

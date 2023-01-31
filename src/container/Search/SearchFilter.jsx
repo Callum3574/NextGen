@@ -1,7 +1,6 @@
 import * as React from "react";
 import { useState, useEffect } from "react";
 import Box from "@mui/material/Box";
-import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import Radio from "@mui/material/Radio";
 import RadioGroup from "@mui/material/RadioGroup";
@@ -10,8 +9,6 @@ import FormControl from "@mui/material/FormControl";
 import FormLabel from "@mui/material/FormLabel";
 import "../../assets/css/custom.css";
 import JobCard from "../../components/JobCard/JobCard.jsx";
-import LoadingGrow from "../../components/Loading/LoadingGrow.jsx";
-import ReactVivus from "react-vivus";
 import PropTypes from "prop-types";
 
 function SearchFilter() {
@@ -185,7 +182,6 @@ function SearchFilter() {
             </div>
           </div>
         </Box>
-        <div className="mt-5 ">{/* <LoadingGrow /> */}</div>
       </div>
 
       <hr />
@@ -325,6 +321,7 @@ function SearchFilter() {
                       type={job.type}
                       job_category={job.job_category}
                       post_date={job.post_date}
+                      job_ref={job.job_ref}
                     />
                   );
                 })
@@ -341,6 +338,7 @@ function SearchFilter() {
                       type={job.type}
                       job_category={job.job_category}
                       post_date={job.post_date}
+                      job_ref={job.job_ref}
                     />
                   );
                 })}
