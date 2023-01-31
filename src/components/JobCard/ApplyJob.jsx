@@ -9,18 +9,7 @@ import { storage } from "../../firebase";
 import { ref, uploadBytes } from "firebase/storage";
 import { v4 } from "uuid";
 
-function ApplyJob({ show, setShow, handleClose, handleShow, classOption }) {
-  const [fileUpload, setFileUpload] = useState(null);
-
-  const uploadCV = () => {
-    if (fileUpload == null) return;
-
-    const fileRef = ref(storage, `CVs/${fileUpload.name}`);
-
-    uploadBytes(fileRef, fileUpload).then(() => {
-      alert("Uploaded file!");
-    });
-  };
+function ApplyJob({ show, handleClose, setFileUpload, uploadCV }) {
   return (
     <div>
       <Modal

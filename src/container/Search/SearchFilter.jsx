@@ -11,6 +11,8 @@ import FormLabel from "@mui/material/FormLabel";
 import "../../assets/css/custom.css";
 import JobCard from "../../components/JobCard/JobCard.jsx";
 import LoadingGrow from "../../components/Loading/LoadingGrow.jsx";
+import ReactVivus from "react-vivus";
+import PropTypes from "prop-types";
 
 function SearchFilter() {
   const [allJobs, setAllJobs] = useState([]);
@@ -126,36 +128,62 @@ function SearchFilter() {
 
   return (
     <div className="bg-primary-blue">
-      <div className="d-flex p-2 bd-highlight justify-content-center">
+      <div className="search-box-jobs d-flex p-2 bd-highlight justify-content-center">
         <Box
           component="form"
           sx={{
             "& > :not(style)": { m: 2, width: "25ch" },
           }}
           noValidate
-          autoComplete="off"
+          autoComplete="on"
         >
-          <TextField
-            onChange={handleSearchInput}
-            id="outlined-basic"
-            label="job-title"
-            variant="filled"
-            name="jobTitle"
-          />
-          <TextField
-            onChange={handleSearchInput}
-            id="filled-basic"
-            label="location"
-            variant="filled"
-            name="location"
-          />
-          <Button
-            onClick={handleSearchFilter}
-            style={{ height: "4.1rem" }}
-            variant="outlined"
-          >
-            SEARCH
-          </Button>
+          <div className="d-flex justify-content-center flex-row w-100">
+            <div>
+              <h4 style={{ color: "white" }}>Start your job search</h4>
+            </div>
+            <div>
+              <i
+                className="fa fa-search px-3"
+                style={{ color: "rgb(30, 150, 190)" }}
+              ></i>
+            </div>
+          </div>
+          <div className=" search-border container d-flex justify-content-start w-100 bg-blue">
+            <div className="px-3">
+              <input
+                onChange={handleSearchInput}
+                id="standard-basic"
+                placeholder="Enter Keywords e.g. Job Title"
+                variant="filled"
+                name="jobTitle"
+                className="text-filter"
+              />
+            </div>
+            <div className="px-3">
+              <input
+                onChange={handleSearchInput}
+                id="standard-basic"
+                placeholder="Location"
+                variant="filled"
+                name="location"
+                className="text-filter2"
+              />
+            </div>
+            <div className="px-3">
+              <Button
+                onClick={handleSearchFilter}
+                style={{
+                  height: "2rem",
+                  color: "white",
+                  borderColor: "rgb(30, 150, 190)",
+                }}
+                variant="outlined"
+                className="search-button mt-1"
+              >
+                SEARCH
+              </Button>
+            </div>
+          </div>
         </Box>
         <div className="mt-5 ">{/* <LoadingGrow /> */}</div>
       </div>
@@ -167,33 +195,37 @@ function SearchFilter() {
             className="d-flex justify-content-start flex-column mt-5  "
             style={{ marginLeft: "3rem" }}
           >
-            <div className="border bg-white d-flex flex-column mt-8 rounded ">
-              <h2 className="p-2 m-2">Filter Results</h2>
+            <div className="filter-results border  d-flex flex-column mt-8 rounded ">
+              <h2 className="filter-results-text p-2 m-2">Filter Results</h2>
 
               <div className="p-2 m-2 ">
                 <FormControl>
-                  <FormLabel id="demo-radio-buttons-group-label">
+                  <FormLabel
+                    style={{ color: "rgb(30, 150, 190)" }}
+                    id="demo-radio-buttons-group-label"
+                  >
                     Job Type
                   </FormLabel>
                   <RadioGroup
                     aria-labelledby="demo-radio-buttons-group-label"
                     defaultValue="Contract"
                     name="type"
+                    style={{ color: "black" }}
                     onChange={handleFilterTypeAndCategory}
                   >
                     <FormControlLabel
                       value="Contract"
-                      control={<Radio />}
+                      control={<Radio color="default" />}
                       label="Contract"
                     />
                     <FormControlLabel
                       value="Permanent"
-                      control={<Radio />}
+                      control={<Radio color="default" />}
                       label="Permanent"
                     />
                     <FormControlLabel
                       value="Temporary"
-                      control={<Radio />}
+                      control={<Radio color="default" />}
                       label="Temporary"
                     />
                   </RadioGroup>
@@ -201,60 +233,76 @@ function SearchFilter() {
               </div>
               <div className="p-2 m-2">
                 <FormControl>
-                  <FormLabel id="demo-radio-buttons-group-label">
+                  <FormLabel
+                    style={{ color: "rgb(30, 150, 190)" }}
+                    id="demo-radio-buttons-group-label"
+                  >
                     Sectors
                   </FormLabel>
                   <RadioGroup
                     aria-labelledby="demo-radio-buttons-group-label"
                     defaultValue="Software & Web Development"
                     name="job_category"
+                    style={{ color: "black" }}
                     onChange={handleFilterTypeAndCategory}
                   >
                     <FormControlLabel
                       value="Software & Web Development"
-                      control={<Radio />}
+                      control={<Radio color="default" />}
                       label="Software & Web Development"
                     />
                     <FormControlLabel
                       value="Networking & Info Security"
-                      control={<Radio />}
+                      control={<Radio color="default" />}
                       label="Networking & Info Security"
                     />
                     <FormControlLabel
                       value="IT Support & Infrastructure"
-                      control={<Radio />}
+                      control={<Radio color="default" />}
                       label="IT Support & Infrastructure"
                     />
 
                     <FormControlLabel
                       value="QA & Testing"
-                      control={<Radio />}
+                      control={<Radio color="default" />}
                       label="QA & Testing"
                     />
                     <FormControlLabel
                       value="Business Change & Transformation"
-                      control={<Radio />}
+                      control={<Radio color="default" />}
                       label="Business Change & Transformation"
                     />
                   </RadioGroup>
                 </FormControl>
                 <div className="p-2 m-2 d-flex ">
-                  <Button
-                    className="m-2"
-                    style={{ height: "4.1rem" }}
-                    variant="outlined"
-                    onClick={handleFilterTypeAndCategorySearch}
-                  >
-                    APPLY
-                  </Button>
-                  <Button
-                    style={{ height: "4.1rem" }}
-                    variant="outlined"
-                    className="m-2"
-                    onClick={handleClearFilterButton}
-                  >
-                    CLEAR
-                  </Button>
+                  <div>
+                    <Button
+                      onClick={handleFilterTypeAndCategorySearch}
+                      style={{
+                        height: "2rem",
+                        color: "black",
+                        borderColor: "rgb(30, 150, 190)",
+                      }}
+                      variant="outlined"
+                      className="search-button mt-1"
+                    >
+                      Apply
+                    </Button>
+                  </div>
+                  <div className="px-2">
+                    <Button
+                      onClick={handleClearFilterButton}
+                      style={{
+                        height: "2rem",
+                        color: "black",
+                        borderColor: "rgb(30, 150, 190)",
+                      }}
+                      variant="outlined"
+                      className="search-button mt-1"
+                    >
+                      CLEAR
+                    </Button>
+                  </div>
                 </div>
               </div>
             </div>
@@ -311,5 +359,13 @@ function SearchFilter() {
     </div>
   );
 }
+SearchFilter.propTypes = {
+  data: PropTypes.object,
+  classOption: PropTypes.string,
+};
+
+SearchFilter.defaultProps = {
+  classOption: "text-center",
+};
 
 export default SearchFilter;

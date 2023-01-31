@@ -54,14 +54,14 @@ const IntroThree = () => {
                   <Link
                     to={process.env.PUBLIC_URL + "/"}
                     className="btn btn-outline-white btn-hover-primary w-50"
-                    style={{ backgroundColor: "#1e96be" }}
+                    style={{ backgroundColor: "#c49e00" }}
                   >
                     Find me a candidate
                   </Link>
                   <Link
                     to={process.env.PUBLIC_URL + "/job-search"}
                     className="btn btn-outline-white btn-hover-primary w-50 mb-20"
-                    style={{ backgroundColor: "#c49e00", color: "white" }}
+                    style={{ backgroundColor: "#1e96be", color: "white" }}
                   >
                     {" "}
                     Find me a role{" "}
