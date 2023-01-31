@@ -33,3 +33,65 @@ a:hover {
   font-family: "Audiowide", cursive;
   font-size: 2.5rem;
 }
+
+h2,
+h3,
+h1,
+h4 {
+  font-family: "Audiowide", cursive;
+}
+
+.filter-results {
+  background-color: #ffffff;
+}
+
+.filter-results-text {
+  color: rgb(30, 150, 190);
+}
+
+.job-card {
+  background-color: #feffff;
+  color: rgb(0, 0, 0);
+}
+
+.type-category {
+  color: rgb(0, 0, 0);
+}
+
+.role-title {
+  color: rgb(30, 150, 190);
+}
+
+.full-card-apply-modal {
+  max-height: 600px;
+  overflow-y: scroll;
+}
+
+.search-border {
+  /* border: 0.5px solid rgb(139, 139, 139); */
+}
+.text-filter {
+  height: 2rem;
+}
+
+.search-box-jobs {
+  background-color: #0f1e32;
+}
+
+.text-filter {
+  height: 2.5rem;
+  width: 20rem;
+  border-radius: 10px;
+  border: none;
+}
+
+.text-filter2 {
+  height: 2.5rem;
+  width: 15rem;
+  border-radius: 10px;
+  border: none;
+}
+
+.search-button {
+  border-radius: 10px;
+}
