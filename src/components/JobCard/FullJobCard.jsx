@@ -3,42 +3,30 @@ import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import ReactVivus from "react-vivus";
 import PropTypes from "prop-types";
-import ApplyJob from "./ApplyJob";
 import Form from "react-bootstrap/Form";
 import "../../assets/css/custom.css";
 import "../../assets/css/animations.css";
 function FullJobCard({
   lgShow,
   setLgShow,
-  classOption,
   role,
   description,
   salary,
   location,
-  consultant,
   type,
-  category,
   industry,
   job_category,
   post_date,
   setFileUpload,
   uploadCV,
+  job_ref,
+  handleUserApply,
 }) {
   const [displayApply, setDisplayApply] = useState(false);
 
   const handleDisplayApply = () => {
     setDisplayApply(!displayApply);
   };
-  function generateReferenceNumber() {
-    const possibleChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-    let referenceNumber = "";
-    for (let i = 0; i < 10; i++) {
-      referenceNumber += possibleChars.charAt(
-        Math.floor(Math.random() * possibleChars.length)
-      );
-    }
-    return referenceNumber;
-  }
 
   return (
     <>
@@ -69,7 +57,7 @@ function FullJobCard({
               />
             </div>
             <div>
-              <p>{post_date}</p>
+              <p>Post date: {post_date.split("").splice(0, 10).join("")}</p>
             </div>
           </Modal.Header>
 
@@ -112,7 +100,7 @@ function FullJobCard({
               </div>
               <div className="mt-2">
                 <p>
-                  <strong>Reference: {generateReferenceNumber()}</strong>
+                  <strong>Reference: {job_ref}</strong>
                 </p>
               </div>
             </div>
@@ -132,14 +120,26 @@ function FullJobCard({
                   controlId="exampleForm.ControlInput1"
                 >
                   <Form.Label>First name</Form.Label>
-                  <Form.Control type="name" placeholder="John" autoFocus />
+                  <Form.Control
+                    name="firstName"
+                    type="name"
+                    placeholder="John"
+                    autoFocus
+                    onChange={handleUserApply}
+                  />
                 </Form.Group>
                 <Form.Group
                   className="mb-3"
                   controlId="exampleForm.ControlInput1"
                 >
                   <Form.Label>Last name</Form.Label>
-                  <Form.Control type="name" placeholder="Doe" autoFocus />
+                  <Form.Control
+                    name="lastName"
+                    type="name"
+                    placeholder="Doe"
+                    autoFocus
+                    onChange={handleUserApply}
+                  />
                 </Form.Group>
                 <Form.Group
                   className="mb-3"
@@ -148,8 +148,10 @@ function FullJobCard({
                   <Form.Label>Email address</Form.Label>
                   <Form.Control
                     type="email"
+                    name="email"
                     placeholder="name@example.com"
                     autoFocus
+                    onChange={handleUserApply}
                   />
                 </Form.Group>
                 <Form.Group

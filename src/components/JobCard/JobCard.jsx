@@ -1,14 +1,12 @@
 import React, { useState, useEffect } from "react";
 import Button from "@mui/material/Button";
 import PropTypes from "prop-types";
-import ReactVivus from "react-vivus";
-import UploadCV from "../CV/UploadCV";
+
 import ApplyJob from "./ApplyJob";
 import FullJobCard from "./FullJobCard";
 import "../../assets/css/custom.css";
 import { storage } from "../../firebase";
 import { ref, uploadBytes } from "firebase/storage";
-import { v4 } from "uuid";
 
 function JobCard({
   classOption,
@@ -22,12 +20,33 @@ function JobCard({
   industry,
   job_category,
   post_date,
+  job_ref,
 }) {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   const [isLoaded, setIsLoaded] = useState(false);
   const [lgShow, setLgShow] = useState(false);
+  const [userApplying, setUserApplying] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+  });
+
+  const [fileUpload, setFileUpload] = useState(null);
+
+  const resetUserApplying = () => {
+    setUserApplying({
+      firstName: "",
+      lastName: "",
+      email: "",
+    });
+  };
+
+  const handleUserApply = (e) => {
+    setUserApplying({ ...userApplying, [e.target.name]: e.target.value });
+    console.log(userApplying);
+  };
 
   useEffect(() => {
     setTimeout(() => setIsLoaded(true), 500);
@@ -40,15 +59,18 @@ function JobCard({
     }
   };
 
-  const [fileUpload, setFileUpload] = useState(null);
-
-  const uploadCV = () => {
+  const uploadCV = async () => {
     if (fileUpload == null) return;
 
-    const fileRef = ref(storage, `CVs/${fileUpload.name}`);
+    const fileRef = ref(
+      storage,
+      `CVs/${userApplying.email + job_ref + fileUpload.name}`
+    );
 
-    uploadBytes(fileRef, fileUpload).then(() => {
+    await uploadBytes(fileRef, fileUpload).then(() => {
       alert("Uploaded file!");
+
+      resetUserApplying();
     });
   };
 
@@ -64,6 +86,8 @@ function JobCard({
           setShow={setShow}
           setFileUpload={setFileUpload}
           uploadCV={uploadCV}
+          handleUserApply={handleUserApply}
+          userApplying={userApplying}
         />
       </div>
 
@@ -83,6 +107,9 @@ function JobCard({
           post_date={post_date}
           setFileUpload={setFileUpload}
           uploadCV={uploadCV}
+          handleUserApply={handleUserApply}
+          userApplying={userApplying}
+          job_ref={job_ref}
         />
       </div>
       <div className={`text-container ${isLoaded ? "loaded" : ""}`}>
@@ -91,7 +118,7 @@ function JobCard({
             <h3 className="role-title">{role}</h3>
           </div>
           <div>
-            <p>Post date: {post_date}</p>
+            <p>Post date: {post_date.split("").splice(0, 10).join("")}</p>
           </div>
         </div>
         <hr style={{ color: "rgb(30, 150, 190)" }} />

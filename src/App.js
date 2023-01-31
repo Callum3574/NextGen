@@ -28,7 +28,7 @@ function App() {
         <Suspense fallback={<div />}>
           <Routes>
             <Route
-              path={`${process.env.PUBLIC_URL + "/home"}`}
+              path={`${process.env.PUBLIC_URL + "/"}`}
               element={<Home />}
             />
             <Route

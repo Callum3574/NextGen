@@ -23,11 +23,13 @@ const Home = () => {
       <Header />
       <IntroThree />
       {/* <HomeAboutThree /> */}
-      {/* <Funfact classOption="section-padding bg-primary-blue" /> */}
       <ServiceIconBox />
+      <Funfact classOption="section-padding" />
+
       <Faq />
       {/* <Team /> */}
-      <TestimonialContainer />
+      {/* <TestimonialContainer /> */}
+
       <CallToAction />
       {/* <HomeBlog /> */}
       <ContactInformation classOption="bg-primary-blue" />

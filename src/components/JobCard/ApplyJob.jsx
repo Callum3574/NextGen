@@ -1,15 +1,18 @@
-import React, { useState } from "react";
+import React from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Modal from "react-bootstrap/Modal";
 import ReactVivus from "react-vivus";
 import PropTypes from "prop-types";
 import "../../assets/css/animations.css";
-import { storage } from "../../firebase";
-import { ref, uploadBytes } from "firebase/storage";
-import { v4 } from "uuid";
 
-function ApplyJob({ show, handleClose, setFileUpload, uploadCV }) {
+function ApplyJob({
+  show,
+  handleClose,
+  setFileUpload,
+  uploadCV,
+  handleUserApply,
+}) {
   return (
     <div>
       <Modal
@@ -39,18 +42,32 @@ function ApplyJob({ show, handleClose, setFileUpload, uploadCV }) {
           <Form>
             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
               <Form.Label>First name</Form.Label>
-              <Form.Control type="name" placeholder="John" autoFocus />
+              <Form.Control
+                name="firstName"
+                type="name"
+                placeholder="John"
+                autoFocus
+                onChange={handleUserApply}
+              />
             </Form.Group>
             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
               <Form.Label>Last name</Form.Label>
-              <Form.Control type="name" placeholder="Doe" autoFocus />
+              <Form.Control
+                name="lastName"
+                type="name"
+                placeholder="Doe"
+                autoFocus
+                onChange={handleUserApply}
+              />
             </Form.Group>
             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
               <Form.Label>Email address</Form.Label>
               <Form.Control
+                name="email"
                 type="email"
                 placeholder="name@example.com"
                 autoFocus
+                onChange={handleUserApply}
               />
             </Form.Group>
             <Form.Group

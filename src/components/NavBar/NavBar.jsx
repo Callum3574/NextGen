@@ -8,7 +8,7 @@ const NavBar = () => {
     <nav className="site-main-menu">
       <ul>
         <li>
-          <NavLink to={process.env.PUBLIC_URL + "/home"}>
+          <NavLink to={process.env.PUBLIC_URL + "/"}>
             <span className="menu-text">Home</span>
           </NavLink>
           <span className="menu-toggle">
