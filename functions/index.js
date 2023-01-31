@@ -23,8 +23,8 @@ exports.onFileUpload = functions.storage.object().onFinalize((object) => {
   const msg = {
     to: "callum.hall123@hotmail.com",
     from: "callumhall65@gmail.com",
-    subject: "New File Uploaded to Firebase Storage",
-    text: `A new file was uploaded to Firebase Storage: ${filePath}`,
+    subject: "CV Submission",
+    text: `A new CV has been submitted: ${filePath}`,
   };
 
   return sgMail
