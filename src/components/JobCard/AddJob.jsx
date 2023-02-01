@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 function AddJob() {
   const baseURL = "http://localhost:8000";
+  const baseURLDeploy = "https://top-fork-production.up.railway.app";
 
   const [jobDetails, setJobDetails] = useState({
     title: "",
@@ -25,7 +26,7 @@ function AddJob() {
   };
 
   const postJobs = async () => {
-    const res = await fetch(baseURL + "/post-job", {
+    const res = await fetch(baseURLDeploy + "/post-job", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(jobDetails),
