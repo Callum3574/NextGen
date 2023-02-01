@@ -26,9 +26,10 @@ function SearchFilter() {
   const [jobsVisible, setJobsVisible] = useState(10);
 
   const baseURL = "http://localhost:8000";
+  const baseURLDeploy = "https://top-fork-production.up.railway.app";
 
   const fetchPosts = async () => {
-    const res = await fetch(baseURL + "/all-jobs");
+    const res = await fetch(baseURLDeploy + "/all-jobs");
 
     const data = await res.json();
 
