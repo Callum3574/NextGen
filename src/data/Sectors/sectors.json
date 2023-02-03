@@ -1,0 +1,24 @@
+{
+  "fields": [
+    {
+      "name": "Infrastructure & Support",
+      "description": "Infrastructure & Support is a critical aspect of any organization. This field focuses on the maintenance and upkeep of a company's technical infrastructure, which includes servers, networks, and other hardware systems. The primary goal of this field is to ensure that the infrastructure is running smoothly and efficiently, so that the company can focus on its core business. Professionals in this field are responsible for configuring, maintaining, and troubleshooting hardware and software systems, as well as ensuring that the infrastructure is secure and available at all times."
+    },
+    {
+      "name": "Networking & Security",
+      "description": "Networking & Security is a crucial field in today's digital world. This field deals with the design, implementation, and maintenance of a company's network systems and security measures to protect against cyber threats. Professionals in this field are responsible for ensuring the confidentiality, integrity, and availability of the organization's data, networks, and systems. They work with a range of technologies and tools to secure the organization's networks, including firewalls, intrusion detection systems, encryption, and access controls. They also perform regular security audits to identify and remediate vulnerabilities, and respond to security incidents as needed."
+    },
+    {
+      "name": "Software Engineering",
+      "description": "Software Engineering is a field that focuses on the design, development, and testing of software systems. This field is concerned with ensuring that software systems meet the requirements of the business and that they are delivered on time, within budget, and with high quality. Software engineers are responsible for developing and maintaining software applications, and they use a range of tools and technologies to do so. They work with stakeholders to understand the business requirements, and they use this information to design, build, and test software systems that meet those requirements. Software engineers are also responsible for debugging and fixing any issues that arise during the software development lifecycle, and for ensuring that the software systems are reliable and secure."
+    },
+    {
+      "name": "Cloud / DevOps",
+      "description": "Cloud / DevOps is a field that focuses on the delivery and management of software systems using cloud computing and DevOps practices. This field is concerned with ensuring that software systems are delivered quickly and reliably, and that they can be easily managed and updated. DevOps engineers are responsible for automating the deployment, testing, and delivery of software systems, and for ensuring that these systems are scalable, reliable, and secure. They work with a range of cloud computing platforms and technologies, such as AWS, Azure, and Google Cloud, and they use DevOps practices such as continuous integration, continuous delivery, and continuous deployment to deliver software systems quickly and efficiently."
+    },
+    {
+      "name": "Senior Executive",
+      "description": "Senior Executives are the leaders of an organization, and they are responsible for setting the strategic direction of the company and ensuring that it is on track to achieve its goals. Senior Executives have a broad perspective on the company, and they use this perspective to make decisions that will have a significant impact on the company's future. They are responsible for leading the company's operations, finance, and human resources, and for working with other executives to ensure that the company is running smoothly. Senior Executives must be strong leaders, with excellent communication and interpersonal skills, and they must have a deep understanding of the company's industry and the marketplace."
+    }
+  ]
+}
