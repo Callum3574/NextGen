@@ -33,12 +33,12 @@ function FullJobCard({
       <Modal
         className="mt-10"
         style={{ zIndex: "9999" }}
-        size="lg"
+        size="xl"
         show={lgShow}
         onHide={() => setLgShow(false)}
         aria-labelledby="example-modal-sizes-title-lg"
       >
-        <div className="full-card-apply-modal ">
+        <div className="full-card-apply-modal p-5 ">
           <Modal.Header closeButton>
             <Modal.Title id="example-modal-sizes-title-lg">{role}</Modal.Title>
 
@@ -78,20 +78,20 @@ function FullJobCard({
               </div>
             </div>
 
-            <div className="d-flex mt-1 flex-column">
-              <div className="">
+            <div className="d-flex mt-1 flex-row">
+              <div>
                 <p>
                   <strong>Location : </strong>
                   {location}
                 </p>
               </div>
-
-              <div className="mt-2">
+              <div>
                 <p>
                   <strong>Salary : </strong> {salary}
                 </p>
               </div>
-
+            </div>
+            <div className="d-flex flex-row">
               <div className="mt-2">
                 <p>
                   <strong>Industry : </strong>

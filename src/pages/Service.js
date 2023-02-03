@@ -11,7 +11,6 @@ import Footer from "../container/Footer/Footer";
 import ScrollToTop from "../components/ScrollToTop.jsx";
 import PortfolioTwo from "../container/Portfolio/PortfolioTwo";
 import SearchFilter from "../container/Search/SearchFilter";
-import Networking from "../networking/Networking.jsx";
 import AddJob from "../components/JobCard/AddJob.jsx";
 
 const Service = () => {
