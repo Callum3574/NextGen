@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 import React from "react";
 import { Link } from "react-router-dom";
+import ReactVivus from "react-vivus";
 
 const Logo = ({ image }) => {
   return (

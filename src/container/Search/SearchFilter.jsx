@@ -10,6 +10,7 @@ import FormLabel from "@mui/material/FormLabel";
 import "../../assets/css/custom.css";
 import JobCard from "../../components/JobCard/JobCard.jsx";
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
 function SearchFilter() {
   const [allJobs, setAllJobs] = useState([]);

@@ -25,12 +25,17 @@ const Work = () => {
       (index) => index.name === selectedSector
     );
     setSectorDetails(index);
-    console.log(sectorDetails);
+  };
+
+  const handleBackArrow = () => {
+    setSectorDetails([]);
   };
 
   useEffect(() => {
     sectorIndex();
   }, [selectedSector]);
+
+  useEffect(() => {}, [sectorDetails]);
 
   return (
     <React.Fragment>
@@ -38,14 +43,15 @@ const Work = () => {
       <Header />
       <Breadcrumb
         image="images/bg/breadcrumb-bg-two.jpg"
-        title="We work with bold brands that we believe in"
+        title="Sectors we recruit for!"
         content="Home"
         contentTwo="Sectors"
       />
-      <Sectors handleSector={handleSector} />
+      <Sectors handleBackArrow={handleBackArrow} handleSector={handleSector} />
       <SectorsMain
         selectedSector={selectedSector}
         sectorDetails={sectorDetails}
+        handleBackArrow={handleBackArrow}
       />
       <Footer />
       <ScrollToTop />
