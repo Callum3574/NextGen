@@ -79,13 +79,13 @@ function FullJobCard({
             </div>
 
             <div className="d-flex mt-1 flex-row">
-              <div>
+              <div className="d-flex flex-row">
                 <p>
                   <strong>Location : </strong>
                   {location}
                 </p>
               </div>
-              <div>
+              <div className="px-20">
                 <p>
                   <strong>Salary : </strong> {salary}
                 </p>
@@ -98,7 +98,7 @@ function FullJobCard({
                   {industry}
                 </p>
               </div>
-              <div className="mt-2">
+              <div className="mt-2 px-30">
                 <p>
                   <strong>Reference: {job_ref}</strong>
                 </p>

@@ -1,31 +1,58 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import SEO from "../components/SEO";
 import Header from "../partials/header/Header";
 import Breadcrumb from "../container/Breadcrumb/Breadcrumb";
-import WorkContainer from "../container/Work/WorkContainer";
-import CallToAction from "../container/CallToAction/CallToAction";
-import AboutFive from "../container/About/AboutFive";
-import BrandContainer from "../container/Brand/BrandContainer";
-import Faq from "../container/Faq/Faq";
 import Footer from "../container/Footer/Footer";
 import ScrollToTop from "../components/ScrollToTop.jsx";
+import Sectors from "../components/Sectors/Sectors";
+import SectorsMain from "../components/Sectors/SectorsMain.js";
+import sectors from "../data/Sectors/sectors.json";
+import ProjectForm from "../components/ProjectForm/ProjectForm";
+import BrandContainer from "../container/Brand/BrandContainer.js";
+import WorkContainer from "../container/Work/WorkContainer.js";
 
 const Work = () => {
+  const [selectedSector, setSelectedSector] = useState("");
+  const [sectorDetails, setSectorDetails] = useState([]);
+
+  const handleSector = (e) => {
+    const name = e.target.getAttribute("data-name");
+    setSelectedSector(name);
+  };
+
+  const sectorIndex = () => {
+    const index = sectors.fields.filter(
+      (index) => index.name === selectedSector
+    );
+    setSectorDetails(index);
+  };
+
+  const handleBackArrow = () => {
+    setSectorDetails([]);
+  };
+
+  useEffect(() => {
+    sectorIndex();
+  }, [selectedSector]);
+
+  useEffect(() => {}, [sectorDetails]);
+
   return (
     <React.Fragment>
       <SEO title="Nextgen || Sectors" />
       <Header />
-      {/* <Breadcrumb
+      <Breadcrumb
         image="images/bg/breadcrumb-bg-two.jpg"
-        title="We work with bold brands that we believe in"
+        title="Sectors we recruit for!"
         content="Home"
-        contentTwo="Work"
-      /> */}
-      {/* <WorkContainer /> */}
-      {/* <CallToAction /> */}
-      {/* <AboutFive /> */}
-      {/* <BrandContainer classOption="section-padding-bottom" /> */}
-      {/* <Faq /> */}
+        contentTwo="Sectors"
+      />
+      <Sectors handleBackArrow={handleBackArrow} handleSector={handleSector} />
+      <SectorsMain
+        selectedSector={selectedSector}
+        sectorDetails={sectorDetails}
+        handleBackArrow={handleBackArrow}
+      />
       <Footer />
       <ScrollToTop />
     </React.Fragment>
