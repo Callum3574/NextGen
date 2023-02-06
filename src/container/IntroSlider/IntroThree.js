@@ -8,7 +8,7 @@ const IntroThree = () => {
     <div
       className="intro-section section overlay"
       style={{
-        backgroundImage: `url(${process.env.PUBLIC_URL}/images/hero-image/hero-1.jpg)`,
+        backgroundImage: `url(${process.env.PUBLIC_URL}/images/hero-image/hero-7.jpg)`,
       }}
     >
       <div className="container">

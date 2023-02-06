@@ -10,16 +10,16 @@ import ScrollToTop from "../components/ScrollToTop.jsx";
 const BlogGrid = () => {
   return (
     <React.Fragment>
-      <SEO title="Nextgen || Blog" />
+      <SEO title="Exomac || Blog" />
       <Header />
-      {/* <Breadcrumb
+      <Breadcrumb
         image="images/bg/breadcrumb-bg-four.jpg"
         title="Find all our latest news, insights, and events"
         content="Home"
         contentTwo="Blog"
       />
       <PageBlog />
-      <CallToAction /> */}
+      <CallToAction />
       <Footer />
       <ScrollToTop />
     </React.Fragment>

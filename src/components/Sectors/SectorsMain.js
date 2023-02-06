@@ -19,6 +19,7 @@ function SectorsMain({ sectorDetails }) {
             <div className="sector-text">
               <p>{sectorDetails[0].description}</p>
             </div>
+
             <div className="d-flex justify-content-between">
               <div className=" sector-text w-25 d-flex flex-column justify-content-start mt-10 w-100">
                 <h4>Areas we cover: </h4>
@@ -28,8 +29,11 @@ function SectorsMain({ sectorDetails }) {
                   })}
                 </ul>
               </div>
-              <div className="w-25 d-flex justify-content-end">
-                <SectorImg />
+              <div className="container d-flex justify-content-start">
+                <SectorImg
+                  scale={sectorDetails[0].scale}
+                  img={sectorDetails[0].img}
+                />
               </div>
             </div>
           </div>
