@@ -2,6 +2,7 @@ import { useEffect, Suspense, lazy } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import AOS from "aos";
 import NavScrollTop from "./components/NavScrollTop";
+import data from "./data//blog/BlogClassic.json";
 
 const Home = lazy(() => import("./pages/Home"));
 const About = lazy(() => import("./pages/About"));
@@ -9,12 +10,8 @@ const Service = lazy(() => import("./pages/Service"));
 const Work = lazy(() => import("./pages/Work"));
 const WorkDetails = lazy(() => import("./pages/WorkDetails"));
 const BlogGrid = lazy(() => import("./pages/BlogGrid"));
-const BlogDetails = lazy(() => import("./components/Blog/BlogDetails"));
 const Contact = lazy(() => import("./pages/Contact"));
-const BlogCategories = lazy(() => import("./pages/BlogCategories"));
-const BlogTag = lazy(() => import("./pages/BlogTag"));
-const BlogClassic = lazy(() => import("./pages/BlogClassic"));
-
+const BlogDetails = lazy(() => import("./pages/BlogDetails"));
 function App() {
   useEffect(() => {
     AOS.init({
@@ -55,18 +52,7 @@ function App() {
               path={`${process.env.PUBLIC_URL + "/blog"}`}
               element={<BlogGrid />}
             />
-            <Route
-              path={`${process.env.PUBLIC_URL + "/blog-classic"}`}
-              element={<BlogClassic />}
-            />
-            <Route
-              path={`${process.env.PUBLIC_URL + "/tag/:slug"}`}
-              element={<BlogTag />}
-            />
-            <Route
-              path={`${process.env.PUBLIC_URL + "/category/:slug"}`}
-              element={<BlogCategories />}
-            />
+
             <Route
               path={`${process.env.PUBLIC_URL + "/blog-details/:id"}`}
               element={<BlogDetails />}

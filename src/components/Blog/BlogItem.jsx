@@ -2,36 +2,35 @@ import PropTypes from "prop-types";
 import React from "react";
 import { Link } from "react-router-dom";
 
-const BlogItem = ({ data }) => {
-  console.log(data);
+const BlogItem = ({ post }) => {
   return (
     <div className="blog">
       <div className="thumbnail">
         <Link
-          to={process.env.PUBLIC_URL + `/blog-details/${data.id}`}
+          to={process.env.PUBLIC_URL + `/blog-details/${post.id}`}
           className="image"
         >
-          <img src={process.env.PUBLIC_URL + data.image} alt="Blog" />
+          <img src={process.env.PUBLIC_URL + post.image} alt="Blog" />
         </Link>
       </div>
       <div className="info">
         <ul className="meta">
           <li>
             <i className="far fa-calendar"></i>
-            {data.date}
+            {post.date}
           </li>
           <li>
             <i className="far fa-eye"></i>
-            {data.view}
+            {post.view}
           </li>
         </ul>
         <h3 className="title">
-          <Link to={process.env.PUBLIC_URL + `/blog-details/${data.id}`}>
-            {data.title}
+          <Link to={process.env.PUBLIC_URL + `/blog-details/${post.id}`}>
+            {post.title}
           </Link>
         </h3>
         <Link
-          to={process.env.PUBLIC_URL + `/blog-details/${data.id}`}
+          to={process.env.PUBLIC_URL + `/blog-details/${post.id}`}
           className="link"
         >
           {" "}
@@ -43,7 +42,7 @@ const BlogItem = ({ data }) => {
 };
 
 BlogItem.propTypes = {
-  data: PropTypes.object,
+  post: PropTypes.object,
 };
 
 export default BlogItem;

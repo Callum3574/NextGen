@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import React from "react";
 import { Link } from "react-router-dom";
-import BlogDetails from "../../components/Blog/BlogDetails.jsx";
+import BlogDetailsFull from "../../components/Blog/BlogDetails.jsx";
 import Comment from "../../components/Comment/Comment.jsx";
 import SidebarWrap from "../../components/Sidebar/SidebarWrap.jsx";
 import SidebarWidget from "../../components/Sidebar/SidebarWidget.jsx";
@@ -12,16 +12,19 @@ import SidebarCategories from "../../components/Sidebar/SidebarCategories.jsx";
 import SidebarPost from "../../components/Sidebar/SidebarPost.jsx";
 import SidebarTag from "../../components/Sidebar/SidebarTag.jsx";
 
-const BlogDetailsContainer = ({ data }) => {
-  console.log(data);
+const BlogDetailsContainer = ({ post }) => {
+  //check if post is null
+  console.log(post);
+
   return (
     <div className="section section-padding fix">
       <div className="container">
         <div className="row mb-n10">
           <div className="col-lg-8 col-12 order-lg-1 mb-10">
             <div className="row row-cols-1 no-gutters">
-              <BlogDetails data={data} />
-              <div className="entry-author">
+              {post ? <BlogDetailsFull post={post} /> : console.log("null")}
+
+              {/* <div className="entry-author">
                 <div className="author-info">
                   <div className="author-avatar">
                     <img
@@ -42,7 +45,7 @@ const BlogDetailsContainer = ({ data }) => {
                     </div>
                   </div>
                 </div>
-              </div>
+              </div> */}
 
               <div className="blog-nav-links">
                 <h4 className="title">Related Posts </h4>
@@ -50,7 +53,7 @@ const BlogDetailsContainer = ({ data }) => {
                   <div className="nav-item prev">
                     <div className="inner">
                       <Link
-                        to={process.env.PUBLIC_URL + `/blog-details/${data.id}`}
+                        to={process.env.PUBLIC_URL + `/blog-details/${post.id}`}
                       >
                         <div
                           className="hover-bg has-thumbnail"
@@ -70,7 +73,7 @@ const BlogDetailsContainer = ({ data }) => {
                   <div className="nav-item next">
                     <div className="inner">
                       <Link
-                        to={process.env.PUBLIC_URL + `/blog-details/${data.id}`}
+                        to={process.env.PUBLIC_URL + `/blog-details/${post.id}`}
                       >
                         <div
                           className="hover-bg has-thumbnail"
@@ -89,12 +92,12 @@ const BlogDetailsContainer = ({ data }) => {
                 </div>
               </div>
 
-              <div className="comment-form-wrap">
+              {/* <div className="comment-form-wrap">
                 <div className="comment-respond">
                   <h3 className="title">Leave a Reply</h3>
-                  <Comment url="" id={data.id} title={data.title} />
+                  <Comment url="" id={post.id} title={post.title} />
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
 
