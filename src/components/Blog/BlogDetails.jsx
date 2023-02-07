@@ -1,10 +1,26 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { slugify } from "../../utils";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
 const BlogDetailsFull = ({ post }) => {
-  console.log(post);
+  const increaseViewCount = async () => {
+    const res = await fetch("http://localhost:8000/view_count", {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        view: parseInt(post[0].view) + 1,
+        id: post[0].id,
+      }),
+    });
+  };
+
+  useEffect(() => {
+    increaseViewCount();
+  }, []);
+
   let cate;
   if (post) {
     cate = post[0].categories.map((value, i) => {
