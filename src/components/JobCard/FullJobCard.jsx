@@ -21,12 +21,16 @@ function FullJobCard({
   uploadCV,
   job_ref,
   handleUserApply,
+  skills,
+  responsibilities,
 }) {
   const [displayApply, setDisplayApply] = useState(false);
 
   const handleDisplayApply = () => {
     setDisplayApply(!displayApply);
   };
+
+  console.log(skills);
 
   return (
     <>
@@ -105,9 +109,32 @@ function FullJobCard({
               </div>
             </div>
             <hr />
-            <div>
-              <p>{description}</p>
-            </div>
+            <h3>Description</h3>
+            <div dangerouslySetInnerHTML={{ __html: description }}></div>
+            <hr />
+            <h3>Skills:</h3>
+            {skills.map((skill, index) => {
+              return (
+                <div
+                  dangerouslySetInnerHTML={{ __html: skill }}
+                  key={index}
+                ></div>
+              );
+            })}
+
+            <hr />
+
+            <h3>Responsibilities:</h3>
+            {responsibilities.map((responsibility, index) => {
+              return (
+                <div
+                  dangerouslySetInnerHTML={{ __html: responsibility }}
+                  key={index}
+                ></div>
+              );
+            })}
+            <hr />
+
             <div className="d-flex justify-content-center mt-5">
               <Button onClick={handleDisplayApply}>APPLY NOW</Button>
             </div>

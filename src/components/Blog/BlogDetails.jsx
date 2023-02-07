@@ -61,11 +61,11 @@ const BlogDetailsFull = ({ post }) => {
             <ul className="meta mb-0 mt-12">
               <li>
                 <i className="fal fa-pencil-alt"></i>
-                {post.author}
+                {post[0].author}
               </li>
               <li>
                 <i className="far fa-calendar"></i>
-                {post.date}
+                {post[0].date}
               </li>
               <li>
                 <i className="fas fa-tags"></i>
