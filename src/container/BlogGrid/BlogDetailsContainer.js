@@ -58,7 +58,12 @@ const BlogDetailsContainer = ({ blogData, post }) => {
                 <div className="nav-list">
                   <div className="nav-item prev">
                     <div className="inner">
-                      <Link to={process.env.PUBLIC_URL + `/blog-details/1}`}>
+                      <Link
+                        to={
+                          process.env.PUBLIC_URL +
+                          `/blog-details/${relatedPosts[0]["id"]}`
+                        }
+                      >
                         <div
                           className="hover-bg has-thumbnail"
                           style={{
@@ -75,7 +80,12 @@ const BlogDetailsContainer = ({ blogData, post }) => {
 
                   <div className="nav-item next">
                     <div className="inner">
-                      <Link to={process.env.PUBLIC_URL + `/blog-details/1}`}>
+                      <Link
+                        to={
+                          process.env.PUBLIC_URL +
+                          `/blog-details/${relatedPosts[1]["id"]}}`
+                        }
+                      >
                         <div
                           className="hover-bg has-thumbnail"
                           style={{
