@@ -311,6 +311,8 @@ function SearchFilter() {
             </div>
             {filteredJobs.length === 0
               ? allJobs.slice(0, jobsVisible).map((job) => {
+                  console.log(job.skills);
+                  console.log(job.responsibilities[4]);
                   return (
                     <JobCard
                       role={job.role}
@@ -324,6 +326,8 @@ function SearchFilter() {
                       job_category={job.job_category}
                       post_date={job.post_date}
                       job_ref={job.job_ref}
+                      responsibilities={job.responsibilities}
+                      skills={job.skills}
                     />
                   );
                 })
@@ -341,6 +345,8 @@ function SearchFilter() {
                       job_category={job.job_category}
                       post_date={job.post_date}
                       job_ref={job.job_ref}
+                      responsibilities={job.responsibilities}
+                      skills={job.skills}
                     />
                   );
                 })}

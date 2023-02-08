@@ -21,6 +21,8 @@ function JobCard({
   job_category,
   post_date,
   job_ref,
+  skills,
+  responsibilities,
 }) {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
@@ -110,6 +112,8 @@ function JobCard({
           handleUserApply={handleUserApply}
           userApplying={userApplying}
           job_ref={job_ref}
+          responsibilities={responsibilities}
+          skills={skills}
         />
       </div>
       <div className={`text-container ${isLoaded ? "loaded" : ""}`}>

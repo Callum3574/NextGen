@@ -10,7 +10,6 @@ import PortfolioTwo from "../container/Portfolio/PortfolioTwo";
 import Team from "../container/Team/Team";
 import TestimonialContainer from "../container/Testimonial/TestimonialContainer";
 import CallToAction from "../container/CallToAction/CallToAction";
-import HomeBlog from "../container/BlogGrid/HomeBlog";
 import ContactInformation from "../container/ContactInformation/ContactInformation";
 import BrandContainer from "../container/Brand/BrandContainer";
 import Footer from "../container/Footer/Footer";

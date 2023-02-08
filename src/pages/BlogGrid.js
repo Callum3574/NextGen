@@ -12,14 +12,13 @@ const BlogGrid = () => {
     <React.Fragment>
       <SEO title="Nextgen || Blog" />
       <Header />
-      {/* <Breadcrumb
+      <Breadcrumb
         image="images/bg/breadcrumb-bg-four.jpg"
         title="Find all our latest news, insights, and events"
         content="Home"
         contentTwo="Blog"
       />
       <PageBlog />
-      <CallToAction /> */}
       <Footer />
       <ScrollToTop />
     </React.Fragment>

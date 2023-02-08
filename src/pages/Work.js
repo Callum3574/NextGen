@@ -18,6 +18,7 @@ const Work = () => {
   const handleSector = (e) => {
     const name = e.target.getAttribute("data-name");
     setSelectedSector(name);
+    console.log(sectorDetails);
   };
 
   const sectorIndex = () => {

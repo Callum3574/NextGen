@@ -56,7 +56,7 @@ const Faq = () => {
                   <div className="overlay-img"></div>
 
                   <img
-                    src={process.env.PUBLIC_URL + "/images/faq/faq-1.jpg"}
+                    src={process.env.PUBLIC_URL + "/images/faq/faq-5.jpg"}
                     alt=""
                   />
                 </Tilt>

@@ -25,45 +25,13 @@ const NavBar = () => {
             <span className="menu-text">Job Search</span>
           </NavLink>
         </li>
-        <li className="has-children">
+        <li>
           <NavLink to={process.env.PUBLIC_URL + "/job-sectors"}>
             <span className="menu-text">Sectors</span>
           </NavLink>
           <span className="menu-toggle">
             <i className="far fa-angle-down"></i>
           </span>
-          <ul className="sub-menu">
-            <li>
-              <NavLink to={process.env.PUBLIC_URL + "/sectors"}>
-                <span className="menu-text">Software Engineering</span>
-              </NavLink>
-            </li>
-            <li>
-              <NavLink to={process.env.PUBLIC_URL + `/sector-details/1`}>
-                <span className="menu-text">Data Engineering</span>
-              </NavLink>
-            </li>
-            <li>
-              <NavLink to={process.env.PUBLIC_URL + "/sectors"}>
-                <span className="menu-text">Data Science</span>
-              </NavLink>
-            </li>
-            <li>
-              <NavLink to={process.env.PUBLIC_URL + `/sector-details/1`}>
-                <span className="menu-text">Cloud/Devops</span>
-              </NavLink>
-            </li>
-            <li>
-              <NavLink to={process.env.PUBLIC_URL + "/sector"}>
-                <span className="menu-text">Senior Executive</span>
-              </NavLink>
-            </li>
-            <li>
-              <NavLink to={process.env.PUBLIC_URL + `/sector-details/1`}>
-                <span className="menu-text">Project Management</span>
-              </NavLink>
-            </li>
-          </ul>
         </li>
         <li>
           <NavLink to={process.env.PUBLIC_URL + "/blog"}>

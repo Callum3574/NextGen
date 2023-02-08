@@ -4,8 +4,8 @@ import Tilt from "react-parallax-tilt";
 import Parallax from "parallax-js";
 import "../../assets/css/custom.css";
 
-function SectorDesc() {
-  const [scale] = useState(1.04);
+function SectorDesc({ img }) {
+  const [scale] = useState(1.2);
   const sceneEl = useRef(null);
   useEffect(() => {
     const parallaxInstance = new Parallax(sceneEl.current, {
@@ -16,27 +16,28 @@ function SectorDesc() {
     return () => parallaxInstance.disable();
   }, []);
   return (
-    <div className="col mb-6 ps-xl-12" data-aos="fade-up" data-aos-delay="200">
+    <div
+      style={{ width: "20rem", height: "40rem" }}
+      className="container col mb-6 ps-xl-12 mt-10 mt-xl-0"
+      data-aos="fade-up"
+      data-aos-delay="200"
+    >
       <div className="about-image-area faq-image-area">
         <div className="about-image ">
-          <Tilt scale={scale} transitionSpeed={4000}>
-            <div className="overlay-img"></div>
+          <Tilt scale={scale} transitionSpeed={3000}>
+            <div className="w-100 container"></div>
 
             <img
-              src={process.env.PUBLIC_URL + "/images/faq/faq-1.jpg"}
+              className="mt-10"
+              style={{ width: "20rem", backgroundColor: "none" }}
+              src={process.env.PUBLIC_URL + "/" + img}
               alt=""
             />
           </Tilt>
         </div>
         <div className="shape shape-1" id="scene" ref={sceneEl}>
-          <span data-depth="1">
-            <img
-              src={
-                process.env.PUBLIC_URL +
-                "/images/shape-animation/video-shape-1.png"
-              }
-              alt=""
-            />
+          <span data-depth="3">
+            {/* <img src={process.env.PUBLIC_URL + "/" + img} alt="" /> */}
           </span>
         </div>
       </div>

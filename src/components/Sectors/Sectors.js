@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "../../assets/css/custom.css";
+import "../../assets/css/animations.css";
 import sectors from "../../data/Sectors/sectors.json";
 import ReactVivus from "react-vivus";
 import PropTypes from "prop-types";
@@ -7,7 +8,7 @@ import PropTypes from "prop-types";
 function Sectors({ handleSector, handleBackArrow }) {
   return (
     <div
-      className="container d-flex flex-row"
+      className="sector-titles container d-flex flex-row"
       style={{ borderBottom: "2px black solid", marginBottom: "1rem" }}
     >
       <div className="container d-flex flex-row mt-4 mb-4 justify-content-center">

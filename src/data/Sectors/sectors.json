@@ -11,7 +11,8 @@
         "Field Engineers / Infrastructure Engineers",
         "Service Desk Manager / IT Manager / Head of IT",
         "Technical Architect"
-      ]
+      ],
+      "img": "images/faq/faq-1.jpg"
     },
     {
       "name": "Networking & Security",
@@ -24,7 +25,8 @@
         "Field Engineers / Infrastructure Engineers",
         "Service Desk Manager / IT Manager / Head of IT",
         "Technical Architect"
-      ]
+      ],
+      "img": "images/faq/faw-11.jpg"
     },
     {
       "name": "Software Engineering",
@@ -36,20 +38,38 @@
         "Frontend Development",
         "Cloud Development",
         "Blockchain Engineering"
-      ]
+      ],
+      "img": "images/faq/faw-7.jpg"
     },
     {
       "name": "Cloud / DevOps",
       "description": "Cloud / DevOps is a field that focuses on the delivery and management of software systems using cloud computing and DevOps practices. This field is concerned with ensuring that software systems are delivered quickly and reliably, and that they can be easily managed and updated. DevOps engineers are responsible for automating the deployment, testing, and delivery of software systems, and for ensuring that these systems are scalable, reliable, and secure. They work with a range of cloud computing platforms and technologies, such as AWS, Azure, and Google Cloud, and they use DevOps practices such as continuous integration, continuous delivery, and continuous deployment to deliver software systems quickly and efficiently.",
-      "areas": ["AWS / Azure / Cloud", "SaaS / PaaS / IaaS", "DevOps", "DBAs"]
+      "areas": ["AWS / Azure / Cloud", "SaaS / PaaS / IaaS", "DevOps", "DBAs"],
+      "img": "images/faq/faw-8.jpg"
     },
+
     {
       "name": "Senior Executive",
       "description": "Senior Executives are the leaders of an organization, and they are responsible for setting the strategic direction of the company and ensuring that it is on track to achieve its goals. Senior Executives have a broad perspective on the company, and they use this perspective to make decisions that will have a significant impact on the company's future. They are responsible for leading the company's operations, finance, and human resources, and for working with other executives to ensure that the company is running smoothly. Senior Executives must be strong leaders, with excellent communication and interpersonal skills, and they must have a deep understanding of the company's industry and the marketplace.",
       "areas": [
         "Service Desk Manager / IT Manager / Head of IT",
         "Technical Architect"
-      ]
+      ],
+      "img": "images/faq/faw-10.jpg"
+    },
+    {
+      "name": "IT support & Infrastructure",
+      "description": "IT support & Infrastructure is a critical aspect of any organization. This field focuses on the maintenance and upkeep of a company's technical infrastructure, which includes servers, networks, and other hardware systems. The primary goal of this field is to ensure that the infrastructure is running smoothly and efficiently, so that the company can focus on its core business. Professionals in this field are responsible for configuring, maintaining, and troubleshooting hardware and software systems, as well as ensuring that the infrastructure is secure and available at all times.",
+      "areas": [
+        "1st Line Support",
+        "2nd Line Support",
+        "3rd Line Support",
+        "Applications Support",
+        "Field Engineers / Infrastructure Engineers",
+        "Service Desk Manager / IT Manager / Head of IT",
+        "Technical Architect"
+      ],
+      "img": "images/faq/faw-9.jpg"
     }
   ]
 }
