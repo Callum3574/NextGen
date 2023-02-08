@@ -71,9 +71,6 @@ const BlogDetailsFull = ({ post }) => {
                 <i className="fas fa-tags"></i>
                 {cate}
               </li>
-              {/* <li>
-                <i className="fas fa-comments"></i>4 Comments
-              </li> */}
               <li className="media">
                 <Link to={process.env.PUBLIC_URL + "/"}>
                   <i className="fas fa-share-alt"></i>Share this post

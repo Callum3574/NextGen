@@ -37,9 +37,11 @@ const BlogDetails = () => {
         image="images/bg/breadcrumb-bg-four.jpg"
         title={post.length ? post[0].title : ""}
         content="Home"
-        contentTwo="Blog Classic"
+        contentTwo="Blog"
       />
-      {post.length ? <BlogDetailsContainer post={post} /> : null}
+      {post.length ? (
+        <BlogDetailsContainer blogData={blogData} post={post} />
+      ) : null}
       <Footer />
       <ScrollToTop />
     </React.Fragment>
