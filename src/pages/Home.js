@@ -14,28 +14,46 @@ import ContactInformation from "../container/ContactInformation/ContactInformati
 import BrandContainer from "../container/Brand/BrandContainer";
 import Footer from "../container/Footer/Footer";
 import ScrollToTop from "../components/ScrollToTop.jsx";
+import "../assets/css/animations.css";
+import "../assets/css/custom.css";
 
 const Home = () => {
+  const [isVisible, setIsVisible] = React.useState(false);
+
+  React.useEffect(() => {
+    setIsVisible(true);
+  }, []);
   return (
-    <React.Fragment>
-      <SEO title="Nextgen || Home Three" />
-      <Header />
-      <IntroThree />
-      {/* <HomeAboutThree /> */}
-      <ServiceIconBox />
-      <Funfact classOption="section-padding" />
+    <div>
+      <React.Fragment>
+        <SEO title="Nextgen || Home" />
+        <Header />
+        <div
+          style={{
+            backgroundColor: isVisible ? "transparent" : "red",
+            opacity: isVisible ? 1 : 0,
+            transition:
+              "background-color 1s ease-in-out, opacity 1.3s ease-in-out",
+          }}
+        >
+          <IntroThree />
+          {/* <HomeAboutThree /> */}
+          <ServiceIconBox />
+          <Funfact classOption="section-padding" />
 
-      <TestimonialContainer />
+          <TestimonialContainer />
 
-      {/* <Team /> */}
+          {/* <Team /> */}
 
-      {/* <CallToAction /> */}
-      {/* <HomeBlog /> */}
-      {/* <ContactInformation classOption="bg-primary-blue" /> */}
-      {/* <BrandContainer classOption="section-padding" /> */}
-      <Footer />
-      <ScrollToTop />
-    </React.Fragment>
+          {/* <CallToAction /> */}
+          {/* <HomeBlog /> */}
+          {/* <ContactInformation classOption="bg-primary-blue" /> */}
+          {/* <BrandContainer classOption="section-padding" /> */}
+          <Footer />
+          <ScrollToTop />
+        </div>
+      </React.Fragment>
+    </div>
   );
 };
 

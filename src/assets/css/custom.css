@@ -117,3 +117,7 @@ h6 {
   max-height: 300px;
   overflow-y: scroll;
 }
+
+.black {
+  background-color: black;
+}

@@ -42,6 +42,7 @@ const Work = () => {
     <React.Fragment>
       <SEO title="Nextgen || Sectors" />
       <Header />
+
       <Breadcrumb
         image="images/bg/breadcrumb-bg-two.jpg"
         title="Sectors we recruit for!"

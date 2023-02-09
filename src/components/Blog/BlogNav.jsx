@@ -54,7 +54,7 @@ const BlogNav = ({
   }, [blogData]);
 
   return (
-    <div className="blog-nav d-flex mb-3">
+    <div className="blog-nav d-flex ">
       <FormControl fullWidth>
         {/* <InputLabel>Tags</InputLabel> */}
         <label>Tags</label>

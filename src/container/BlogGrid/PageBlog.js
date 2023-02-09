@@ -55,20 +55,20 @@ const PageBlog = () => {
   };
 
   return (
-    <div className="">
-      <div className="search-box-jobs d-flex flex-column p-2 bd-highlight align-items-center">
+    <div>
+      <div className="search-box-jobs d-flex flex-column p-1 bd-highlight align-items-center">
         <div className="d-flex justify-content-center flex-row w-100">
-          <div className="blog-title mb-5">
+          <div className="blog-title m-2">
             <h4 style={{ color: "white" }}>Browse Our Blogs</h4>
           </div>
-          <div>
+          <div className="mt-2 px-2">
             <i
-              className="fa fa-search px-3"
+              className="fa fa-search"
               style={{ color: "rgb(30, 150, 190)" }}
             ></i>
           </div>
         </div>
-        <div className="d-flex">
+        <div>
           {/* <h4 style={{ color: "white" }} className="mt-5 px-8">
             Filter Blogs
           </h4> */}
@@ -80,6 +80,7 @@ const PageBlog = () => {
           />
         </div>
       </div>
+      <hr />
       <div className="container mt-10">
         <div className=" container row row-cols-lg-3 row-cols-md-2 row-cols-sm-2 row-cols-1 mb-6">
           {!filteredResults.length

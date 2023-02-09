@@ -131,7 +131,7 @@ function SearchFilter() {
           autoComplete="on"
         >
           <div className="search-title d-flex justify-content-center flex-row w-100">
-            <div>
+            <div className="mb-3">
               <h4 style={{ color: "white" }}>Start your job search</h4>
             </div>
             <div>
