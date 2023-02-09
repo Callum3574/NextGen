@@ -29,8 +29,6 @@ const PageBlog = () => {
     getBlogData();
   }, []);
 
-  useEffect(() => {}, [filteredResults]);
-
   const handleTagChoice = (e) => {
     const selectedTags = e.target.value;
     setFiltered((prev) => {
@@ -65,7 +63,7 @@ const PageBlog = () => {
           </h4>
         </div>
         <div className="d-flex">
-          <h4 style={{ color: "white" }} className="mt-2 px-3">
+          <h4 style={{ color: "white" }} className="mt-5 px-8">
             Filter Blogs
           </h4>
           <BlogNav
@@ -77,7 +75,7 @@ const PageBlog = () => {
         </div>
       </div>
       <div className="container mt-10">
-        <div className="row row-cols-lg-3 row-cols-md-2 row-cols-sm-2 row-cols-1 mb-n6">
+        <div className=" container row row-cols-lg-3 row-cols-md-2 row-cols-sm-2 row-cols-1 mb-n6">
           {!filteredResults.length
             ? blogData.map((post, key) => {
                 return (
