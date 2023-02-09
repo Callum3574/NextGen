@@ -36,7 +36,7 @@ const PageBlog = () => {
           <h4 style={{ color: "white" }} className="mt-2 px-3">
             Filter Blogs
           </h4>
-          <BlogNav />
+          <BlogNav blogData={blogData} />
         </div>
       </div>
       <div className="container mt-10">

@@ -3,31 +3,56 @@ import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import "../../assets/css/custom.css";
 
-const BlogNav = () => {
+const BlogNav = ({ blogData }) => {
   const [age, setAge] = useState("");
+  const [blogTags, setBlogTags] = useState([]);
 
   const handleChange = (event) => {
     setAge(event.target.value);
   };
+
+  const getAllTags = () => {
+    const tags = blogData.map((item) => {
+      return item.tags;
+    });
+
+    const indivTags = [];
+
+    tags.map((tagArr) => {
+      for (let i = 0; i < tagArr.length; i++) {
+        if (!indivTags.includes(tagArr[i])) {
+          indivTags.push(tagArr[i]);
+        }
+      }
+      setBlogTags(indivTags);
+    });
+    console.log(blogTags);
+  };
+
+  useEffect(() => {
+    getAllTags();
+  }, [blogData]);
+
   return (
     <div className="">
       <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
-        <InputLabel>Age</InputLabel>
+        <InputLabel>Tags</InputLabel>
         <Select
           labelId="demo-select-small"
           id="demo-select-small"
           value={age}
-          label="Age"
+          label="Tags"
           onChange={handleChange}
         >
-          <MenuItem value="">
-            <em>None</em>
-          </MenuItem>
-          <MenuItem value={10}>Ten</MenuItem>
-          <MenuItem value={20}>Twenty</MenuItem>
-          <MenuItem value={30}>Thirty</MenuItem>
+          <div className="tag-dropdown">
+            {blogTags.map((tag) => {
+              console.log(tag);
+              return <MenuItem value={tag}>{tag}</MenuItem>;
+            })}
+          </div>
         </Select>
       </FormControl>
       <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
