@@ -4,6 +4,7 @@ import BlogClassicData from "../../data/blog/BlogClassic.json";
 import BlogItem from "../../components/Blog/BlogItem";
 import BlogNav from "../../components/Blog/BlogNav.jsx";
 import "../../assets/css/custom.css";
+import "../../assets/css/animations.css";
 
 const PageBlog = () => {
   const [blogData, setBlogData] = useState([]);
@@ -56,16 +57,21 @@ const PageBlog = () => {
   return (
     <div className="">
       <div className="search-box-jobs d-flex flex-column p-2 bd-highlight align-items-center">
-        <div></div>
-        <div className="p-8 ">
-          <h4 className="" style={{ color: "white" }}>
-            Browse Our Blogs!
-          </h4>
+        <div className="d-flex justify-content-center flex-row w-100">
+          <div className="blog-title mb-5">
+            <h4 style={{ color: "white" }}>Browse Our Blogs</h4>
+          </div>
+          <div>
+            <i
+              className="fa fa-search px-3"
+              style={{ color: "rgb(30, 150, 190)" }}
+            ></i>
+          </div>
         </div>
         <div className="d-flex">
-          <h4 style={{ color: "white" }} className="mt-5 px-8">
+          {/* <h4 style={{ color: "white" }} className="mt-5 px-8">
             Filter Blogs
-          </h4>
+          </h4> */}
           <BlogNav
             handleCateChoice={handleCateChoice}
             handleTagChoice={handleTagChoice}
@@ -75,7 +81,7 @@ const PageBlog = () => {
         </div>
       </div>
       <div className="container mt-10">
-        <div className=" container row row-cols-lg-3 row-cols-md-2 row-cols-sm-2 row-cols-1 mb-n6">
+        <div className=" container row row-cols-lg-3 row-cols-md-2 row-cols-sm-2 row-cols-1 mb-6">
           {!filteredResults.length
             ? blogData.map((post, key) => {
                 return (

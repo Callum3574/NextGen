@@ -54,12 +54,16 @@ const BlogNav = ({
   }, [blogData]);
 
   return (
-    <div className="d-flex mb-6">
+    <div className="blog-nav d-flex mb-3">
       <FormControl fullWidth>
         {/* <InputLabel>Tags</InputLabel> */}
         <label>Tags</label>
 
-        <NativeSelect defaultValue={30} onChange={handleTagChoice}>
+        <NativeSelect
+          style={{ color: "white" }}
+          defaultValue={30}
+          onChange={handleTagChoice}
+        >
           {blogTags.map((tag) => {
             return <option value={tag}>{tag}</option>;
           })}
@@ -68,7 +72,7 @@ const BlogNav = ({
       <FormControl fullWidth>
         {/* <InputLabel>Category</InputLabel> */}
         <label>Category</label>
-        <NativeSelect onChange={handleCateChoice}>
+        <NativeSelect style={{ color: "white" }} onChange={handleCateChoice}>
           {cateTags.map((cate) => {
             return <option value={cate}>{cate}</option>;
           })}
@@ -78,7 +82,11 @@ const BlogNav = ({
         {/* <InputLabel>Type</InputLabel> */}
         <label>Type</label>
 
-        <NativeSelect defaultValue={30} onChange={handleTagChoice}>
+        <NativeSelect
+          style={{ color: "white" }}
+          defaultValue={30}
+          onChange={handleTagChoice}
+        >
           {blogTags.map((tag) => {
             return <option value={tag}>{tag}</option>;
           })}
@@ -86,8 +94,8 @@ const BlogNav = ({
       </FormControl>
       <Button
         onClick={handleFilterSearch}
-        className="m-6 w-50"
-        variant="outlined"
+        className=" mt-8 m-4  w-50"
+        variant="default"
       >
         Search
       </Button>

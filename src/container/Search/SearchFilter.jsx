@@ -130,7 +130,7 @@ function SearchFilter() {
           noValidate
           autoComplete="on"
         >
-          <div className="d-flex justify-content-center flex-row w-100">
+          <div className="search-title d-flex justify-content-center flex-row w-100">
             <div>
               <h4 style={{ color: "white" }}>Start your job search</h4>
             </div>
@@ -141,7 +141,7 @@ function SearchFilter() {
               ></i>
             </div>
           </div>
-          <div className=" search-border container d-flex justify-content-start w-100 bg-blue">
+          <div className="search-nav search-border container d-flex justify-content-start w-100 bg-blue">
             <div className="px-3">
               <input
                 onChange={handleSearchInput}
