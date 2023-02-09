@@ -1,21 +1,22 @@
 import * as React from "react";
+import Box from "@mui/material/Box";
 import InputLabel from "@mui/material/InputLabel";
-import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
-import Select from "@mui/material/Select";
+import NativeSelect from "@mui/material/NativeSelect";
+
 import { useState, useEffect } from "react";
 import Button from "@mui/material/Button";
 
 import "../../assets/css/custom.css";
 
-const BlogNav = ({ blogData }) => {
-  const [age, setAge] = useState("");
+const BlogNav = ({
+  blogData,
+  handleTagChoice,
+  handleCateChoice,
+  handleFilterSearch,
+}) => {
   const [blogTags, setBlogTags] = useState([]);
   const [cateTags, setCateTags] = useState([]);
-
-  const handleChange = (event) => {
-    setAge(event.target.value);
-  };
 
   const getAllTags = () => {
     const tags = blogData.map((item) => {
@@ -54,56 +55,31 @@ const BlogNav = ({ blogData }) => {
 
   return (
     <div className="d-flex">
-      <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
+      <FormControl fullWidth>
         <InputLabel>Tags</InputLabel>
-        <Select
-          labelId="demo-select-small"
-          id="demo-select-small"
-          value={age}
-          label="Tags"
-          onChange={handleChange}
-        >
-          <div className="tag-dropdown">
-            {blogTags.map((tag) => {
-              console.log(tag);
-              return <MenuItem value={tag}>{tag}</MenuItem>;
-            })}
-          </div>
-        </Select>
-      </FormControl>
-      <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
-        <InputLabel id="demo-select-small">Categories</InputLabel>
-        <Select
-          labelId="demo-select-small"
-          id="demo-select-small"
-          value={age}
-          label="Categories"
-          onChange={handleChange}
-        >
-          {cateTags.map((cate) => {
-            return <MenuItem value={cate}>{cate}</MenuItem>;
+        <NativeSelect defaultValue={30} onChange={handleTagChoice}>
+          {blogTags.map((tag) => {
+            return <option value={tag}>{tag}</option>;
           })}
-        </Select>
+        </NativeSelect>
       </FormControl>
-
-      <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
-        <InputLabel id="demo-select-small">Type</InputLabel>
-        <Select
-          labelId="demo-select-small"
-          id="demo-select-small"
-          value={age}
-          label="Type"
-          onChange={handleChange}
-        >
-          <MenuItem value="">
-            <em>None</em>
-          </MenuItem>
-          <MenuItem value={10}>Ten</MenuItem>
-          <MenuItem value={20}>Twenty</MenuItem>
-          <MenuItem value={30}>Thirty</MenuItem>
-        </Select>
+      <FormControl fullWidth>
+        <InputLabel>Category</InputLabel>
+        <NativeSelect defaultValue={30} onChange={handleCateChoice}>
+          {cateTags.map((cate) => {
+            return <option value={cate}>{cate}</option>;
+          })}
+        </NativeSelect>
       </FormControl>
-      <Button className="m-2" variant="outlined">
+      <FormControl fullWidth>
+        <InputLabel>Type</InputLabel>
+        <NativeSelect defaultValue={30} onChange={handleTagChoice}>
+          {blogTags.map((tag) => {
+            return <option value={tag}>{tag}</option>;
+          })}
+        </NativeSelect>
+      </FormControl>
+      <Button onClick={handleFilterSearch} className="m-2" variant="outlined">
         Search
       </Button>
     </div>

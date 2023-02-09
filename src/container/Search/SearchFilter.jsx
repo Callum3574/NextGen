@@ -77,12 +77,6 @@ function SearchFilter() {
     setFiltered(true);
     setFilteredJobs(
       allJobs.filter((job) => {
-        console.log(job.job_category, job.type, 1);
-
-        console.log(
-          filterTypeAndCategory.job_category,
-          filterTypeAndCategory.type
-        );
         return (
           job.type.toLowerCase() === filterTypeAndCategory.type.toLowerCase() &&
           job.job_category.toLowerCase() ===

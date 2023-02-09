@@ -7,6 +7,12 @@ import "../../assets/css/custom.css";
 
 const PageBlog = () => {
   const [blogData, setBlogData] = useState([]);
+  const [filtered, setFiltered] = useState({
+    category: [],
+    tags: [],
+  });
+
+  const [filteredResults, setFilteredResults] = useState([]);
 
   const getBlogData = async () => {
     try {
@@ -23,8 +29,30 @@ const PageBlog = () => {
     getBlogData();
   }, []);
 
+  useEffect(() => {}, [filteredResults]);
+
   const handleTagChoice = (e) => {
-    const selectedTag = "";
+    const selectedTags = e.target.value;
+    setFiltered((prev) => {
+      return { ...prev, tags: [...filtered.tags, selectedTags] };
+    });
+    console.log(filtered);
+  };
+
+  const handleCateChoice = (e) => {
+    const selectedCate = e.target.value;
+    setFiltered((prev) => {
+      return { ...prev, category: [...filtered.category, selectedCate] };
+    });
+    console.log(filtered);
+  };
+
+  const handleFilterSearch = () => {
+    const results = blogData.filter((item) => {
+      return item.tags.includes(filtered.tags[0]);
+    });
+    setFilteredResults(results);
+    console.log(results);
   };
 
   return (
@@ -40,19 +68,31 @@ const PageBlog = () => {
           <h4 style={{ color: "white" }} className="mt-2 px-3">
             Filter Blogs
           </h4>
-          <BlogNav blogData={blogData} />
+          <BlogNav
+            handleCateChoice={handleCateChoice}
+            handleTagChoice={handleTagChoice}
+            blogData={blogData}
+            handleFilterSearch={handleFilterSearch}
+          />
         </div>
       </div>
       <div className="container mt-10">
         <div className="row row-cols-lg-3 row-cols-md-2 row-cols-sm-2 row-cols-1 mb-n6">
-          {blogData &&
-            blogData.map((post, key) => {
-              return (
-                <div key={key} className="col mb-6" data-aos="fade-up">
-                  <BlogItem post={post} key={key} />
-                </div>
-              );
-            })}
+          {!filteredResults.length
+            ? blogData.map((post, key) => {
+                return (
+                  <div key={key} className="col mb-6" data-aos="fade-up">
+                    <BlogItem post={post} key={key} />
+                  </div>
+                );
+              })
+            : filteredResults.map((post, key) => {
+                return (
+                  <div key={key} className="col mb-6" data-aos="fade-up">
+                    <BlogItem post={post} key={key} />
+                  </div>
+                );
+              })}
         </div>
       </div>
     </div>
