@@ -25,13 +25,13 @@ const Home = () => {
       <ServiceIconBox />
       <Funfact classOption="section-padding" />
 
-      <Faq />
-      {/* <Team /> */}
-      {/* <TestimonialContainer /> */}
+      <TestimonialContainer />
 
-      <CallToAction />
+      {/* <Team /> */}
+
+      {/* <CallToAction /> */}
       {/* <HomeBlog /> */}
-      <ContactInformation classOption="bg-primary-blue" />
+      {/* <ContactInformation classOption="bg-primary-blue" /> */}
       {/* <BrandContainer classOption="section-padding" /> */}
       <Footer />
       <ScrollToTop />
