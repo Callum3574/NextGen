@@ -4,11 +4,14 @@ import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import { useState, useEffect } from "react";
+import Button from "@mui/material/Button";
+
 import "../../assets/css/custom.css";
 
 const BlogNav = ({ blogData }) => {
   const [age, setAge] = useState("");
   const [blogTags, setBlogTags] = useState([]);
+  const [cateTags, setCateTags] = useState([]);
 
   const handleChange = (event) => {
     setAge(event.target.value);
@@ -19,7 +22,12 @@ const BlogNav = ({ blogData }) => {
       return item.tags;
     });
 
+    const cate = blogData.map((item) => {
+      return item.categories;
+    });
+
     const indivTags = [];
+    const indivCat = [];
 
     tags.map((tagArr) => {
       for (let i = 0; i < tagArr.length; i++) {
@@ -29,7 +37,15 @@ const BlogNav = ({ blogData }) => {
       }
       setBlogTags(indivTags);
     });
-    console.log(blogTags);
+
+    cate.map((catArr) => {
+      for (let i = 0; i < catArr.length; i++) {
+        if (!indivCat.includes(catArr[i])) {
+          indivCat.push(catArr[i]);
+        }
+      }
+      setCateTags(indivCat);
+    });
   };
 
   useEffect(() => {
@@ -37,7 +53,7 @@ const BlogNav = ({ blogData }) => {
   }, [blogData]);
 
   return (
-    <div className="">
+    <div className="d-flex">
       <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
         <InputLabel>Tags</InputLabel>
         <Select
@@ -56,30 +72,27 @@ const BlogNav = ({ blogData }) => {
         </Select>
       </FormControl>
       <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
-        <InputLabel id="demo-select-small">Age</InputLabel>
+        <InputLabel id="demo-select-small">Categories</InputLabel>
         <Select
           labelId="demo-select-small"
           id="demo-select-small"
           value={age}
-          label="Age"
+          label="Categories"
           onChange={handleChange}
         >
-          <MenuItem value="">
-            <em>None</em>
-          </MenuItem>
-          <MenuItem value={10}>Ten</MenuItem>
-          <MenuItem value={20}>Twenty</MenuItem>
-          <MenuItem value={30}>Thirty</MenuItem>
+          {cateTags.map((cate) => {
+            return <MenuItem value={cate}>{cate}</MenuItem>;
+          })}
         </Select>
       </FormControl>
 
       <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
-        <InputLabel id="demo-select-small">Age</InputLabel>
+        <InputLabel id="demo-select-small">Type</InputLabel>
         <Select
           labelId="demo-select-small"
           id="demo-select-small"
           value={age}
-          label="Age"
+          label="Type"
           onChange={handleChange}
         >
           <MenuItem value="">
@@ -90,6 +103,9 @@ const BlogNav = ({ blogData }) => {
           <MenuItem value={30}>Thirty</MenuItem>
         </Select>
       </FormControl>
+      <Button className="m-2" variant="outlined">
+        Search
+      </Button>
     </div>
   );
 };

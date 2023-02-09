@@ -23,6 +23,10 @@ const PageBlog = () => {
     getBlogData();
   }, []);
 
+  const handleTagChoice = (e) => {
+    const selectedTag = "";
+  };
+
   return (
     <div className="">
       <div className="search-box-jobs d-flex flex-column p-2 bd-highlight align-items-center">
