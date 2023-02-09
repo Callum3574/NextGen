@@ -2,9 +2,18 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import BlogClassicData from "../../data/blog/BlogClassic.json";
 import BlogItem from "../../components/Blog/BlogItem";
+import BlogNav from "../../components/Blog/BlogNav.jsx";
+import "../../assets/css/custom.css";
+import "../../assets/css/animations.css";
 
 const PageBlog = () => {
   const [blogData, setBlogData] = useState([]);
+  const [filtered, setFiltered] = useState({
+    category: [],
+    tags: [],
+  });
+
+  const [filteredResults, setFilteredResults] = useState([]);
 
   const getBlogData = async () => {
     try {
@@ -21,18 +30,74 @@ const PageBlog = () => {
     getBlogData();
   }, []);
 
+  const handleTagChoice = (e) => {
+    const selectedTags = e.target.value;
+    setFiltered((prev) => {
+      return { ...prev, tags: [...filtered.tags, selectedTags] };
+    });
+    console.log(filtered);
+  };
+
+  const handleCateChoice = (e) => {
+    const selectedCate = e.target.value;
+    setFiltered((prev) => {
+      return { ...prev, category: [...filtered.category, selectedCate] };
+    });
+    console.log(filtered);
+  };
+
+  const handleFilterSearch = () => {
+    const results = blogData.filter((item) => {
+      return item.tags.includes(filtered.tags[0]);
+    });
+    setFilteredResults(results);
+    console.log(results);
+  };
+
   return (
-    <div className="section section-padding fix">
-      <div className="container">
-        <div className="row row-cols-lg-3 row-cols-md-2 row-cols-sm-2 row-cols-1 mb-n6">
-          {blogData &&
-            blogData.map((post, key) => {
-              return (
-                <div key={key} className="col mb-6" data-aos="fade-up">
-                  <BlogItem post={post} key={key} />
-                </div>
-              );
-            })}
+    <div>
+      <div className="search-box-jobs d-flex flex-column p-1 bd-highlight align-items-center">
+        <div className="d-flex justify-content-center flex-row w-100">
+          <div className="blog-title m-2">
+            <h4 style={{ color: "white" }}>Browse Our Blogs</h4>
+          </div>
+          <div className="mt-2 px-2">
+            <i
+              className="fa fa-search"
+              style={{ color: "rgb(30, 150, 190)" }}
+            ></i>
+          </div>
+        </div>
+        <div>
+          {/* <h4 style={{ color: "white" }} className="mt-5 px-8">
+            Filter Blogs
+          </h4> */}
+          <BlogNav
+            handleCateChoice={handleCateChoice}
+            handleTagChoice={handleTagChoice}
+            blogData={blogData}
+            handleFilterSearch={handleFilterSearch}
+          />
+        </div>
+      </div>
+      <hr />
+      <div className="container mt-10">
+        <div className=" container row row-cols-lg-3 row-cols-md-2 row-cols-sm-2 row-cols-1 mb-6">
+          {!filteredResults.length
+            ? blogData.map((post, key) => {
+                return (
+                  <div key={key} className="col mb-6" data-aos="fade-up">
+                    <BlogItem post={post} key={key} />
+                  </div>
+                );
+              })
+            : filteredResults.map((post, key) => {
+                return (
+                  <div key={key} className="col mb-6" data-aos="fade-up">
+                    <BlogItem post={post} key={key} />
+                  </div>
+                );
+              })}
         </div>
       </div>
     </div>

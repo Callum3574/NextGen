@@ -77,12 +77,6 @@ function SearchFilter() {
     setFiltered(true);
     setFilteredJobs(
       allJobs.filter((job) => {
-        console.log(job.job_category, job.type, 1);
-
-        console.log(
-          filterTypeAndCategory.job_category,
-          filterTypeAndCategory.type
-        );
         return (
           job.type.toLowerCase() === filterTypeAndCategory.type.toLowerCase() &&
           job.job_category.toLowerCase() ===
@@ -136,8 +130,8 @@ function SearchFilter() {
           noValidate
           autoComplete="on"
         >
-          <div className="d-flex justify-content-center flex-row w-100">
-            <div>
+          <div className="search-title d-flex justify-content-center flex-row w-100">
+            <div className="mb-3">
               <h4 style={{ color: "white" }}>Start your job search</h4>
             </div>
             <div>
@@ -147,7 +141,7 @@ function SearchFilter() {
               ></i>
             </div>
           </div>
-          <div className=" search-border container d-flex justify-content-start w-100 bg-blue">
+          <div className="search-nav search-border container d-flex justify-content-start w-100 bg-blue">
             <div className="px-3">
               <input
                 onChange={handleSearchInput}
