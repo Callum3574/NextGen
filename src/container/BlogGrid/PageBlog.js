@@ -5,6 +5,9 @@ import BlogItem from "../../components/Blog/BlogItem";
 import BlogNav from "../../components/Blog/BlogNav.jsx";
 import "../../assets/css/custom.css";
 import "../../assets/css/animations.css";
+import Typography from "@mui/material/Typography";
+import Breadcrumbs from "@mui/material/Breadcrumbs";
+// import Link from '@mui/material/Link';
 
 const PageBlog = () => {
   const [blogData, setBlogData] = useState([]);
@@ -40,34 +43,40 @@ const PageBlog = () => {
 
   const handleCateChoice = (e) => {
     const selectedCate = e.target.value;
-    console.log(selectedCate)
+    console.log(selectedCate);
     setFiltered((prev) => {
       return { ...prev, category: [...filtered.category, selectedCate] };
     });
     console.log(filtered);
   };
 
-const handleFilterSearch = () => {
-  let filteredData = [...blogData];
+  const handleFilterSearch = () => {
+    let filteredData = [...blogData];
 
-  if (filtered.tags.length > 0 ) {
-      filteredData = filteredData.filter((post) => post.tags.some(tags => filtered.tags.includes(tags)))
-  }
+    if (filtered.tags.length > 0) {
+      filteredData = filteredData.filter((post) =>
+        post.tags.some((tags) => filtered.tags.includes(tags))
+      );
+    }
 
-  if (filtered.category.length > 0) {
-filteredData = filteredData.filter((post) => post.categories.some(cate => filtered.category.includes(cate)))
-  }
+    if (filtered.category.length > 0) {
+      filteredData = filteredData.filter((post) =>
+        post.categories.some((cate) => filtered.category.includes(cate))
+      );
+    }
 
-  setFilteredResults(filteredData);
-};
+    setFilteredResults(filteredData);
+  };
 
-const handleResetButton = () => {
-  setFilteredResults([])
-  setFiltered((prev) => {
-    return {...prev, [filtered.category]: []},
-    {...prev, [filtered.tags]: []}
-  })
-}
+  const handleResetButton = () => {
+    setFilteredResults([]);
+
+    setFiltered({
+      category: [],
+      tags: [],
+    });
+    console.log(filtered);
+  };
 
   return (
     <div>
@@ -94,6 +103,33 @@ const handleResetButton = () => {
             handleFilterSearch={handleFilterSearch}
             handleResetButton={handleResetButton}
           />
+        </div>
+
+        <div className="d-flex flex-column align-content-start">
+          <div>
+            {filtered.tags.length > 0 && (
+              <Breadcrumbs className="mb-2" style={{ color: "white" }}>
+                <p className="breadcrumb-anim" style={{ color: "cyan" }}>
+                  Tags
+                </p>
+                {filtered.tags.map((item) => {
+                  return <p className="breadcrumb-anim">{item}</p>;
+                })}
+              </Breadcrumbs>
+            )}
+          </div>
+          <div>
+            {filtered.category.length > 0 && (
+              <Breadcrumbs className="mb-2" style={{ color: "white" }}>
+                <p className="breadcrumb-anim" style={{ color: "cyan" }}>
+                  Categories
+                </p>
+                {filtered.category.map((item) => {
+                  return <p className="breadcrumb-anim">{item}</p>;
+                })}
+              </Breadcrumbs>
+            )}
+          </div>
         </div>
       </div>
       <hr />
