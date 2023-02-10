@@ -50,19 +50,13 @@ const PageBlog = () => {
 const handleFilterSearch = () => {
   let filteredData = [...blogData];
 
-  filteredData = filteredData.filter((post, i) => post.tags.some(tag => filtered.tags.includes(tag)))
+  if (filtered.tags.length > 0 ) {
+      filteredData = filteredData.filter((post) => post.tags.some(tags => filtered.tags.includes(tags)))
+  }
 
-  
-
-  
-
- 
-  
-  // if (filtered.tags.length > 0) {
-  //   filteredData = filteredData.filter(post => filtered.tags.includes(post.tags));
-  //       console.log(filteredData)
-
-  // }
+  if (filtered.category.length > 0) {
+filteredData = filteredData.filter((post) => post.categories.some(cate => filtered.category.includes(cate)))
+  }
 
   setFilteredResults(filteredData);
 };
