@@ -7,7 +7,8 @@ import "../../assets/css/custom.css";
 import "../../assets/css/animations.css";
 import Typography from "@mui/material/Typography";
 import Breadcrumbs from "@mui/material/Breadcrumbs";
-// import Link from '@mui/material/Link';
+import LinearProgress from "@mui/material/LinearProgress";
+import Alert from "@mui/material/Alert";
 
 const PageBlog = () => {
   const [blogData, setBlogData] = useState([]);
@@ -17,6 +18,7 @@ const PageBlog = () => {
   });
 
   const [filteredResults, setFilteredResults] = useState([]);
+  const [emptyResult, setEmptyResult] = useState(false);
 
   const getBlogData = async () => {
     try {
@@ -57,13 +59,28 @@ const PageBlog = () => {
       filteredData = filteredData.filter((post) =>
         post.tags.some((tags) => filtered.tags.includes(tags))
       );
+      if (filteredData.length === 0) {
+        setEmptyResult(true);
+
+        setTimeout(() => {
+          setEmptyResult(false);
+        }, 2000);
+      }
     }
 
     if (filtered.category.length > 0) {
       filteredData = filteredData.filter((post) =>
         post.categories.some((cate) => filtered.category.includes(cate))
       );
+      if (filteredData.length === 0) {
+        setEmptyResult(true);
+
+        setTimeout(() => {
+          setEmptyResult(false);
+        }, 5000);
+      }
     }
+    console.log(filteredData);
 
     setFilteredResults(filteredData);
   };
@@ -85,6 +102,7 @@ const PageBlog = () => {
           <div className="blog-title m-2">
             <h4 style={{ color: "white" }}>Browse Our Blogs</h4>
           </div>
+
           <div className="mt-2 px-2">
             <i
               className="fa fa-search"
@@ -104,7 +122,11 @@ const PageBlog = () => {
             handleResetButton={handleResetButton}
           />
         </div>
-
+        {emptyResult && (
+          <Alert className="mb-3" variant="outlined" severity="error">
+            No results found!
+          </Alert>
+        )}{" "}
         <div className="d-flex flex-column align-content-start">
           <div>
             {filtered.tags.length > 0 && (
@@ -133,25 +155,32 @@ const PageBlog = () => {
         </div>
       </div>
       <hr />
-      <div className="container mt-10">
-        <div className=" container row row-cols-lg-3 row-cols-md-2 row-cols-sm-2 row-cols-1 mb-6">
-          {!filteredResults.length
-            ? blogData.map((post, key) => {
-                return (
-                  <div key={key} className="col mb-6" data-aos="fade-up">
-                    <BlogItem post={post} key={key} />
-                  </div>
-                );
-              })
-            : filteredResults.map((post, key) => {
-                return (
-                  <div key={key} className="col mb-6" data-aos="fade-up">
-                    <BlogItem post={post} key={key} />
-                  </div>
-                );
-              })}
+      {blogData.length ? (
+        <div className="container mt-10">
+          <div className=" container row row-cols-lg-3 row-cols-md-2 row-cols-sm-2 row-cols-1 mb-6">
+            {!filteredResults.length
+              ? blogData.map((post, key) => {
+                  return (
+                    <div key={key} className="col mb-6" data-aos="fade-up">
+                      <BlogItem post={post} key={key} />
+                    </div>
+                  );
+                })
+              : filteredResults.map((post, key) => {
+                  return (
+                    <div key={key} className="col mb-6" data-aos="fade-up">
+                      <BlogItem post={post} key={key} />
+                    </div>
+                  );
+                })}
+          </div>
         </div>
-      </div>
+      ) : (
+        <div className="loading">
+          <h4>Loading ...</h4>
+          <LinearProgress />
+        </div>
+      )}
     </div>
   );
 };
