@@ -11,7 +11,8 @@ import "../../assets/css/custom.css";
 import JobCard from "../../components/JobCard/JobCard.jsx";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
-import '../../assets/css/responsive.css'
+import "../../assets/css/responsive.css";
+import LinearProgress from "@mui/material/LinearProgress";
 
 function SearchFilter() {
   const [allJobs, setAllJobs] = useState([]);
@@ -28,10 +29,10 @@ function SearchFilter() {
   const [jobsVisible, setJobsVisible] = useState(10);
 
   const baseURL = "http://localhost:8000";
-  const baseURLDeploy = "https://top-fork-production.up.railway.app";
+  // const baseURLDeploy = "https://top-fork-production.up.railway.app";
 
   const fetchPosts = async () => {
-    const res = await fetch(baseURLDeploy + "/all-jobs");
+    const res = await fetch(baseURL + "/all-jobs");
 
     const data = await res.json();
 
@@ -155,7 +156,6 @@ function SearchFilter() {
             </div>
             <div className="px-3">
               <input
-              
                 onChange={handleSearchInput}
                 id="standard-basic"
                 placeholder="Location"
@@ -184,179 +184,186 @@ function SearchFilter() {
 
       <hr />
       <div>
-        <div className="filter-res d-flex p-2 bd-highlight justify-content-center flex-row">
-          <div
-            className="d-flex justify-content-start flex-column mt-5  "
-            style={{ marginLeft: "3rem" }}
-          >
-            <div className="filter-results border  d-flex flex-column mt-8 rounded ">
-              <h2 className="filter-results-text p-2 m-2">Filter Results</h2>
+        {allJobs.length > 0 ? (
+          <div className="filter-res d-flex p-2 bd-highlight justify-content-center flex-row">
+            <div
+              className="d-flex justify-content-start flex-column mt-5  "
+              style={{ marginLeft: "3rem" }}
+            >
+              <div className="filter-results border  d-flex flex-column mt-8 rounded ">
+                <h2 className="filter-results-text p-2 m-2">Filter Results</h2>
 
-              <div className="p-2 m-2 ">
-                <FormControl>
-                  <FormLabel
-                    style={{ color: "rgb(30, 150, 190)" }}
-                    id="demo-radio-buttons-group-label"
-                  >
-                    Job Type
-                  </FormLabel>
-                  <RadioGroup
-                    aria-labelledby="demo-radio-buttons-group-label"
-                    defaultValue="Contract"
-                    name="type"
-                    style={{ color: "black" }}
-                    onChange={handleFilterTypeAndCategory}
-                  >
-                    <FormControlLabel
-                      value="Contract"
-                      control={<Radio color="default" />}
-                      label="Contract"
-                    />
-                    <FormControlLabel
-                      value="Permanent"
-                      control={<Radio color="default" />}
-                      label="Permanent"
-                    />
-                    <FormControlLabel
-                      value="Temporary"
-                      control={<Radio color="default" />}
-                      label="Temporary"
-                    />
-                  </RadioGroup>
-                </FormControl>
-              </div>
-              <div className="p-2 m-2">
-                <FormControl>
-                  <FormLabel
-                    style={{ color: "rgb(30, 150, 190)" }}
-                    id="demo-radio-buttons-group-label"
-                  >
-                    Sectors
-                  </FormLabel>
-                  <RadioGroup
-                    aria-labelledby="demo-radio-buttons-group-label"
-                    defaultValue="Software & Web Development"
-                    name="job_category"
-                    style={{ color: "black" }}
-                    onChange={handleFilterTypeAndCategory}
-                  >
-                    <FormControlLabel
-                      value="Software & Web Development"
-                      control={<Radio color="default" />}
-                      label="Software & Web Development"
-                    />
-                    <FormControlLabel
-                      value="Networking & Info Security"
-                      control={<Radio color="default" />}
-                      label="Networking & Info Security"
-                    />
-                    <FormControlLabel
-                      value="IT Support & Infrastructure"
-                      control={<Radio color="default" />}
-                      label="IT Support & Infrastructure"
-                    />
+                <div className="p-2 m-2 ">
+                  <FormControl>
+                    <FormLabel
+                      style={{ color: "rgb(30, 150, 190)" }}
+                      id="demo-radio-buttons-group-label"
+                    >
+                      Job Type
+                    </FormLabel>
+                    <RadioGroup
+                      aria-labelledby="demo-radio-buttons-group-label"
+                      defaultValue="Contract"
+                      name="type"
+                      style={{ color: "black" }}
+                      onChange={handleFilterTypeAndCategory}
+                    >
+                      <FormControlLabel
+                        value="Contract"
+                        control={<Radio color="default" />}
+                        label="Contract"
+                      />
+                      <FormControlLabel
+                        value="Permanent"
+                        control={<Radio color="default" />}
+                        label="Permanent"
+                      />
+                      <FormControlLabel
+                        value="Temporary"
+                        control={<Radio color="default" />}
+                        label="Temporary"
+                      />
+                    </RadioGroup>
+                  </FormControl>
+                </div>
+                <div className="p-2 m-2">
+                  <FormControl>
+                    <FormLabel
+                      style={{ color: "rgb(30, 150, 190)" }}
+                      id="demo-radio-buttons-group-label"
+                    >
+                      Sectors
+                    </FormLabel>
+                    <RadioGroup
+                      aria-labelledby="demo-radio-buttons-group-label"
+                      defaultValue="Software & Web Development"
+                      name="job_category"
+                      style={{ color: "black" }}
+                      onChange={handleFilterTypeAndCategory}
+                    >
+                      <FormControlLabel
+                        value="Software & Web Development"
+                        control={<Radio color="default" />}
+                        label="Software & Web Development"
+                      />
+                      <FormControlLabel
+                        value="Networking & Info Security"
+                        control={<Radio color="default" />}
+                        label="Networking & Info Security"
+                      />
+                      <FormControlLabel
+                        value="IT Support & Infrastructure"
+                        control={<Radio color="default" />}
+                        label="IT Support & Infrastructure"
+                      />
 
-                    <FormControlLabel
-                      value="QA & Testing"
-                      control={<Radio color="default" />}
-                      label="QA & Testing"
-                    />
-                    <FormControlLabel
-                      value="Business Change & Transformation"
-                      control={<Radio color="default" />}
-                      label="Business Change & Transformation"
-                    />
-                  </RadioGroup>
-                </FormControl>
-                <div className="p-2 m-2 d-flex ">
-                  <div>
-                    <Button
-                      onClick={handleFilterTypeAndCategorySearch}
-                      style={{
-                        height: "2rem",
-                        color: "black",
-                        borderColor: "rgb(30, 150, 190)",
-                      }}
-                      variant="outlined"
-                      className="search-button mt-1"
-                    >
-                      Apply
-                    </Button>
-                  </div>
-                  <div className="px-2">
-                    <Button
-                      onClick={handleClearFilterButton}
-                      style={{
-                        height: "2rem",
-                        color: "black",
-                        borderColor: "rgb(30, 150, 190)",
-                      }}
-                      variant="outlined"
-                      className="search-button mt-1"
-                    >
-                      CLEAR
-                    </Button>
+                      <FormControlLabel
+                        value="QA & Testing"
+                        control={<Radio color="default" />}
+                        label="QA & Testing"
+                      />
+                      <FormControlLabel
+                        value="Business Change & Transformation"
+                        control={<Radio color="default" />}
+                        label="Business Change & Transformation"
+                      />
+                    </RadioGroup>
+                  </FormControl>
+                  <div className="p-2 m-2 d-flex ">
+                    <div>
+                      <Button
+                        onClick={handleFilterTypeAndCategorySearch}
+                        style={{
+                          height: "2rem",
+                          color: "black",
+                          borderColor: "rgb(30, 150, 190)",
+                        }}
+                        variant="outlined"
+                        className="search-button mt-1"
+                      >
+                        Apply
+                      </Button>
+                    </div>
+                    <div className="px-2">
+                      <Button
+                        onClick={handleClearFilterButton}
+                        style={{
+                          height: "2rem",
+                          color: "black",
+                          borderColor: "rgb(30, 150, 190)",
+                        }}
+                        variant="outlined"
+                        className="search-button mt-1"
+                      >
+                        CLEAR
+                      </Button>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div className="d-flex flex-column justify-content-center jobs-container container-sm p-5 mt-1">
-            <div className="d-flex justify-content-end mb-2 ">
-              {displayJobsCount()}
+            <div className="d-flex flex-column justify-content-center jobs-container container-sm p-5 mt-1">
+              <div className="d-flex justify-content-end mb-2 ">
+                {displayJobsCount()}
+              </div>
+              {filteredJobs.length === 0
+                ? allJobs.slice(0, jobsVisible).map((job) => {
+                    console.log(job.skills);
+                    console.log(job.responsibilities[4]);
+                    return (
+                      <JobCard
+                        role={job.role}
+                        description={job.job_description}
+                        salary={job.salary}
+                        location={job.location}
+                        category={job.category}
+                        industry={job.industry}
+                        consultant={job.consultant}
+                        type={job.type}
+                        job_category={job.job_category}
+                        post_date={job.post_date}
+                        job_ref={job.job_ref}
+                        responsibilities={job.responsibilities}
+                        skills={job.skills}
+                      />
+                    );
+                  })
+                : filteredJobs.slice(0, jobsVisible).map((job) => {
+                    return (
+                      <JobCard
+                        role={job.role}
+                        description={job.job_description}
+                        salary={job.salary}
+                        location={job.location}
+                        category={job.category}
+                        industry={job.industry}
+                        consultant={job.consultant}
+                        type={job.type}
+                        job_category={job.job_category}
+                        post_date={job.post_date}
+                        job_ref={job.job_ref}
+                        responsibilities={job.responsibilities}
+                        skills={job.skills}
+                      />
+                    );
+                  })}
+              <div className="container d-flex justify-content-center">
+                <Button
+                  onClick={() => {
+                    handleJobListLength(filtered ? filteredJobs : allJobs);
+                  }}
+                >
+                  Load more
+                </Button>
+              </div>
             </div>
-            {filteredJobs.length === 0
-              ? allJobs.slice(0, jobsVisible).map((job) => {
-                  console.log(job.skills);
-                  console.log(job.responsibilities[4]);
-                  return (
-                    <JobCard
-                      role={job.role}
-                      description={job.job_description}
-                      salary={job.salary}
-                      location={job.location}
-                      category={job.category}
-                      industry={job.industry}
-                      consultant={job.consultant}
-                      type={job.type}
-                      job_category={job.job_category}
-                      post_date={job.post_date}
-                      job_ref={job.job_ref}
-                      responsibilities={job.responsibilities}
-                      skills={job.skills}
-                    />
-                  );
-                })
-              : filteredJobs.slice(0, jobsVisible).map((job) => {
-                  return (
-                    <JobCard
-                      role={job.role}
-                      description={job.job_description}
-                      salary={job.salary}
-                      location={job.location}
-                      category={job.category}
-                      industry={job.industry}
-                      consultant={job.consultant}
-                      type={job.type}
-                      job_category={job.job_category}
-                      post_date={job.post_date}
-                      job_ref={job.job_ref}
-                      responsibilities={job.responsibilities}
-                      skills={job.skills}
-                    />
-                  );
-                })}
-            <div className="container d-flex justify-content-center">
-              <Button
-                onClick={() => {
-                  handleJobListLength(filtered ? filteredJobs : allJobs);
-                }}
-              >
-                Load more
-              </Button>
-            </div>
           </div>
-        </div>
+        ) : (
+          <div className="loading">
+            <h4>Loading ...</h4>
+            <LinearProgress />
+          </div>
+        )}
       </div>
     </div>
   );

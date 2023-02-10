@@ -3,6 +3,7 @@ import Box from "@mui/material/Box";
 import InputLabel from "@mui/material/InputLabel";
 import FormControl from "@mui/material/FormControl";
 import NativeSelect from "@mui/material/NativeSelect";
+import Alert from "@mui/material/Alert";
 
 import { useState, useEffect } from "react";
 import Button from "@mui/material/Button";
@@ -14,7 +15,7 @@ const BlogNav = ({
   handleTagChoice,
   handleCateChoice,
   handleFilterSearch,
-  handleResetButton
+  handleResetButton,
 }) => {
   const [blogTags, setBlogTags] = useState([]);
   const [cateTags, setCateTags] = useState([]);
@@ -97,23 +98,23 @@ const BlogNav = ({
           })}
         </NativeSelect>
       </FormControl>
-      <Button
-        onClick={handleFilterSearch}
-        className=" mt-8 m-4  w-50"
-        variant="default"
-      >
-        Search
-      </Button>
-            <Button
-        onClick={handleResetButton}
-        className=" mt-8 m-4  w-50"
-        variant="default"
-      >
-        Reset
-      </Button>
 
-      <div>
-        </div>
+      <div className="d-flex">
+        <Button
+          onClick={handleFilterSearch}
+          className=" mt-8 m-4  w-50"
+          variant="default"
+        >
+          Search
+        </Button>
+        <Button
+          onClick={handleResetButton}
+          className=" mt-8 m-4  w-50"
+          variant="default"
+        >
+          Reset
+        </Button>
+      </div>
     </div>
   );
 };

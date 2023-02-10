@@ -116,6 +116,7 @@ function JobCard({
           skills={skills}
         />
       </div>
+
       <div className={`text-container ${isLoaded ? "loaded" : ""}`}>
         <div>
           <div>

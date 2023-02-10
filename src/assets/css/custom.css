@@ -121,3 +121,7 @@ h6 {
 .black {
   background-color: black;
 }
+
+.loading {
+  height: 30rem;
+}
