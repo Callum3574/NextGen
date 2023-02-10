@@ -5,6 +5,9 @@ import BlogItem from "../../components/Blog/BlogItem";
 import BlogNav from "../../components/Blog/BlogNav.jsx";
 import "../../assets/css/custom.css";
 import "../../assets/css/animations.css";
+import Typography from "@mui/material/Typography";
+import Breadcrumbs from "@mui/material/Breadcrumbs";
+// import Link from '@mui/material/Link';
 
 const PageBlog = () => {
   const [blogData, setBlogData] = useState([]);
@@ -40,6 +43,7 @@ const PageBlog = () => {
 
   const handleCateChoice = (e) => {
     const selectedCate = e.target.value;
+    console.log(selectedCate);
     setFiltered((prev) => {
       return { ...prev, category: [...filtered.category, selectedCate] };
     });
@@ -47,11 +51,31 @@ const PageBlog = () => {
   };
 
   const handleFilterSearch = () => {
-    const results = blogData.filter((item) => {
-      return item.tags.includes(filtered.tags[0]);
+    let filteredData = [...blogData];
+
+    if (filtered.tags.length > 0) {
+      filteredData = filteredData.filter((post) =>
+        post.tags.some((tags) => filtered.tags.includes(tags))
+      );
+    }
+
+    if (filtered.category.length > 0) {
+      filteredData = filteredData.filter((post) =>
+        post.categories.some((cate) => filtered.category.includes(cate))
+      );
+    }
+
+    setFilteredResults(filteredData);
+  };
+
+  const handleResetButton = () => {
+    setFilteredResults([]);
+
+    setFiltered({
+      category: [],
+      tags: [],
     });
-    setFilteredResults(results);
-    console.log(results);
+    console.log(filtered);
   };
 
   return (
@@ -77,7 +101,35 @@ const PageBlog = () => {
             handleTagChoice={handleTagChoice}
             blogData={blogData}
             handleFilterSearch={handleFilterSearch}
+            handleResetButton={handleResetButton}
           />
+        </div>
+
+        <div className="d-flex flex-column align-content-start">
+          <div>
+            {filtered.tags.length > 0 && (
+              <Breadcrumbs className="mb-2" style={{ color: "white" }}>
+                <p className="breadcrumb-anim" style={{ color: "cyan" }}>
+                  Tags
+                </p>
+                {filtered.tags.map((item) => {
+                  return <p className="breadcrumb-anim">{item}</p>;
+                })}
+              </Breadcrumbs>
+            )}
+          </div>
+          <div>
+            {filtered.category.length > 0 && (
+              <Breadcrumbs className="mb-2" style={{ color: "white" }}>
+                <p className="breadcrumb-anim" style={{ color: "cyan" }}>
+                  Categories
+                </p>
+                {filtered.category.map((item) => {
+                  return <p className="breadcrumb-anim">{item}</p>;
+                })}
+              </Breadcrumbs>
+            )}
+          </div>
         </div>
       </div>
       <hr />

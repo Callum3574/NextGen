@@ -11,6 +11,7 @@ import "../../assets/css/custom.css";
 import JobCard from "../../components/JobCard/JobCard.jsx";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
+import '../../assets/css/responsive.css'
 
 function SearchFilter() {
   const [allJobs, setAllJobs] = useState([]);
@@ -120,8 +121,8 @@ function SearchFilter() {
   };
 
   return (
-    <div className="bg-primary-blue">
-      <div className="search-box-jobs d-flex p-2 bd-highlight justify-content-center">
+    <div className=" bg-primary-blue">
+      <div className=" search-box-jobs d-flex p-2 bd-highlight justify-content-center">
         <Box
           component="form"
           sx={{
@@ -154,12 +155,13 @@ function SearchFilter() {
             </div>
             <div className="px-3">
               <input
+              
                 onChange={handleSearchInput}
                 id="standard-basic"
                 placeholder="Location"
                 variant="filled"
                 name="location"
-                className="text-filter2"
+                className="loc-bar text-filter2"
               />
             </div>
             <div className="px-3">
@@ -182,7 +184,7 @@ function SearchFilter() {
 
       <hr />
       <div>
-        <div className="d-flex p-2 bd-highlight justify-content-center flex-row">
+        <div className="filter-res d-flex p-2 bd-highlight justify-content-center flex-row">
           <div
             className="d-flex justify-content-start flex-column mt-5  "
             style={{ marginLeft: "3rem" }}

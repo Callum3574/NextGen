@@ -14,6 +14,7 @@ const BlogNav = ({
   handleTagChoice,
   handleCateChoice,
   handleFilterSearch,
+  handleResetButton
 }) => {
   const [blogTags, setBlogTags] = useState([]);
   const [cateTags, setCateTags] = useState([]);
@@ -62,8 +63,10 @@ const BlogNav = ({
         <NativeSelect
           style={{ color: "white" }}
           defaultValue={30}
+          place
           onChange={handleTagChoice}
         >
+          <option>Select tag(s)</option>
           {blogTags.map((tag) => {
             return <option value={tag}>{tag}</option>;
           })}
@@ -73,6 +76,7 @@ const BlogNav = ({
         {/* <InputLabel>Category</InputLabel> */}
         <label>Category</label>
         <NativeSelect style={{ color: "white" }} onChange={handleCateChoice}>
+          <option>Select categories</option>
           {cateTags.map((cate) => {
             return <option value={cate}>{cate}</option>;
           })}
@@ -87,6 +91,7 @@ const BlogNav = ({
           defaultValue={30}
           onChange={handleTagChoice}
         >
+          <option>Select type</option>
           {blogTags.map((tag) => {
             return <option value={tag}>{tag}</option>;
           })}
@@ -99,6 +104,16 @@ const BlogNav = ({
       >
         Search
       </Button>
+            <Button
+        onClick={handleResetButton}
+        className=" mt-8 m-4  w-50"
+        variant="default"
+      >
+        Reset
+      </Button>
+
+      <div>
+        </div>
     </div>
   );
 };

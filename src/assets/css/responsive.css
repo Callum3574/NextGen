@@ -1,0 +1,25 @@
+@media (max-width: 650px) {
+    .filter-res {
+        flex-direction: column !important
+
+    }
+
+    .search-nav {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .loc-bar {
+        margin-top: 1.5rem;
+        margin-bottom: 1rem
+    }
+
+    .filter-results{
+        flex-direction: row !important;
+        max-width: 450px;
+        overflow-x: scroll;
+        margin-right: 25px
+    
+    }
+    
+}
