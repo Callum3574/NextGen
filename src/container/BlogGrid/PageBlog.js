@@ -61,6 +61,14 @@ filteredData = filteredData.filter((post) => post.categories.some(cate => filter
   setFilteredResults(filteredData);
 };
 
+const handleResetButton = () => {
+  setFilteredResults([])
+  setFiltered((prev) => {
+    return {...prev, [filtered.category]: []},
+    {...prev, [filtered.tags]: []}
+  })
+}
+
   return (
     <div>
       <div className="search-box-jobs d-flex flex-column p-1 bd-highlight align-items-center">
@@ -84,6 +92,7 @@ filteredData = filteredData.filter((post) => post.categories.some(cate => filter
             handleTagChoice={handleTagChoice}
             blogData={blogData}
             handleFilterSearch={handleFilterSearch}
+            handleResetButton={handleResetButton}
           />
         </div>
       </div>

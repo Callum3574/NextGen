@@ -14,6 +14,7 @@ const BlogNav = ({
   handleTagChoice,
   handleCateChoice,
   handleFilterSearch,
+  handleResetButton
 }) => {
   const [blogTags, setBlogTags] = useState([]);
   const [cateTags, setCateTags] = useState([]);
@@ -102,6 +103,13 @@ const BlogNav = ({
         variant="default"
       >
         Search
+      </Button>
+            <Button
+        onClick={handleResetButton}
+        className=" mt-8 m-4  w-50"
+        variant="default"
+      >
+        Reset
       </Button>
     </div>
   );
