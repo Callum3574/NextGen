@@ -1,6 +1,6 @@
-@media (max-width: 850px) {
+@media (max-width: 650px) {
     .filter-res {
-        flex-direction: column;
+        flex-direction: column !important
 
     }
 
@@ -14,5 +14,12 @@
         margin-bottom: 1rem
     }
 
+    .filter-results{
+        flex-direction: row !important;
+        max-width: 450px;
+        overflow-x: scroll;
+        margin-right: 25px
+    
+    }
     
 }

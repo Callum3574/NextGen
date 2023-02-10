@@ -40,19 +40,32 @@ const PageBlog = () => {
 
   const handleCateChoice = (e) => {
     const selectedCate = e.target.value;
+    console.log(selectedCate)
     setFiltered((prev) => {
       return { ...prev, category: [...filtered.category, selectedCate] };
     });
     console.log(filtered);
   };
 
-  const handleFilterSearch = () => {
-    const results = blogData.filter((item) => {
-      return item.tags.includes(filtered.tags[0]);
-    });
-    setFilteredResults(results);
-    console.log(results);
-  };
+const handleFilterSearch = () => {
+  let filteredData = [...blogData];
+
+  filteredData = filteredData.filter((post, i) => post.tags.some(tag => filtered.tags.includes(tag)))
+
+  
+
+  
+
+ 
+  
+  // if (filtered.tags.length > 0) {
+  //   filteredData = filteredData.filter(post => filtered.tags.includes(post.tags));
+  //       console.log(filteredData)
+
+  // }
+
+  setFilteredResults(filteredData);
+};
 
   return (
     <div>
