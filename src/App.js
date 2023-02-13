@@ -12,6 +12,7 @@ const WorkDetails = lazy(() => import("./pages/WorkDetails"));
 const BlogGrid = lazy(() => import("./pages/BlogGrid"));
 const Contact = lazy(() => import("./pages/Contact"));
 const BlogDetails = lazy(() => import("./pages/BlogDetails"));
+const Signup = lazy(() => import("./pages/SignUp"));
 function App() {
   useEffect(() => {
     AOS.init({
@@ -60,6 +61,14 @@ function App() {
             <Route
               path={`${process.env.PUBLIC_URL + "/contact"}`}
               element={<Contact />}
+            />
+            <Route
+              path={`${process.env.PUBLIC_URL + "/login"}`}
+              element={<Contact />}
+            />
+            <Route
+              path={`${process.env.PUBLIC_URL + "/signup"}`}
+              element={<Signup />}
             />
           </Routes>
         </Suspense>

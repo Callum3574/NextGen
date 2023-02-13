@@ -32,11 +32,13 @@ function SearchFilter() {
   // const baseURLDeploy = "https://top-fork-production.up.railway.app";
 
   const fetchPosts = async () => {
-    const res = await fetch(baseURL + "/all-jobs");
-
-    const data = await res.json();
-
-    setAllJobs(data);
+    try {
+      const res = await fetch(baseURL + "/all-jobs");
+      const data = await res.json();
+      setAllJobs(data);
+    } catch (e) {
+      console.error(e);
+    }
   };
 
   useEffect(() => {

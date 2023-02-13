@@ -41,6 +41,7 @@ const Home = () => {
           <ServiceIconBox />
           <Funfact classOption="section-padding" />
 
+<<<<<<< Updated upstream
           <TestimonialContainer />
 
           {/* <Team /> */}
@@ -54,6 +55,19 @@ const Home = () => {
         </div>
       </React.Fragment>
     </div>
+=======
+      <TestimonialContainer />
+
+      {/* <Team /> */}
+
+      {/* <CallToAction /> */}
+      {/* <HomeBlog /> */}
+      {/* <ContactInformation classOption="bg-primary-blue" /> */}
+      {/* <BrandContainer classOption="section-padding" /> */}
+      <Footer />
+      <ScrollToTop />
+    </React.Fragment>
+>>>>>>> Stashed changes
   );
 };
 
