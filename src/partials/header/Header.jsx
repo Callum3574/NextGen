@@ -7,6 +7,7 @@ import MobileMenu from "../../components/NavBar/MobileMenu";
 import MainSearch from "../../components/NavBar/MainSearch";
 import LoginButton from "../../components/Auth/LoginButton.js";
 import LogoutButton from "../../components/Auth/LogoutButton.js";
+import SignedIn from "../../components/Auth/SignedIn";
 
 const Header = () => {
   const [ofcanvasShow, setOffcanvasShow] = useState(false);
@@ -69,9 +70,8 @@ const Header = () => {
               </div>
 
               <div className="col-xl-2 col d-none d-sm-flex justify-content-end order-1 order-xl-2">
-                {/* <Btn name="Login/Signup" /> */}
-                <LoginButton />
-                <LogoutButton />
+                {/* <LoginButton /> */}
+                <SignedIn />
               </div>
             </div>
           </div>

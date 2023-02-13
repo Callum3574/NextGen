@@ -6,7 +6,7 @@ const Btn = (props) => {
   return (
     <React.Fragment>
       <Link
-        to={process.env.PUBLIC_URL + "/"}
+        to={process.env.PUBLIC_URL + props.url}
         className="btn btn-outline-white btn-hover-primary"
       >
         {props.name}
