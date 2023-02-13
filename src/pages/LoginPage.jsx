@@ -15,6 +15,7 @@ import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { useNavigate } from "react-router-dom";
 import Alert from "@mui/material/Alert";
+import { useSignIn } from "react-auth-kit";
 
 function Copyright(props) {
   return (
@@ -46,7 +47,7 @@ function LoginPage() {
     message: "",
     type: "",
   });
-
+  const signIn = useSignIn();
   const navigate = useNavigate();
 
   const handleCredentials = (e) => {
@@ -78,6 +79,13 @@ function LoginPage() {
           navigate("/");
         }, 1000);
       }
+
+      signIn({
+        token: "213435432895723495789435",
+        expiresIn: 3600,
+        tokenType: "Bearer",
+        authState: { email: currentCredentials.email },
+      });
     } catch (e) {
       console.error(e);
     }

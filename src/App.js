@@ -1,9 +1,10 @@
-import { useEffect, Suspense, lazy } from "react";
+import { useEffect, Suspense, lazy, useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import AOS from "aos";
 import NavScrollTop from "./components/NavScrollTop";
 import data from "./data//blog/BlogClassic.json";
 import LoginPage from "./pages/LoginPage.jsx";
+import { RequireAuth } from "react-auth-kit";
 
 const Home = lazy(() => import("./pages/Home"));
 const About = lazy(() => import("./pages/About"));
@@ -15,6 +16,8 @@ const Contact = lazy(() => import("./pages/Contact"));
 const BlogDetails = lazy(() => import("./pages/BlogDetails"));
 const Signup = lazy(() => import("./pages/SignUp"));
 const Login = lazy(() => import("./pages/LoginPage"));
+const Dashboard = lazy(() => import("./pages/Dashboard"));
+
 function App() {
   useEffect(() => {
     AOS.init({
@@ -25,6 +28,8 @@ function App() {
     });
     AOS.refresh();
   }, []);
+
+  const [isAdmin, setIsAdmin] = useState(false);
   return (
     <Router>
       <NavScrollTop>
@@ -71,6 +76,14 @@ function App() {
             <Route
               path={`${process.env.PUBLIC_URL + "/signup"}`}
               element={<Signup />}
+            />
+            <Route
+              path={`${process.env.PUBLIC_URL + "/dashboard"}`}
+              element={
+                <RequireAuth loginPath="/login">
+                  <Dashboard />
+                </RequireAuth>
+              }
             />
           </Routes>
         </Suspense>

@@ -27,7 +27,7 @@ const Home = () => {
     <div>
       <React.Fragment>
         <SEO title="Nextgen || Home" />
-        <Header />
+        <Header cal="cal" />
         <div
           style={{
             backgroundColor: isVisible ? "transparent" : "red",

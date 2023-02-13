@@ -24,7 +24,7 @@ export default function SignedIn() {
         onClick={handleClick}
         className="m-5 btn btn-outline-white btn-hover-primary"
       >
-        Signed in as Josh
+        Dashboard
       </button>
       <Menu
         id="basic-menu"
