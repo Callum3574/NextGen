@@ -4,14 +4,11 @@ import BlogClassicData from "../../data/blog/BlogClassic.json";
 import BlogItem from "../../components/Blog/BlogItem";
 import BlogNav from "../../components/Blog/BlogNav.jsx";
 import "../../assets/css/custom.css";
-<<<<<<< Updated upstream
 import "../../assets/css/animations.css";
 import Typography from "@mui/material/Typography";
 import Breadcrumbs from "@mui/material/Breadcrumbs";
 import LinearProgress from "@mui/material/LinearProgress";
 import Alert from "@mui/material/Alert";
-=======
->>>>>>> Stashed changes
 
 const PageBlog = () => {
   const [blogData, setBlogData] = useState([]);
@@ -99,7 +96,6 @@ const PageBlog = () => {
   };
 
   return (
-<<<<<<< Updated upstream
     <div>
       <div className="search-box-jobs d-flex flex-column p-1 bd-highlight align-items-center">
         <div className="d-flex justify-content-center flex-row w-100">
@@ -156,33 +152,6 @@ const PageBlog = () => {
               </Breadcrumbs>
             )}
           </div>
-=======
-    <div className="">
-      <div className="search-box-jobs d-flex flex-column p-2 bd-highlight align-items-center">
-        <div></div>
-        <div className="p-8 ">
-          <h4 className="" style={{ color: "white" }}>
-            Browse Our Blogs!
-          </h4>
-        </div>
-        <div className="d-flex">
-          <h4 style={{ color: "white" }} className="mt-2 px-3">
-            Filter Blogs
-          </h4>
-          <BlogNav />
-        </div>
-      </div>
-      <div className="container mt-10">
-        <div className="row row-cols-lg-3 row-cols-md-2 row-cols-sm-2 row-cols-1 mb-n6">
-          {blogData &&
-            blogData.map((post, key) => {
-              return (
-                <div key={key} className="col mb-6" data-aos="fade-up">
-                  <BlogItem post={post} key={key} />
-                </div>
-              );
-            })}
->>>>>>> Stashed changes
         </div>
       </div>
       <hr />

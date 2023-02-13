@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import AOS from "aos";
 import NavScrollTop from "./components/NavScrollTop";
 import data from "./data//blog/BlogClassic.json";
+import LoginPage from "./pages/LoginPage.jsx";
 
 const Home = lazy(() => import("./pages/Home"));
 const About = lazy(() => import("./pages/About"));
@@ -13,6 +14,7 @@ const BlogGrid = lazy(() => import("./pages/BlogGrid"));
 const Contact = lazy(() => import("./pages/Contact"));
 const BlogDetails = lazy(() => import("./pages/BlogDetails"));
 const Signup = lazy(() => import("./pages/SignUp"));
+const Login = lazy(() => import("./pages/LoginPage"));
 function App() {
   useEffect(() => {
     AOS.init({
@@ -64,7 +66,7 @@ function App() {
             />
             <Route
               path={`${process.env.PUBLIC_URL + "/login"}`}
-              element={<Contact />}
+              element={<LoginPage />}
             />
             <Route
               path={`${process.env.PUBLIC_URL + "/signup"}`}
