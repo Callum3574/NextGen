@@ -13,6 +13,8 @@ import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+import { useNavigate } from "react-router-dom";
+import Alert from "@mui/material/Alert";
 
 function Copyright(props) {
   return (
@@ -40,11 +42,51 @@ function LoginPage() {
     password: "",
   });
 
+  const [errorMessage, setErrorMessage] = useState({
+    message: "",
+    type: "",
+  });
+
+  const navigate = useNavigate();
+
   const handleCredentials = (e) => {
     setCurrentCredentials((prev) => {
       return { ...prev, [e.target.name]: e.target.value };
     });
   };
+
+  const handleLogin = async () => {
+    try {
+      const data = await fetch("http://localhost:8000/login", {
+        method: "POST",
+        headers: { "Content-type": "application/json" },
+        body: JSON.stringify(currentCredentials),
+      });
+      const res = await data.json();
+
+      if (res.message !== "Successful sign in") {
+        setErrorMessage({
+          message: res.message,
+          type: "error",
+        });
+      } else {
+        setErrorMessage({
+          message: res.message,
+          type: "success",
+        });
+        setTimeout(() => {
+          navigate("/");
+        }, 1000);
+      }
+    } catch (e) {
+      console.error(e);
+    }
+  };
+
+  const handleAlerts = (message, type) => {
+    return <Alert severity={type}>{message}</Alert>;
+  };
+
   return (
     <ThemeProvider theme={theme}>
       <Container component="main" maxWidth="xs">
@@ -57,17 +99,12 @@ function LoginPage() {
             alignItems: "center",
           }}
         >
-          <img src="images/logo/NEXTGEN_LOGO.png"></img>
+          <img alt="logo" src="images/logo/NEXTGEN_LOGO.png"></img>
 
           <Typography component="h1" variant="h5">
             Sign in
           </Typography>
-          <Box
-            component="form"
-            onSubmit={handleSubmit}
-            noValidate
-            sx={{ mt: 1 }}
-          >
+          <Box component="form" noValidate sx={{ mt: 1 }}>
             <TextField
               margin="normal"
               required
@@ -77,6 +114,7 @@ function LoginPage() {
               name="email"
               autoComplete="email"
               autoFocus
+              onChange={handleCredentials}
             />
             <TextField
               margin="normal"
@@ -87,16 +125,21 @@ function LoginPage() {
               type="password"
               id="password"
               autoComplete="current-password"
+              onChange={handleCredentials}
             />
             <FormControlLabel
               control={<Checkbox value="remember" color="primary" />}
               label="Remember me"
             />
+            <Grid item xs={12}>
+              {Object.keys(errorMessage).length > 0 &&
+                handleAlerts(errorMessage.message, errorMessage.type)}
+            </Grid>
             <Button
-              type="submit"
               fullWidth
               variant="contained"
               sx={{ mt: 3, mb: 2 }}
+              onClick={handleLogin}
             >
               Sign In
             </Button>
@@ -106,6 +149,7 @@ function LoginPage() {
                   Forgot password?
                 </Link>
               </Grid>
+
               <Grid item>
                 <Link href="#" variant="body2">
                   {"Don't have an account? Sign Up"}

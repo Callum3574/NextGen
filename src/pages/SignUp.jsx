@@ -1,6 +1,5 @@
 import * as React from "react";
 import { useEffect, useState } from "react";
-import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import CssBaseline from "@mui/material/CssBaseline";
 import TextField from "@mui/material/TextField";
@@ -9,11 +8,11 @@ import Checkbox from "@mui/material/Checkbox";
 import Link from "@mui/material/Link";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
-import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-// import { Link } from "react-router-dom";
+import Alert from "@mui/material/Alert";
+import { useNavigate } from "react-router-dom";
 
 function Copyright(props) {
   return (
@@ -43,6 +42,13 @@ function SignUp() {
     password: "",
   });
 
+  const [errorMessage, setErrorMessage] = useState({
+    message: "",
+    type: "",
+  });
+
+  const navigate = useNavigate();
+
   const handleCredentials = (e) => {
     setCredentials((prev) => {
       return { ...prev, [e.target.name]: e.target.value };
@@ -57,10 +63,21 @@ function SignUp() {
         body: JSON.stringify(credentials),
       });
       const res = await data.json();
-      console.log(res);
+      if (res.message !== "Successful Registration") {
+        setErrorMessage({ message: res.message, type: "error" });
+      } else {
+        setErrorMessage({ message: res.message, type: "success" });
+        setTimeout(() => {
+          navigate("/login");
+        }, 1000);
+      }
     } catch (e) {
       console.error(e);
     }
+  };
+
+  const handleAlerts = (message, type) => {
+    return <Alert severity={type}>{message}</Alert>;
   };
 
   return (
@@ -75,7 +92,7 @@ function SignUp() {
             alignItems: "center",
           }}
         >
-          <img src="images/logo/NEXTGEN_LOGO.png"></img>
+          <img alt="logo" src="images/logo/NEXTGEN_LOGO.png"></img>
           <Typography component="h1" variant="h5">
             Sign up
           </Typography>
@@ -133,6 +150,10 @@ function SignUp() {
                 />
               </Grid>
               <Grid item xs={12}>
+                {Object.keys(errorMessage).length > 0 &&
+                  handleAlerts(errorMessage.message, errorMessage.type)}
+              </Grid>
+              <Grid item xs={12}>
                 <FormControlLabel
                   control={
                     <Checkbox value="allowExtraEmails" color="primary" />
@@ -142,18 +163,17 @@ function SignUp() {
               </Grid>
             </Grid>
             <Button
-              type="submit"
+              // type="submit"
               fullWidth
               variant="contained"
               sx={{ mt: 3, mb: 2 }}
+              onClick={handleSignUp}
             >
               Sign Up
             </Button>
             <Grid container justifyContent="flex-end">
               <Grid item>
-                <Link href="/login" variant="body2">
-                  Already have an account? Sign in
-                </Link>
+                <Link href="/login">Already have an account? Sign in</Link>
               </Grid>
             </Grid>
           </Box>
