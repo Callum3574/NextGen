@@ -103,6 +103,12 @@ function LoginPage({
     return <Alert severity={type}>{message}</Alert>;
   };
 
+  const handleKeypress = (e) => {
+    //it triggers by pressing the enter key
+    if (e.key === "Enter") {
+      handleLogin();
+    }
+  };
   return (
     <ThemeProvider theme={theme}>
       <Container component="main" maxWidth="xs">
@@ -120,59 +126,63 @@ function LoginPage({
           <Typography component="h1" variant="h5">
             Sign in
           </Typography>
-          <Box component="form" noValidate sx={{ mt: 1 }}>
-            <TextField
-              margin="normal"
-              required
-              fullWidth
-              id="email"
-              label="Email Address"
-              name="email"
-              autoComplete="email"
-              autoFocus
-              onChange={handleCredentials}
-            />
-            <TextField
-              margin="normal"
-              required
-              fullWidth
-              name="password"
-              label="Password"
-              type="password"
-              id="password"
-              autoComplete="current-password"
-              onChange={handleCredentials}
-            />
-            <FormControlLabel
-              control={<Checkbox value="remember" color="primary" />}
-              label="Remember me"
-            />
-            <Grid item xs={12}>
-              {Object.keys(errorMessage).length > 0 &&
-                handleAlerts(errorMessage.message, errorMessage.type)}
-            </Grid>
-            <Button
-              fullWidth
-              variant="contained"
-              sx={{ mt: 3, mb: 2 }}
-              onClick={handleLogin}
-            >
-              Sign In
-            </Button>
-            <Grid container>
-              <Grid item xs>
-                <Link href="#" variant="body2">
-                  Forgot password?
-                </Link>
+          <form onSubmit={handleLogin}>
+            <Box component="form" noValidate sx={{ mt: 1 }}>
+              <TextField
+                margin="normal"
+                required
+                fullWidth
+                id="email"
+                label="Email Address"
+                name="email"
+                autoComplete="email"
+                autoFocus
+                onChange={handleCredentials}
+              />
+              <TextField
+                margin="normal"
+                required
+                fullWidth
+                name="password"
+                label="Password"
+                type="password"
+                id="password"
+                autoComplete="current-password"
+                onChange={handleCredentials}
+              />
+              <FormControlLabel
+                control={<Checkbox value="remember" color="primary" />}
+                label="Remember me"
+              />
+              <Grid item xs={12}>
+                {Object.keys(errorMessage).length > 0 &&
+                  handleAlerts(errorMessage.message, errorMessage.type)}
               </Grid>
+              <Button
+                fullWidth
+                variant="contained"
+                sx={{ mt: 3, mb: 2 }}
+                onClick={handleLogin}
+                onKeyDown={handleKeypress}
+              >
+                Sign In
+              </Button>
 
-              <Grid item>
-                <Link href="/signup" variant="body2">
-                  {"Don't have an account? Sign Up"}
-                </Link>
+              <Grid container>
+                <Grid item xs>
+                  <Link href="#" variant="body2">
+                    Forgot password?
+                  </Link>
+                </Grid>
+
+                <Grid item>
+                  <Link href="/signup" variant="body2">
+                    {"Don't have an account? Sign Up"}
+                  </Link>
+                </Grid>
               </Grid>
-            </Grid>
-          </Box>
+            </Box>
+          </form>
         </Box>
         <Copyright sx={{ mt: 8, mb: 4 }} />
       </Container>

@@ -17,6 +17,10 @@ export default function SignedIn({ authState }) {
 
   useEffect(() => {}, [authState]);
 
+  const handleLogOut = () => {
+    window.localStorage.clear();
+    window.location.href = "/";
+  };
   return (
     <div>
       <button
@@ -40,7 +44,7 @@ export default function SignedIn({ authState }) {
       >
         <MenuItem onClick={handleClose}>Profile</MenuItem>
         <MenuItem onClick={handleClose}>My account</MenuItem>
-        <MenuItem onClick={handleClose}>Logout</MenuItem>
+        <MenuItem onClick={handleLogOut}>Logout</MenuItem>
       </Menu>
     </div>
   );
