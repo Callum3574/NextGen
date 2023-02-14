@@ -59,11 +59,14 @@ function LoginPage({ setLoginStatus, setUserSignedIn }) {
 
   const handleLogin = async () => {
     try {
-      const res = await fetch("http://localhost:8000/login", {
-        method: "POST",
-        headers: { "Content-type": "application/json" },
-        body: JSON.stringify(currentCredentials),
-      });
+      const res = await fetch(
+        "https://top-fork-production.up.railway.app/login",
+        {
+          method: "POST",
+          headers: { "Content-type": "application/json" },
+          body: JSON.stringify(currentCredentials),
+        }
+      );
       const data = await res.json();
 
       if (!data.auth) {

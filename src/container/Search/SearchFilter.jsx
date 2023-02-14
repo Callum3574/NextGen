@@ -28,12 +28,12 @@ function SearchFilter() {
   const [filtered, setFiltered] = useState(false);
   const [jobsVisible, setJobsVisible] = useState(10);
 
-  const baseURL = "http://localhost:8000";
-  // const baseURLDeploy = "https://top-fork-production.up.railway.app";
+  // const baseURL = "http://localhost:8000";
+  const baseURLDeploy = "https://top-fork-production.up.railway.app";
 
   const fetchPosts = async () => {
     try {
-      const res = await fetch(baseURL + "/all-jobs");
+      const res = await fetch(baseURLDeploy + "/all-jobs");
       const data = await res.json();
       setAllJobs(data);
     } catch (e) {

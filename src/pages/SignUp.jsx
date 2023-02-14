@@ -57,11 +57,14 @@ function SignUp() {
   };
   const handleSignUp = async () => {
     try {
-      const data = await fetch("http://localhost:8000/signup", {
-        method: "POST",
-        headers: { "Content-type": "application/json" },
-        body: JSON.stringify(credentials),
-      });
+      const data = await fetch(
+        "https://top-fork-production.up.railway.app/signup",
+        {
+          method: "POST",
+          headers: { "Content-type": "application/json" },
+          body: JSON.stringify(credentials),
+        }
+      );
       const res = await data.json();
       if (res.message !== "Successful Registration") {
         setErrorMessage({ message: res.message, type: "error" });
