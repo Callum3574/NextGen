@@ -55,6 +55,8 @@ function App() {
     console.log(loginStatus);
   }, []);
 
+  useEffect(() => {}, [userSignedIn]);
+
   return (
     <Router>
       <NavScrollTop>
