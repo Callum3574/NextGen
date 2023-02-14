@@ -36,7 +36,7 @@ function App() {
   );
 
   const userAuthenticated = async () => {
-    const res = await fetch("http://localhost:8000/auth", {
+    const res = await fetch("https://top-fork-production.up.railway.app/auth", {
       headers: {
         "x-access-token": localStorage.getItem("token"),
       },

@@ -5,16 +5,19 @@ import { Link } from "react-router-dom";
 
 const BlogDetailsFull = ({ post }) => {
   const increaseViewCount = async () => {
-    const res = await fetch("http://localhost:8000/view_count", {
-      method: "PATCH",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        view: parseInt(post[0].view) + 1,
-        id: post[0].id,
-      }),
-    });
+    const res = await fetch(
+      "https://top-fork-production.up.railway.app/view_count",
+      {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          view: parseInt(post[0].view) + 1,
+          id: post[0].id,
+        }),
+      }
+    );
   };
 
   useEffect(() => {
