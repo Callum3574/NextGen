@@ -20,6 +20,7 @@
     "fs": "^0.0.1-security",
     "imagesloaded": "^5.0.0",
     "isotope-layout": "^3.0.6",
+    "jsonwebtoken": "^9.0.0",
     "parallax-js": "^3.1.0",
     "path": "^0.12.7",
     "react": "^18.2.0",

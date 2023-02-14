@@ -5,6 +5,7 @@ import NavScrollTop from "./components/NavScrollTop";
 import data from "./data//blog/BlogClassic.json";
 import LoginPage from "./pages/LoginPage.jsx";
 import { RequireAuth } from "react-auth-kit";
+import { useIsAuthenticated } from "react-auth-kit";
 
 const Home = lazy(() => import("./pages/Home"));
 const About = lazy(() => import("./pages/About"));
@@ -29,7 +30,35 @@ function App() {
     AOS.refresh();
   }, []);
 
-  const [isAdmin, setIsAdmin] = useState(false);
+  const [loginStatus, setLoginStatus] = useState(false);
+  const [userSignedIn, setUserSignedIn] = useState("");
+
+  const userAuthenticated = async () => {
+    const res = await fetch("http://localhost:8000/auth", {
+      headers: {
+        "x-access-token": localStorage.getItem("token"),
+      },
+    });
+    const data = await res.json();
+    if (data.message !== "authenticated") {
+      setLoginStatus(false);
+    } else {
+      setLoginStatus(true);
+    }
+  };
+  useEffect(() => {
+    userAuthenticated();
+  }, []);
+
+  const loggedIn = () => {
+    console.log(loginStatus, userSignedIn);
+    return loginStatus ? (
+      <h1>{localStorage.getItem("authState")}</h1>
+    ) : (
+      <h2>logged out</h2>
+    );
+  };
+
   return (
     <Router>
       <NavScrollTop>
@@ -37,7 +66,7 @@ function App() {
           <Routes>
             <Route
               path={`${process.env.PUBLIC_URL + "/"}`}
-              element={<Home />}
+              element={<Home loggedIn={loggedIn} />}
             />
 
             <Route
@@ -71,7 +100,12 @@ function App() {
             />
             <Route
               path={`${process.env.PUBLIC_URL + "/login"}`}
-              element={<LoginPage />}
+              element={
+                <LoginPage
+                  setUserSignedIn={setUserSignedIn}
+                  setLoginStatus={setLoginStatus}
+                />
+              }
             />
             <Route
               path={`${process.env.PUBLIC_URL + "/signup"}`}

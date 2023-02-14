@@ -9,7 +9,7 @@ import LoginButton from "../../components/Auth/LoginButton.js";
 import LogoutButton from "../../components/Auth/LogoutButton.js";
 import SignedIn from "../../components/Auth/SignedIn";
 
-const Header = ({ cal }) => {
+const Header = ({ currentUser }) => {
   const [ofcanvasShow, setOffcanvasShow] = useState(false);
   const onCanvasHandler = () => {
     setOffcanvasShow((prev) => !prev);
@@ -71,6 +71,7 @@ const Header = ({ cal }) => {
 
               <div className="col-xl-2 col d-none d-sm-flex justify-content-end order-1 order-xl-2">
                 <LoginButton />
+                <h3>{currentUser}</h3>
                 {/* <SignedIn /> */}
               </div>
             </div>

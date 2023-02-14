@@ -37,7 +37,7 @@ function Copyright(props) {
 
 const theme = createTheme();
 
-function LoginPage() {
+function LoginPage({ setLoginStatus, setUserSignedIn }) {
   const [currentCredentials, setCurrentCredentials] = useState({
     email: "",
     password: "",
@@ -47,6 +47,7 @@ function LoginPage() {
     message: "",
     type: "",
   });
+
   const signIn = useSignIn();
   const navigate = useNavigate();
 
@@ -58,34 +59,42 @@ function LoginPage() {
 
   const handleLogin = async () => {
     try {
-      const data = await fetch("http://localhost:8000/login", {
+      const res = await fetch("http://localhost:8000/login", {
         method: "POST",
         headers: { "Content-type": "application/json" },
         body: JSON.stringify(currentCredentials),
       });
-      const res = await data.json();
+      const data = await res.json();
 
-      if (res.message !== "Successful sign in") {
+      if (!data.auth) {
         setErrorMessage({
-          message: res.message,
+          message: data.message,
           type: "error",
         });
+        setLoginStatus(false);
       } else {
         setErrorMessage({
-          message: res.message,
+          message: data.message,
           type: "success",
         });
+        setLoginStatus(true);
+        console.log(data.result);
+        setUserSignedIn(data.result);
         setTimeout(() => {
           navigate("/");
         }, 1000);
       }
 
       signIn({
-        token: "213435432895723495789435",
+        token: data.token,
         expiresIn: 3600,
         tokenType: "Bearer",
-        authState: { email: currentCredentials.email },
+        authState: { name: data.result },
       });
+      localStorage.setItem("token", data.token);
+      localStorage.setItem("expiresIn", 3600);
+      localStorage.setItem("tokenType", "Bearer");
+      localStorage.setItem("authState", JSON.stringify({ name: data.result }));
     } catch (e) {
       console.error(e);
     }

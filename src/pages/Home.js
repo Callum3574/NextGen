@@ -17,7 +17,7 @@ import ScrollToTop from "../components/ScrollToTop.jsx";
 import "../assets/css/animations.css";
 import "../assets/css/custom.css";
 
-const Home = () => {
+const Home = ({ currentUser, loggedIn }) => {
   const [isVisible, setIsVisible] = React.useState(false);
 
   React.useEffect(() => {
@@ -25,9 +25,11 @@ const Home = () => {
   }, []);
   return (
     <div>
+      <div>{loggedIn()}</div>
       <React.Fragment>
         <SEO title="Nextgen || Home" />
-        <Header cal="cal" />
+        <Header />
+
         <div
           style={{
             backgroundColor: isVisible ? "transparent" : "red",
