@@ -34,6 +34,17 @@ function App() {
   const [userSignedIn, setUserSignedIn] = useState(
     localStorage.getItem("authState")
   );
+  const [token, setToken] = useState(localStorage.getItem("token"));
+  const [expiresIn, setExpiresIn] = useState(localStorage.getItem("expiresIn"));
+  const [tokenType, setTokenType] = useState(localStorage.getItem("tokenType"));
+  const [authState, setAuthState] = useState(localStorage.getItem("authState"));
+
+  useEffect(() => {
+    localStorage.setItem("token", token);
+    localStorage.setItem("expiresIn", expiresIn);
+    localStorage.setItem("tokenType", tokenType);
+    localStorage.setItem("authState", authState);
+  }, [token, expiresIn, tokenType, authState]);
 
   const userAuthenticated = async () => {
     const res = await fetch("https://top-fork-production.up.railway.app/auth", {
@@ -48,14 +59,13 @@ function App() {
       localStorage.clear();
     } else {
       setLoginStatus(true);
+      setUserSignedIn(localStorage.getItem("authState"));
     }
   };
   useEffect(() => {
     userAuthenticated();
     console.log(loginStatus);
   }, []);
-
-  useEffect(() => {}, [userSignedIn]);
 
   return (
     <Router>
@@ -64,37 +74,49 @@ function App() {
           <Routes>
             <Route
               path={`${process.env.PUBLIC_URL + "/"}`}
-              element={<Home userSignedIn={userSignedIn} />}
+              element={<Home authState={authState} loginStatus={loginStatus} />}
             />
 
             <Route
               path={`${process.env.PUBLIC_URL + "/about"}`}
-              element={<About />}
+              element={
+                <About authState={authState} loginStatus={loginStatus} />
+              }
             />
             <Route
               path={`${process.env.PUBLIC_URL + "/job-search"}`}
-              element={<Service />}
+              element={
+                <Service authState={authState} loginStatus={loginStatus} />
+              }
             />
             <Route
               path={`${process.env.PUBLIC_URL + "/job-sectors"}`}
-              element={<Work />}
+              element={<Work authState={authState} loginStatus={loginStatus} />}
             />
             <Route
               path={`${process.env.PUBLIC_URL + "/work-details/:id"}`}
-              element={<WorkDetails />}
+              element={
+                <WorkDetails authState={authState} loginStatus={loginStatus} />
+              }
             />
             <Route
               path={`${process.env.PUBLIC_URL + "/blog"}`}
-              element={<BlogGrid />}
+              element={
+                <BlogGrid authState={authState} loginStatus={loginStatus} />
+              }
             />
 
             <Route
               path={`${process.env.PUBLIC_URL + "/blog-details/:id"}`}
-              element={<BlogDetails />}
+              element={
+                <BlogDetails authState={authState} loginStatus={loginStatus} />
+              }
             />
             <Route
               path={`${process.env.PUBLIC_URL + "/contact"}`}
-              element={<Contact />}
+              element={
+                <Contact authState={authState} loginStatus={loginStatus} />
+              }
             />
             <Route
               path={`${process.env.PUBLIC_URL + "/login"}`}
@@ -102,6 +124,10 @@ function App() {
                 <LoginPage
                   setUserSignedIn={setUserSignedIn}
                   setLoginStatus={setLoginStatus}
+                  setToken={setToken}
+                  setExpiresIn={setExpiresIn}
+                  setTokenType={setTokenType}
+                  setAuthState={setAuthState}
                 />
               }
             />

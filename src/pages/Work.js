@@ -11,7 +11,7 @@ import ProjectForm from "../components/ProjectForm/ProjectForm";
 import BrandContainer from "../container/Brand/BrandContainer.js";
 import WorkContainer from "../container/Work/WorkContainer.js";
 
-const Work = () => {
+const Work = ({ authState, loginStatus }) => {
   const [selectedSector, setSelectedSector] = useState("");
   const [sectorDetails, setSectorDetails] = useState([]);
 
@@ -41,7 +41,7 @@ const Work = () => {
   return (
     <React.Fragment>
       <SEO title="Nextgen || Sectors" />
-      <Header />
+      <Header authState={authState} loginStatus={loginStatus} />
 
       <Breadcrumb
         image="images/bg/breadcrumb-bg-two.jpg"

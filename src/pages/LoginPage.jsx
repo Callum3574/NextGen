@@ -37,7 +37,13 @@ function Copyright(props) {
 
 const theme = createTheme();
 
-function LoginPage({ setLoginStatus, setUserSignedIn }) {
+function LoginPage({
+  setLoginStatus,
+  setAuthState,
+  setToken,
+  setTokenType,
+  setExpiresIn,
+}) {
   const [currentCredentials, setCurrentCredentials] = useState({
     email: "",
     password: "",
@@ -48,7 +54,6 @@ function LoginPage({ setLoginStatus, setUserSignedIn }) {
     type: "",
   });
 
-  const signIn = useSignIn();
   const navigate = useNavigate();
 
   const handleCredentials = (e) => {
@@ -85,10 +90,10 @@ function LoginPage({ setLoginStatus, setUserSignedIn }) {
           navigate("/");
         }, 1000);
       }
-      localStorage.setItem("token", data.token);
-      localStorage.setItem("expiresIn", 10);
-      localStorage.setItem("tokenType", "Bearer");
-      localStorage.setItem("authState", data.result);
+      setToken(data.token);
+      setExpiresIn(10);
+      setTokenType("Bearer");
+      setAuthState(data.result);
     } catch (e) {
       console.error(e);
     }
