@@ -4,7 +4,7 @@ import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import Btn from "../../components/Btn/Btn";
 
-export default function SignedIn() {
+export default function SignedIn({ userSignedIn }) {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
@@ -24,7 +24,7 @@ export default function SignedIn() {
         onClick={handleClick}
         className="m-5 btn btn-outline-white btn-hover-primary"
       >
-        Dashboard
+        Signed in as {userSignedIn}
       </button>
       <Menu
         id="basic-menu"

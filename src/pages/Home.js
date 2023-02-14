@@ -17,18 +17,19 @@ import ScrollToTop from "../components/ScrollToTop.jsx";
 import "../assets/css/animations.css";
 import "../assets/css/custom.css";
 
-const Home = ({ currentUser, loggedIn }) => {
+const Home = ({ userSignedIn }) => {
   const [isVisible, setIsVisible] = React.useState(false);
 
   React.useEffect(() => {
     setIsVisible(true);
   }, []);
+
+  console.log(userSignedIn);
   return (
     <div>
-      <div>{loggedIn()}</div>
       <React.Fragment>
         <SEO title="Nextgen || Home" />
-        <Header />
+        <Header userSignedIn={userSignedIn} />
 
         <div
           style={{

@@ -31,7 +31,9 @@ function App() {
   }, []);
 
   const [loginStatus, setLoginStatus] = useState(false);
-  const [userSignedIn, setUserSignedIn] = useState("");
+  const [userSignedIn, setUserSignedIn] = useState(
+    localStorage.getItem("authState")
+  );
 
   const userAuthenticated = async () => {
     const res = await fetch("http://localhost:8000/auth", {
@@ -40,24 +42,18 @@ function App() {
       },
     });
     const data = await res.json();
+    console.log(data);
     if (data.message !== "authenticated") {
       setLoginStatus(false);
+      localStorage.clear();
     } else {
       setLoginStatus(true);
     }
   };
   useEffect(() => {
     userAuthenticated();
+    console.log(loginStatus);
   }, []);
-
-  const loggedIn = () => {
-    console.log(loginStatus, userSignedIn);
-    return loginStatus ? (
-      <h1>{localStorage.getItem("authState")}</h1>
-    ) : (
-      <h2>logged out</h2>
-    );
-  };
 
   return (
     <Router>
@@ -66,7 +62,7 @@ function App() {
           <Routes>
             <Route
               path={`${process.env.PUBLIC_URL + "/"}`}
-              element={<Home loggedIn={loggedIn} />}
+              element={<Home userSignedIn={userSignedIn} />}
             />
 
             <Route
