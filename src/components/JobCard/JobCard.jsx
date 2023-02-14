@@ -7,7 +7,8 @@ import FullJobCard from "./FullJobCard";
 import "../../assets/css/custom.css";
 import { storage } from "../../firebase";
 import { ref, uploadBytes } from "firebase/storage";
-
+import BookmarkIcon from "@mui/icons-material/Bookmark";
+import BookmarkBorderIcon from "@mui/icons-material/BookmarkBorder";
 function JobCard({
   classOption,
   role,
@@ -189,6 +190,9 @@ function JobCard({
             >
               MORE INFO
             </Button>
+          </div>
+          <div className="mt-1">
+            <BookmarkBorderIcon />
           </div>
         </div>
       </div>

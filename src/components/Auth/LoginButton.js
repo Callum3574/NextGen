@@ -1,14 +1,12 @@
-import { useAuth0 } from "@auth0/auth0-react";
+import React from "react";
+import { Link } from "react-router-dom";
+import Btn from "../../components/Btn/Btn";
 
 const LoginButton = () => {
-  const { loginWithRedirect, isAuthenticated } = useAuth0();
-
-  console.log(loginWithRedirect);
-
   return (
-    !isAuthenticated && (
-      <button onClick={() => loginWithRedirect()}>Log In</button>
-    )
+    <div>
+      <Btn url="/login" name="Login/Signup"></Btn>
+    </div>
   );
 };
 

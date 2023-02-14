@@ -1,8 +1,11 @@
-import { useEffect, Suspense, lazy } from "react";
+import { useEffect, Suspense, lazy, useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import AOS from "aos";
 import NavScrollTop from "./components/NavScrollTop";
 import data from "./data//blog/BlogClassic.json";
+import LoginPage from "./pages/LoginPage.jsx";
+import { RequireAuth } from "react-auth-kit";
+import { useIsAuthenticated } from "react-auth-kit";
 
 const Home = lazy(() => import("./pages/Home"));
 const About = lazy(() => import("./pages/About"));
@@ -12,6 +15,10 @@ const WorkDetails = lazy(() => import("./pages/WorkDetails"));
 const BlogGrid = lazy(() => import("./pages/BlogGrid"));
 const Contact = lazy(() => import("./pages/Contact"));
 const BlogDetails = lazy(() => import("./pages/BlogDetails"));
+const Signup = lazy(() => import("./pages/SignUp"));
+const Login = lazy(() => import("./pages/LoginPage"));
+const Dashboard = lazy(() => import("./pages/Dashboard"));
+
 function App() {
   useEffect(() => {
     AOS.init({
@@ -22,6 +29,36 @@ function App() {
     });
     AOS.refresh();
   }, []);
+
+  const [loginStatus, setLoginStatus] = useState(false);
+  const [userSignedIn, setUserSignedIn] = useState("");
+
+  const userAuthenticated = async () => {
+    const res = await fetch("http://localhost:8000/auth", {
+      headers: {
+        "x-access-token": localStorage.getItem("token"),
+      },
+    });
+    const data = await res.json();
+    if (data.message !== "authenticated") {
+      setLoginStatus(false);
+    } else {
+      setLoginStatus(true);
+    }
+  };
+  useEffect(() => {
+    userAuthenticated();
+  }, []);
+
+  const loggedIn = () => {
+    console.log(loginStatus, userSignedIn);
+    return loginStatus ? (
+      <h1>{localStorage.getItem("authState")}</h1>
+    ) : (
+      <h2>logged out</h2>
+    );
+  };
+
   return (
     <Router>
       <NavScrollTop>
@@ -29,7 +66,7 @@ function App() {
           <Routes>
             <Route
               path={`${process.env.PUBLIC_URL + "/"}`}
-              element={<Home />}
+              element={<Home loggedIn={loggedIn} />}
             />
 
             <Route
@@ -60,6 +97,27 @@ function App() {
             <Route
               path={`${process.env.PUBLIC_URL + "/contact"}`}
               element={<Contact />}
+            />
+            <Route
+              path={`${process.env.PUBLIC_URL + "/login"}`}
+              element={
+                <LoginPage
+                  setUserSignedIn={setUserSignedIn}
+                  setLoginStatus={setLoginStatus}
+                />
+              }
+            />
+            <Route
+              path={`${process.env.PUBLIC_URL + "/signup"}`}
+              element={<Signup />}
+            />
+            <Route
+              path={`${process.env.PUBLIC_URL + "/dashboard"}`}
+              element={
+                <RequireAuth loginPath="/login">
+                  <Dashboard />
+                </RequireAuth>
+              }
             />
           </Routes>
         </Suspense>
