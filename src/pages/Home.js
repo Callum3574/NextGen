@@ -1,4 +1,5 @@
 import React from "react";
+import { useState, useEffect } from "react";
 import SEO from "../components/SEO";
 import Header from "../partials/header/Header";
 import IntroThree from "../container/IntroSlider/IntroThree";
@@ -17,19 +18,18 @@ import ScrollToTop from "../components/ScrollToTop.jsx";
 import "../assets/css/animations.css";
 import "../assets/css/custom.css";
 
-const Home = ({ userSignedIn }) => {
+const Home = ({ userSignedIn, loginStatus, authState }) => {
   const [isVisible, setIsVisible] = React.useState(false);
 
   React.useEffect(() => {
     setIsVisible(true);
   }, []);
 
-  console.log(userSignedIn);
   return (
     <div>
       <React.Fragment>
         <SEO title="Nextgen || Home" />
-        <Header userSignedIn={userSignedIn} />
+        <Header authState={authState} loginStatus={loginStatus} />
 
         <div
           style={{

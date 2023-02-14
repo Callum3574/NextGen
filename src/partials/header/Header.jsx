@@ -9,8 +9,7 @@ import LoginButton from "../../components/Auth/LoginButton.js";
 import LogoutButton from "../../components/Auth/LogoutButton.js";
 import SignedIn from "../../components/Auth/SignedIn";
 
-const Header = ({ userSignedIn }) => {
-  console.log(userSignedIn);
+const Header = ({ loginStatus, authState }) => {
   const [ofcanvasShow, setOffcanvasShow] = useState(false);
   const onCanvasHandler = () => {
     setOffcanvasShow((prev) => !prev);
@@ -34,6 +33,7 @@ const Header = ({ userSignedIn }) => {
   const handleScroll = () => {
     setScroll(window.scrollY);
   };
+
   return (
     <Fragment>
       <div
@@ -71,8 +71,8 @@ const Header = ({ userSignedIn }) => {
               </div>
 
               <div className="col-xl-2 col d-none d-sm-flex justify-content-end order-1 order-xl-2">
-                {userSignedIn ? (
-                  <SignedIn userSignedIn={userSignedIn} />
+                {loginStatus ? (
+                  <SignedIn authState={authState} />
                 ) : (
                   <LoginButton />
                 )}
