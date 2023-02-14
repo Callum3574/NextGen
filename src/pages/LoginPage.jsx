@@ -78,23 +78,14 @@ function LoginPage({ setLoginStatus, setUserSignedIn }) {
           type: "success",
         });
         setLoginStatus(true);
-        console.log(data.result);
-        setUserSignedIn(data.result);
         setTimeout(() => {
           navigate("/");
         }, 1000);
       }
-
-      signIn({
-        token: data.token,
-        expiresIn: 3600,
-        tokenType: "Bearer",
-        authState: { name: data.result },
-      });
       localStorage.setItem("token", data.token);
-      localStorage.setItem("expiresIn", 3600);
+      localStorage.setItem("expiresIn", 10);
       localStorage.setItem("tokenType", "Bearer");
-      localStorage.setItem("authState", JSON.stringify({ name: data.result }));
+      localStorage.setItem("authState", data.result);
     } catch (e) {
       console.error(e);
     }
