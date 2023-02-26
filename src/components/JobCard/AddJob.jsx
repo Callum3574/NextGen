@@ -26,7 +26,7 @@ function AddJob() {
   };
 
   const postJobs = async () => {
-    const res = await fetch(baseURLDeploy + "/post-job", {
+    const res = await fetch(baseURL + "/post-job", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(jobDetails),

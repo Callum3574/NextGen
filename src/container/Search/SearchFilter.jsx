@@ -21,20 +21,21 @@ function SearchFilter() {
     location: "",
   });
   const [filterTypeAndCategory, setFilterTypeAndCategory] = useState({
-    type: "Contract",
+    type: "",
     job_category: "",
   });
   const [filteredJobs, setFilteredJobs] = useState([]);
   const [filtered, setFiltered] = useState(false);
   const [jobsVisible, setJobsVisible] = useState(10);
 
-  // const baseURL = "http://localhost:8000";
+  const baseURL = "http://localhost:8000";
   const baseURLDeploy = "https://top-fork-production.up.railway.app";
 
   const fetchPosts = async () => {
     try {
-      const res = await fetch(baseURLDeploy + "/all-jobs");
+      const res = await fetch(baseURL + "/all-jobs");
       const data = await res.json();
+      console.log(data);
       setAllJobs(data);
     } catch (e) {
       console.error(e);
@@ -79,12 +80,16 @@ function SearchFilter() {
   //* handles the apply button click
   const handleFilterTypeAndCategorySearch = () => {
     setFiltered(true);
+
     setFilteredJobs(
       allJobs.filter((job) => {
         return (
-          job.type.toLowerCase() === filterTypeAndCategory.type.toLowerCase() &&
-          job.job_category.toLowerCase() ===
-            filterTypeAndCategory.job_category.toLowerCase()
+          job.type
+            .toLowerCase()
+            .includes(filterTypeAndCategory.type.toLowerCase()) &&
+          job.job_category
+            .toLowerCase()
+            .includes(filterTypeAndCategory.job_category.toLowerCase())
         );
       })
     );
@@ -258,7 +263,6 @@ function SearchFilter() {
                         control={<Radio color="default" />}
                         label="IT Support & Infrastructure"
                       />
-
                       <FormControlLabel
                         value="QA & Testing"
                         control={<Radio color="default" />}
@@ -268,6 +272,12 @@ function SearchFilter() {
                         value="Business Change & Transformation"
                         control={<Radio color="default" />}
                         label="Business Change & Transformation"
+                      />
+
+                      <FormControlLabel
+                        value="IT & Engineering"
+                        control={<Radio color="default" />}
+                        label="IT & Engineering"
                       />
                     </RadioGroup>
                   </FormControl>
@@ -310,8 +320,6 @@ function SearchFilter() {
               </div>
               {filteredJobs.length === 0
                 ? allJobs.slice(0, jobsVisible).map((job) => {
-                    console.log(job.skills);
-                    console.log(job.responsibilities[4]);
                     return (
                       <JobCard
                         role={job.role}

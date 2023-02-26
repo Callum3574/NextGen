@@ -30,8 +30,6 @@ function FullJobCard({
     setDisplayApply(!displayApply);
   };
 
-  console.log(skills);
-
   return (
     <>
       <Modal

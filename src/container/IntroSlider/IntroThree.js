@@ -3,7 +3,7 @@ import Typewriter from "typewriter-effect";
 import { Link } from "react-router-dom";
 import "../../assets/css/custom.css";
 
-const IntroThree = () => {
+const IntroThree = ({ userType }) => {
   return (
     <div
       className="intro-section section overlay"
@@ -54,6 +54,16 @@ const IntroThree = () => {
                     {" "}
                     Find me a role{" "}
                   </Link>
+                  {userType === "admin" && (
+                    <Link
+                      to={process.env.PUBLIC_URL + "/dashboard"}
+                      className="btn btn-outline-white btn-hover-primary w-50 mb-20"
+                      style={{ backgroundColor: "white", color: "black" }}
+                    >
+                      {" "}
+                      Admin Dashboard{" "}
+                    </Link>
+                  )}
                 </div>
               </div>
             </div>

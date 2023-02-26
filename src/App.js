@@ -6,6 +6,7 @@ import data from "./data//blog/BlogClassic.json";
 import LoginPage from "./pages/LoginPage.jsx";
 import { RequireAuth } from "react-auth-kit";
 import { useIsAuthenticated } from "react-auth-kit";
+import { Navigate } from "react-router-dom";
 
 const Home = lazy(() => import("./pages/Home"));
 const About = lazy(() => import("./pages/About"));
@@ -34,6 +35,7 @@ function App() {
   const [userSignedIn, setUserSignedIn] = useState(
     localStorage.getItem("authState")
   );
+  const [userType, setUserType] = useState("admin");
   const [token, setToken] = useState(localStorage.getItem("token"));
   const [expiresIn, setExpiresIn] = useState(localStorage.getItem("expiresIn"));
   const [tokenType, setTokenType] = useState(localStorage.getItem("tokenType"));
@@ -47,13 +49,12 @@ function App() {
   }, [token, expiresIn, tokenType, authState]);
 
   const userAuthenticated = async () => {
-    const res = await fetch("https://top-fork-production.up.railway.app/auth", {
+    const res = await fetch("http://localhost:8000/auth", {
       headers: {
         "x-access-token": localStorage.getItem("token"),
       },
     });
     const data = await res.json();
-    console.log(data);
     if (data.message !== "authenticated") {
       setLoginStatus(false);
       localStorage.clear();
@@ -64,7 +65,6 @@ function App() {
   };
   useEffect(() => {
     userAuthenticated();
-    console.log(loginStatus);
   }, []);
 
   return (
@@ -74,7 +74,13 @@ function App() {
           <Routes>
             <Route
               path={`${process.env.PUBLIC_URL + "/"}`}
-              element={<Home authState={authState} loginStatus={loginStatus} />}
+              element={
+                <Home
+                  userType={userType}
+                  authState={authState}
+                  loginStatus={loginStatus}
+                />
+              }
             />
 
             <Route
@@ -128,6 +134,7 @@ function App() {
                   setExpiresIn={setExpiresIn}
                   setTokenType={setTokenType}
                   setAuthState={setAuthState}
+                  setUserType={setUserType}
                 />
               }
             />
@@ -138,9 +145,15 @@ function App() {
             <Route
               path={`${process.env.PUBLIC_URL + "/dashboard"}`}
               element={
-                <RequireAuth loginPath="/login">
+                userType === "admin" ? (
                   <Dashboard />
-                </RequireAuth>
+                ) : (
+                  <Home
+                    userType={userType}
+                    authState={authState}
+                    loginStatus={loginStatus}
+                  />
+                )
               }
             />
           </Routes>

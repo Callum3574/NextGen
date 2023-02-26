@@ -13,9 +13,7 @@ const BlogDetails = ({ authState, loginStatus }) => {
 
   const getBlogData = async () => {
     try {
-      const response = await fetch(
-        "https://top-fork-production.up.railway.app/blog_posts"
-      );
+      const response = await fetch("http://localhost:8000/blog_posts");
       const jsonData = await response.json();
       console.log(jsonData.title);
       setBlogData(jsonData);

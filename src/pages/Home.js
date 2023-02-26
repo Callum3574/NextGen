@@ -18,7 +18,7 @@ import ScrollToTop from "../components/ScrollToTop.jsx";
 import "../assets/css/animations.css";
 import "../assets/css/custom.css";
 
-const Home = ({ userSignedIn, loginStatus, authState }) => {
+const Home = ({ loginStatus, authState, userType }) => {
   const [isVisible, setIsVisible] = React.useState(false);
 
   React.useEffect(() => {
@@ -39,7 +39,7 @@ const Home = ({ userSignedIn, loginStatus, authState }) => {
               "background-color 1s ease-in-out, opacity 1.3s ease-in-out",
           }}
         >
-          <IntroThree />
+          <IntroThree userType={userType} />
           {/* <HomeAboutThree /> */}
           <ServiceIconBox />
           <Funfact classOption="section-padding" />

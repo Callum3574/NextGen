@@ -1,9 +1,10 @@
 import React from "react";
+import DashboardContainer from "../container/Dashboard/Dashboard";
 
 function Dashboard() {
   return (
     <div>
-      <h1>Hello</h1>
+      <DashboardContainer />
     </div>
   );
 }
