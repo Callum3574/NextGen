@@ -33,7 +33,7 @@ const MobileNavMenu = () => {
     <nav className="site-mobile-menu">
       <ul>
         <li>
-          <NavLink to={process.env.PUBLIC_URL + "/home"}>
+          <NavLink to={process.env.PUBLIC_URL + "/"}>
             <span className="menu-text">Home</span>
           </NavLink>
         </li>
@@ -48,12 +48,12 @@ const MobileNavMenu = () => {
           </NavLink>
         </li>
         <li>
-          <NavLink to={process.env.PUBLIC_URL + "/work"}>
+          <NavLink to={process.env.PUBLIC_URL + "/job-sectors"}>
             <span className="menu-text">Sectors</span>
           </NavLink>
         </li>
         <li>
-          <NavLink to={process.env.PUBLIC_URL + "/blog-grid"}>
+          <NavLink to={process.env.PUBLIC_URL + "/blog"}>
             <span className="menu-text">Blog</span>
           </NavLink>
         </li>

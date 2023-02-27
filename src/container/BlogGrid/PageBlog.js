@@ -111,9 +111,6 @@ const PageBlog = () => {
           </div>
         </div>
         <div>
-          {/* <h4 style={{ color: "white" }} className="mt-5 px-8">
-            Filter Blogs
-          </h4> */}
           <BlogNav
             handleCateChoice={handleCateChoice}
             handleTagChoice={handleTagChoice}
@@ -131,7 +128,7 @@ const PageBlog = () => {
           <div>
             {filtered.tags.length > 0 && (
               <Breadcrumbs className="mb-2" style={{ color: "white" }}>
-                <p className="breadcrumb-anim" style={{ color: "cyan" }}>
+                <p className="breadcrumb-anim" style={{ color: "#1D96BE" }}>
                   Tags
                 </p>
                 {filtered.tags.map((item) => {
@@ -143,7 +140,7 @@ const PageBlog = () => {
           <div>
             {filtered.category.length > 0 && (
               <Breadcrumbs className="mb-2" style={{ color: "white" }}>
-                <p className="breadcrumb-anim" style={{ color: "cyan" }}>
+                <p className="breadcrumb-anim" style={{ color: "#1D96BE" }}>
                   Categories
                 </p>
                 {filtered.category.map((item) => {

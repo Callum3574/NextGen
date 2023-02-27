@@ -72,7 +72,7 @@ const Header = ({ loginStatus, authState }) => {
 
               <div className="col-xl-2 col d-none d-sm-flex justify-content-end order-1 order-xl-2">
                 <div>
-                  <Btn url="/login" name="Enquire Now!"></Btn>
+                  <Btn url="/contact" name="Enquire Now!"></Btn>
                 </div>
               </div>
             </div>

@@ -40403,3 +40403,7 @@ textarea:focus {
   background-color: blue;
   opacity: 0.5; /* Adjust as needed */
 }
+
+.mobile-menu-content {
+  background-color: white;
+}

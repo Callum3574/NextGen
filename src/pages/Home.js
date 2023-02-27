@@ -35,6 +35,7 @@ const Home = () => {
           }}
         >
           <IntroThree />
+
           <ServiceIconBox />
           <Faq />
           <TestimonialContainer />

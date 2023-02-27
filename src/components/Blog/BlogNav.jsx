@@ -58,7 +58,6 @@ const BlogNav = ({
   return (
     <div className="blog-nav d-flex ">
       <FormControl fullWidth>
-        {/* <InputLabel>Tags</InputLabel> */}
         <label>Tags</label>
 
         <NativeSelect
@@ -80,21 +79,6 @@ const BlogNav = ({
           <option>Select categories</option>
           {cateTags.map((cate) => {
             return <option value={cate}>{cate}</option>;
-          })}
-        </NativeSelect>
-      </FormControl>
-      <FormControl fullWidth>
-        {/* <InputLabel>Type</InputLabel> */}
-        <label>Type</label>
-
-        <NativeSelect
-          style={{ color: "white" }}
-          defaultValue={30}
-          onChange={handleTagChoice}
-        >
-          <option>Select type</option>
-          {blogTags.map((tag) => {
-            return <option value={tag}>{tag}</option>;
           })}
         </NativeSelect>
       </FormControl>
