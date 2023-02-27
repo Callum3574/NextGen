@@ -19,9 +19,7 @@ const Footer = () => {
               <div className="footer-widget-content">
                 <div className="content">
                   <p>
-                    <Link to={process.env.PUBLIC_URL + "/"}>
-                      (+1) 212-946-2701
-                    </Link>
+                    <Link to={process.env.PUBLIC_URL + "/"}>07344343343</Link>
                   </p>
                   <p>
                     <Link to={process.env.PUBLIC_URL + "/"}>
@@ -44,7 +42,7 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* {FooterData &&
+          {FooterData &&
             FooterData.map((single, key) => {
               return (
                 <div
@@ -54,7 +52,7 @@ const Footer = () => {
                   <FooterLinkItem data={single} key={key} />
                 </div>
               );
-            })} */}
+            })}
         </div>
 
         <div className="row">

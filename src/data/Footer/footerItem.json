@@ -1,107 +1,92 @@
 [
-    {
+  {
+    "id": 1,
+    "title": "Quick Links",
+    "list": [
+      {
         "id": 1,
-        "title": "Services",
-        "list": [
-            {
-            "id": 1,
-            "text": "Marketing",
-            "url": "/"
-            },
-            {
-            "id": 2,
-            "text": "SEO/SEM",
-            "url": "/"
-            },
-            {
-            "id": 3,
-            "text": "Development",
-            "url": "/"
-            },
-            {
-            "id": 4,
-            "text": "UX Design",
-            "url": "/"
-            }
-        ]
-    },
-    {
+        "text": "About Us",
+        "url": "/about"
+      },
+      {
         "id": 2,
-        "title": "Products",
-        "list": [
-            {
-            "id": 1,
-            "text": "Elementor Guru",
-            "url": "/"
-            },
-            {
-            "id": 2,
-            "text": "WooLentor Pro",
-            "url": "/"
-            },
-            {
-            "id": 3,
-            "text": "Plugins",
-            "badge": "New",
-            "url": "/"
-            },
-            {
-            "id": 4,
-            "text": "Page Builder",
-            "url": "/"
-            }
-        ]
-    },
-    {
+        "text": "Job Search",
+        "url": "/job-search"
+      },
+      {
         "id": 3,
-        "title": "About",
-        "list": [
-            {
-            "id": 1,
-            "text": "Features",
-            "url": "/"
-            },
-            {
-            "id": 2,
-            "text": "Our Partners",
-            "url": "/"
-            },
-            {
-            "id": 3,
-            "text": "Affiliate Program",
-            "url": "/"
-            },
-            {
-            "id": 4,
-            "text": "Pricing",
-            "url": "/"
-            }
-        ]
-    },
-    {
+        "text": "Sectors",
+        "url": "/job-sectors"
+      },
+      {
         "id": 4,
-        "title": "Contact",
-        "list": [
-            {
-            "id": 1,
-            "text": "Support Ticket",
-            "url": "/"
-            },
-            {
-            "id": 2,
-            "text": "Help Desk",
-            "url": "/"
-            },
-            {
-            "id": 3,
-            "text": "Live Chat",
-            "url": "/"
-            },
-            {
-            "id": 4,
-            "text": "FAQs",
-            "url": "/"
-            }
-        ]
-    }
+        "text": "Blog",
+        "url": "/blog"
+      },
+      {
+        "id": 5,
+        "text": "Contact Us",
+        "url": "/contact"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Sectors",
+    "list": [
+      {
+        "id": 1,
+        "text": "IT Support & Infrastructure",
+        "url": "/job-sectors"
+      },
+      {
+        "id": 2,
+        "text": "Senior Executive",
+        "url": "/job-sectors"
+      },
+      {
+        "id": 3,
+        "text": "Networking & Security",
+
+        "url": "/job-sectors"
+      },
+      {
+        "id": 4,
+        "text": "Cloud / DevOps",
+        "url": "/job-sectors"
+      },
+      {
+        "id": 5,
+        "text": "Software Engineering",
+        "url": "/job-sectors"
+      }
+    ]
+  },
+
+  {
+    "id": 4,
+    "title": "Contact",
+    "list": [
+      {
+        "id": 1,
+        "text": "Wilmslow 07344343343",
+        "url": "/"
+      },
+      {
+        "id": 2,
+        "text": "London 07344343343",
+        "url": "/"
+      },
+      {
+        "id": 3,
+        "text": "Oxford 07344343343",
+        "url": "/"
+      },
+      {
+        "id": 4,
+        "text": "Leeds 07344343343",
+        "url": "/"
+      }
+    ]
+  }
 ]

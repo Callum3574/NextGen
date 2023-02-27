@@ -169,7 +169,7 @@ function JobCard({
               style={{
                 height: "2rem",
                 color: "black",
-                borderColor: "rgb(30, 150, 190)",
+                borderColor: "rgb(70, 133, 142)",
               }}
               variant="outlined"
               className="search-button mt-1"
@@ -183,7 +183,7 @@ function JobCard({
               style={{
                 height: "2rem",
                 color: "black",
-                borderColor: "rgb(30, 150, 190)",
+                borderColor: "rgb(70, 133, 142)",
               }}
               variant="outlined"
               className="search-button mt-1"
@@ -191,9 +191,9 @@ function JobCard({
               MORE INFO
             </Button>
           </div>
-          <div className="mt-1">
+          {/* <div className="mt-1">
             <BookmarkBorderIcon />
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

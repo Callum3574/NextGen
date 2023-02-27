@@ -104,14 +104,14 @@ function SearchFilter() {
   const displayJobsCount = () => {
     if (filteredJobs.length === 0) {
       return (
-        <p>
+        <p style={{ zIndex: 1000 }}>
           Displaying {allJobs.length < 10 ? allJobs.length : jobsVisible} out of{" "}
           {allJobs.length} jobs
         </p>
       );
     } else {
       return (
-        <p>
+        <p style={{ zIndex: 1000 }}>
           Displaying{" "}
           {filteredJobs.length < 10 ? filteredJobs.length : jobsVisible} out of{" "}
           {filteredJobs.length} jobs
@@ -140,18 +140,18 @@ function SearchFilter() {
           autoComplete="on"
         >
           <div className="search-title d-flex justify-content-center flex-row w-100">
-            <div className="mb-3">
+            <div className="mb-">
               <h4 style={{ color: "white" }}>Start your job search</h4>
             </div>
             <div>
               <i
                 className="fa fa-search px-3"
-                style={{ color: "rgb(30, 150, 190)" }}
+                style={{ color: "rgb(70, 133, 142)" }}
               ></i>
             </div>
           </div>
           <div className="search-nav search-border container d-flex justify-content-start w-100 bg-blue">
-            <div className="px-3">
+            <div className="px-1">
               <input
                 onChange={handleSearchInput}
                 id="standard-basic"
@@ -171,13 +171,13 @@ function SearchFilter() {
                 className="loc-bar text-filter2"
               />
             </div>
-            <div className="px-3">
+            <div className="px-1">
               <Button
                 onClick={handleSearchFilter}
                 style={{
                   height: "2rem",
                   color: "white",
-                  borderColor: "rgb(30, 150, 190)",
+                  borderColor: "rgb(70, 133, 142)",
                 }}
                 variant="outlined"
                 className="search-button mt-1"
@@ -189,7 +189,6 @@ function SearchFilter() {
         </Box>
       </div>
 
-      <hr />
       <div>
         {allJobs.length > 0 ? (
           <div className="filter-res d-flex p-2 bd-highlight justify-content-center flex-row">
@@ -203,7 +202,7 @@ function SearchFilter() {
                 <div className="p-2 m-2 ">
                   <FormControl>
                     <FormLabel
-                      style={{ color: "rgb(30, 150, 190)" }}
+                      style={{ color: "rgb(70, 133, 142)" }}
                       id="demo-radio-buttons-group-label"
                     >
                       Job Type
@@ -236,7 +235,7 @@ function SearchFilter() {
                 <div className="p-2 m-2">
                   <FormControl>
                     <FormLabel
-                      style={{ color: "rgb(30, 150, 190)" }}
+                      style={{ color: "rgb(70, 133, 142)" }}
                       id="demo-radio-buttons-group-label"
                     >
                       Sectors

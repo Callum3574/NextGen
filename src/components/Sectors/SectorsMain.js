@@ -43,10 +43,10 @@ function SectorsMain({ sectorDetails, selectedSector }) {
                   })}
                 </ul>
               </div>
-              <div className="break-titles h-100  me-20"></div>
+              <div className="sector-text break-titles h-100 me-20"></div>
 
               <div className="sect-container container flex-column align-items-center d-flex  w-100  mt-5 me-20">
-                <div className="mt-12 d-flex flex-column align-items-center">
+                <div className="sector-text mt-12 d-flex flex-column align-items-center">
                   <Stack
                     direction="row"
                     divider={<Divider orientation="vertical" flexItem />}
@@ -55,7 +55,12 @@ function SectorsMain({ sectorDetails, selectedSector }) {
                   <img
                     className="sect-logo mt-5 h-50"
                     src="images/logo/NEXTGEN_Logo.png"
+                    alt="logo"
                   ></img>
+                  <div className="d-flex mt-2 ">
+                    <Button variant="text">Browse Live Vacancies</Button>
+                    <Button variant="text">Contact us</Button>
+                  </div>
                 </div>
               </div>
             </div>

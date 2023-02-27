@@ -15,13 +15,12 @@ const Contact = () => {
       <Header />
       <Breadcrumb
         image="images/bg/breadcrumb-bg-five.jpg"
-        title="We are an agency located in New York"
+        title="NEXTGEN TALENT SOLUTIONS"
         content="Home"
         contentTwo="Contact Us"
       />
-      <ContactInformation />
-      <GoogleMap />
       <ContactFromContainer />
+      <ContactInformation />
       <Footer />
       <ScrollToTop />
     </React.Fragment>
