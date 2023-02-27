@@ -7,10 +7,7 @@ import PropTypes from "prop-types";
 
 function Sectors({ handleSector, handleBackArrow }) {
   return (
-    <div
-      className="sector-titles container d-flex flex-row"
-      style={{ borderBottom: "2px black solid", marginBottom: "1rem" }}
-    >
+    <div className="sector-titles container d-flex flex-row">
       <div className="container d-flex flex-row mt-4 mb-4 justify-content-center">
         <i
           onClick={handleBackArrow}

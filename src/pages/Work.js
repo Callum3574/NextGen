@@ -58,6 +58,7 @@ const Work = () => {
         sectorDetails={sectorDetails}
         handleBackArrow={handleBackArrow}
       />
+
       <Footer />
       <ScrollToTop />
     </React.Fragment>

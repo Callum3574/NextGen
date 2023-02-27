@@ -6,8 +6,21 @@ import ReactVivus from "react-vivus";
 import "../../assets/css/animations.css";
 import Faq from "../../container/Faq/Faq";
 import HomeAbout from "../About/HomeAbout";
+import Divider from "@mui/material/Divider";
+import Paper from "@mui/material/Paper";
+import Stack from "@mui/material/Stack";
+import { styled } from "@mui/material/styles";
+import Button from "react-bootstrap/Button";
 
 function SectorsMain({ sectorDetails, selectedSector }) {
+  const Item = styled(Paper)(({ theme }) => ({
+    backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
+    ...theme.typography.body2,
+    padding: theme.spacing(1),
+    textAlign: "center",
+    color: theme.palette.text.secondary,
+  }));
+
   return (
     <div className="d-flex container p-8">
       {selectedSector.length ? (
@@ -19,6 +32,7 @@ function SectorsMain({ sectorDetails, selectedSector }) {
             <div className="sector-text">
               <p>{sectorDetails[0].description}</p>
             </div>
+            <hr className="mt-10 sector-titles" />
 
             <div className="d-flex justify-content-between">
               <div className=" sector-text w-25 d-flex flex-column justify-content-start mt-10 w-100">
@@ -29,11 +43,20 @@ function SectorsMain({ sectorDetails, selectedSector }) {
                   })}
                 </ul>
               </div>
-              <div className="container d-flex justify-content-start">
-                <SectorImg
-                  scale={sectorDetails[0].scale}
-                  img={sectorDetails[0].img}
-                />
+              <div className="break-titles h-100  me-20"></div>
+
+              <div className="sect-container container flex-column align-items-center d-flex  w-100  mt-5 me-20">
+                <div className="mt-12 d-flex flex-column align-items-center">
+                  <Stack
+                    direction="row"
+                    divider={<Divider orientation="vertical" flexItem />}
+                    spacing={4}
+                  ></Stack>
+                  <img
+                    className="sect-logo mt-5 h-50"
+                    src="images/logo/NEXTGEN_Logo.png"
+                  ></img>
+                </div>
               </div>
             </div>
           </div>

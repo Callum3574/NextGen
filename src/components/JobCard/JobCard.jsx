@@ -79,7 +79,7 @@ function JobCard({
 
   return (
     <div
-      className={`job-card d-flex flex-column container-sm mb-5 border w-100 ${classOption}`}
+      className={`job-card d-flex flex-column container-sm mb-5 border w-100  ${classOption}`}
     >
       <div>
         <ApplyJob
