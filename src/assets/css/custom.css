@@ -78,7 +78,40 @@ h6 {
 
 .search-box-jobs {
   background-color: #0f1e32;
+  border-bottom-right-radius: 8rem;
 }
+
+.sect-container {
+  background: linear-gradient(
+    to right,
+    #ffffff,
+    #aad3dd,
+    #ffffff,
+    #ffffff,
+    #ded3ad,
+    #ffffff
+  );
+  background-size: 1200% 200%;
+  animation: gradient 20s ease infinite;
+  border-radius: 5px;
+  border: transparent;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+/* .section,
+.section-padding-t90-b100 {
+  border-bottom-right-radius: 15rem;
+} */
 
 .text-filter {
   height: 2.5rem;
@@ -103,6 +136,30 @@ h6 {
   cursor: pointer;
 }
 
+.sector-titles {
+  border-bottom: 3px solid transparent;
+  border-image: linear-gradient(
+      to right,
+      #ffffff,
+      rgb(1, 94, 141),
+      rgb(1, 94, 141),
+      rgb(255, 255, 255)
+    )
+    1;
+}
+
+.search-underline {
+  border-bottom: 3px solid transparent;
+  border-image: linear-gradient(
+      to right,
+      #ffffff,
+      rgb(1, 94, 141),
+      rgb(1, 94, 141),
+      rgb(255, 255, 255)
+    )
+    1;
+}
+
 .back-arrow-sectors {
   cursor: pointer;
   margin-top: 1.4rem;
@@ -124,4 +181,26 @@ h6 {
 
 .loading {
   height: 30rem;
+}
+
+/* .logo-sector {
+  height: 100px;
+  width: 300px;
+} */
+
+.stats-sector {
+  border: 1px solid black;
+  border-radius: 20px;
+  text-align: center;
+}
+
+.break-titles {
+  border: 3px solid transparent;
+  border-image: linear-gradient(
+      to bottom,
+      #ffffff,
+      rgb(18, 115, 150),
+      rgb(255, 255, 255)
+    )
+    1;
 }

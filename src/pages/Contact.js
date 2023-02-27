@@ -8,11 +8,11 @@ import ContactFromContainer from "../container/ContactFromContainer/ContactFromC
 import Footer from "../container/Footer/Footer";
 import ScrollToTop from "../components/ScrollToTop.jsx";
 
-const Contact = ({ authState, loginStatus }) => {
+const Contact = () => {
   return (
     <React.Fragment>
       <SEO title="Nextgen || Contact" />
-      <Header authState={authState} loginStatus={loginStatus} />
+      <Header />
       <Breadcrumb
         image="images/bg/breadcrumb-bg-five.jpg"
         title="We are an agency located in New York"

@@ -79,7 +79,7 @@ function JobCard({
 
   return (
     <div
-      className={`job-card d-flex flex-column container-sm mb-5 border w-100 ${classOption}`}
+      className={`job-card d-flex flex-column container-sm mb-5 border w-100  ${classOption}`}
     >
       <div>
         <ApplyJob
@@ -127,7 +127,7 @@ function JobCard({
             <p>Post date: {post_date.split("").splice(0, 10).join("")}</p>
           </div>
         </div>
-        <hr style={{ color: "rgb(30, 150, 190)" }} />
+        <hr className="search-underline" />
         <div className=" d-flex">
           <div>
             <h5 className="type-category">{type}</h5>

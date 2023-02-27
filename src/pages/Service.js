@@ -13,11 +13,11 @@ import PortfolioTwo from "../container/Portfolio/PortfolioTwo";
 import SearchFilter from "../container/Search/SearchFilter";
 import AddJob from "../components/JobCard/AddJob.jsx";
 
-const Service = ({ authState, loginStatus }) => {
+const Service = () => {
   return (
     <React.Fragment>
       <SEO title="Nextgen || Job-search" />
-      <Header authState={authState} loginStatus={loginStatus} />
+      <Header />
       <Breadcrumb
         image="images/bg/breadcrumb-bg-three.jpg"
         title="Browse Current Vacancies"

@@ -42,7 +42,7 @@ export default function SignedIn({ authState }) {
           "aria-labelledby": "basic-button",
         }}
       >
-        <MenuItem onClick={handleClose}>Profile</MenuItem>
+        {<MenuItem onClick={handleClose}>Profile</MenuItem>}
         <MenuItem onClick={handleClose}>My account</MenuItem>
         <MenuItem onClick={handleLogOut}>Logout</MenuItem>
       </Menu>

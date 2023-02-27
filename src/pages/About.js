@@ -10,11 +10,11 @@ import CallToActionTwo from "../container/CallToAction/CallToActionTwo";
 import Footer from "../container/Footer/Footer";
 import ScrollToTop from "../components/ScrollToTop.jsx";
 
-const AboutUs = ({ authState, loginStatus }) => {
+const AboutUs = () => {
   return (
     <React.Fragment>
       <SEO title="Nextgen || About" />
-      <Header authState={authState} loginStatus={loginStatus} />
+      <Header />
       {/* <Breadcrumb
         image="images/bg/breadcrumb-bg.jpg"
         title="We are an agency located in New York"

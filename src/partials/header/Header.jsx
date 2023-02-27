@@ -71,11 +71,9 @@ const Header = ({ loginStatus, authState }) => {
               </div>
 
               <div className="col-xl-2 col d-none d-sm-flex justify-content-end order-1 order-xl-2">
-                {loginStatus ? (
-                  <SignedIn authState={authState} />
-                ) : (
-                  <LoginButton />
-                )}
+                <div>
+                  <Btn url="/login" name="Enquire Now!"></Btn>
+                </div>
               </div>
             </div>
           </div>

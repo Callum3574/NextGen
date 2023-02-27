@@ -43,6 +43,7 @@ function LoginPage({
   setToken,
   setTokenType,
   setExpiresIn,
+  setUserType,
 }) {
   const [currentCredentials, setCurrentCredentials] = useState({
     email: "",
@@ -64,14 +65,11 @@ function LoginPage({
 
   const handleLogin = async () => {
     try {
-      const res = await fetch(
-        "https://top-fork-production.up.railway.app/login",
-        {
-          method: "POST",
-          headers: { "Content-type": "application/json" },
-          body: JSON.stringify(currentCredentials),
-        }
-      );
+      const res = await fetch("http://localhost:8000/login", {
+        method: "POST",
+        headers: { "Content-type": "application/json" },
+        body: JSON.stringify(currentCredentials),
+      });
       const data = await res.json();
 
       if (!data.auth) {
@@ -85,6 +83,9 @@ function LoginPage({
           message: data.message,
           type: "success",
         });
+        data.user_type === 2 ? setUserType("user") : setUserType("admin");
+        console.log(data.user_type);
+
         setLoginStatus(true);
         setTimeout(() => {
           navigate("/");
