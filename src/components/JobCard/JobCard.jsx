@@ -127,7 +127,7 @@ function JobCard({
             <p>Post date: {post_date.split("").splice(0, 10).join("")}</p>
           </div>
         </div>
-        <hr style={{ color: "rgb(30, 150, 190)" }} />
+        <hr className="search-underline" />
         <div className=" d-flex">
           <div>
             <h5 className="type-category">{type}</h5>

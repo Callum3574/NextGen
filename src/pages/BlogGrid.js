@@ -7,11 +7,11 @@ import CallToAction from "../container/CallToAction/CallToAction";
 import Footer from "../container/Footer/Footer";
 import ScrollToTop from "../components/ScrollToTop.jsx";
 
-const BlogGrid = ({ authState, loginStatus }) => {
+const BlogGrid = () => {
   return (
     <React.Fragment>
       <SEO title="Nextgen || Blog" />
-      <Header authState={authState} loginStatus={loginStatus} />
+      <Header />
       <Breadcrumb
         image="images/bg/breadcrumb-bg-four.jpg"
         title="Find all our latest news, insights, and events"

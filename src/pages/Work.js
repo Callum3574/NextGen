@@ -11,29 +11,32 @@ import ProjectForm from "../components/ProjectForm/ProjectForm";
 import BrandContainer from "../container/Brand/BrandContainer.js";
 import WorkContainer from "../container/Work/WorkContainer.js";
 
-const Work = ({ authState, loginStatus }) => {
+const Work = () => {
   const [selectedSector, setSelectedSector] = useState("");
   const [sectorDetails, setSectorDetails] = useState([]);
 
   const handleSector = (e) => {
     const name = e.target.getAttribute("data-name");
+    console.log(name);
     setSelectedSector(name);
-    console.log(sectorDetails);
   };
 
   const sectorIndex = () => {
-    const index = sectors.fields.filter(
-      (index) => index.name === selectedSector
+    const index = sectors.fields.filter((index) =>
+      index.name.includes(selectedSector)
     );
+
     setSectorDetails(index);
   };
 
   const handleBackArrow = () => {
-    setSectorDetails([]);
+    setSelectedSector("");
+    // setSectorDetails([]);
   };
 
   useEffect(() => {
     sectorIndex();
+    console.log(";he");
   }, [selectedSector]);
 
   useEffect(() => {}, [sectorDetails]);
@@ -41,7 +44,7 @@ const Work = ({ authState, loginStatus }) => {
   return (
     <React.Fragment>
       <SEO title="Nextgen || Sectors" />
-      <Header authState={authState} loginStatus={loginStatus} />
+      <Header />
 
       <Breadcrumb
         image="images/bg/breadcrumb-bg-two.jpg"

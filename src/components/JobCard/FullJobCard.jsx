@@ -71,7 +71,7 @@ function FullJobCard({
 
               <div>
                 <p>
-                  <hr />
+                  <hr className="search-underline" />
                 </p>
               </div>
 
@@ -106,10 +106,10 @@ function FullJobCard({
                 </p>
               </div>
             </div>
-            <hr />
+            <hr className="search-underline" />
             <h3>Description</h3>
             <div dangerouslySetInnerHTML={{ __html: description }}></div>
-            <hr />
+            <hr className="search-underline" />
             <h3>Skills:</h3>
             {skills.map((skill, index) => {
               return (
@@ -120,7 +120,7 @@ function FullJobCard({
               );
             })}
 
-            <hr />
+            <hr className="search-underline" />
 
             <h3>Responsibilities:</h3>
             {responsibilities.map((responsibility, index) => {
@@ -131,7 +131,7 @@ function FullJobCard({
                 ></div>
               );
             })}
-            <hr />
+            <hr className="search-underline" />
 
             <div className="d-flex justify-content-center mt-5">
               <Button onClick={handleDisplayApply}>APPLY NOW</Button>

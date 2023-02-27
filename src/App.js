@@ -31,42 +31,6 @@ function App() {
     AOS.refresh();
   }, []);
 
-  const [loginStatus, setLoginStatus] = useState(false);
-  const [userSignedIn, setUserSignedIn] = useState(
-    localStorage.getItem("authState")
-  );
-  const [userType, setUserType] = useState("admin");
-  const [token, setToken] = useState(localStorage.getItem("token"));
-  const [expiresIn, setExpiresIn] = useState(localStorage.getItem("expiresIn"));
-  const [tokenType, setTokenType] = useState(localStorage.getItem("tokenType"));
-  const [authState, setAuthState] = useState(localStorage.getItem("authState"));
-
-  useEffect(() => {
-    localStorage.setItem("token", token);
-    localStorage.setItem("expiresIn", expiresIn);
-    localStorage.setItem("tokenType", tokenType);
-    localStorage.setItem("authState", authState);
-  }, [token, expiresIn, tokenType, authState]);
-
-  const userAuthenticated = async () => {
-    const res = await fetch("http://localhost:8000/auth", {
-      headers: {
-        "x-access-token": localStorage.getItem("token"),
-      },
-    });
-    const data = await res.json();
-    if (data.message !== "authenticated") {
-      setLoginStatus(false);
-      localStorage.clear();
-    } else {
-      setLoginStatus(true);
-      setUserSignedIn(localStorage.getItem("authState"));
-    }
-  };
-  useEffect(() => {
-    userAuthenticated();
-  }, []);
-
   return (
     <Router>
       <NavScrollTop>
@@ -74,87 +38,37 @@ function App() {
           <Routes>
             <Route
               path={`${process.env.PUBLIC_URL + "/"}`}
-              element={
-                <Home
-                  userType={userType}
-                  authState={authState}
-                  loginStatus={loginStatus}
-                />
-              }
+              element={<Home />}
             />
 
             <Route
               path={`${process.env.PUBLIC_URL + "/about"}`}
-              element={
-                <About authState={authState} loginStatus={loginStatus} />
-              }
+              element={<About />}
             />
             <Route
               path={`${process.env.PUBLIC_URL + "/job-search"}`}
-              element={
-                <Service authState={authState} loginStatus={loginStatus} />
-              }
+              element={<Service />}
             />
             <Route
               path={`${process.env.PUBLIC_URL + "/job-sectors"}`}
-              element={<Work authState={authState} loginStatus={loginStatus} />}
+              element={<Work />}
             />
             <Route
               path={`${process.env.PUBLIC_URL + "/work-details/:id"}`}
-              element={
-                <WorkDetails authState={authState} loginStatus={loginStatus} />
-              }
+              element={<WorkDetails />}
             />
             <Route
               path={`${process.env.PUBLIC_URL + "/blog"}`}
-              element={
-                <BlogGrid authState={authState} loginStatus={loginStatus} />
-              }
+              element={<BlogGrid />}
             />
 
             <Route
               path={`${process.env.PUBLIC_URL + "/blog-details/:id"}`}
-              element={
-                <BlogDetails authState={authState} loginStatus={loginStatus} />
-              }
+              element={<BlogDetails />}
             />
             <Route
               path={`${process.env.PUBLIC_URL + "/contact"}`}
-              element={
-                <Contact authState={authState} loginStatus={loginStatus} />
-              }
-            />
-            <Route
-              path={`${process.env.PUBLIC_URL + "/login"}`}
-              element={
-                <LoginPage
-                  setUserSignedIn={setUserSignedIn}
-                  setLoginStatus={setLoginStatus}
-                  setToken={setToken}
-                  setExpiresIn={setExpiresIn}
-                  setTokenType={setTokenType}
-                  setAuthState={setAuthState}
-                  setUserType={setUserType}
-                />
-              }
-            />
-            <Route
-              path={`${process.env.PUBLIC_URL + "/signup"}`}
-              element={<Signup />}
-            />
-            <Route
-              path={`${process.env.PUBLIC_URL + "/dashboard"}`}
-              element={
-                userType === "admin" ? (
-                  <Dashboard />
-                ) : (
-                  <Home
-                    userType={userType}
-                    authState={authState}
-                    loginStatus={loginStatus}
-                  />
-                )
-              }
+              element={<Contact />}
             />
           </Routes>
         </Suspense>

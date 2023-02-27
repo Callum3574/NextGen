@@ -78,7 +78,13 @@ h6 {
 
 .search-box-jobs {
   background-color: #0f1e32;
+  border-bottom-right-radius: 8rem;
 }
+
+/* .section,
+.section-padding-t90-b100 {
+  border-bottom-right-radius: 15rem;
+} */
 
 .text-filter {
   height: 2.5rem;
@@ -101,6 +107,29 @@ h6 {
 .sector-list:hover {
   text-decoration: underline;
   cursor: pointer;
+}
+
+.sector-titles {
+  border-bottom: 10px solid transparent;
+  border-image: linear-gradient(
+      to right,
+      #ffffff,
+      rgb(18, 115, 150),
+      rgb(255, 255, 255)
+    )
+    1;
+}
+
+.search-underline {
+  border-bottom: 5px solid transparent;
+  border-image: linear-gradient(
+      to right,
+      #ffffff,
+      rgb(1, 94, 141),
+      rgb(1, 94, 141),
+      rgb(255, 255, 255)
+    )
+    1;
 }
 
 .back-arrow-sectors {

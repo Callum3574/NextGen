@@ -8,7 +8,7 @@ import Footer from "../container/Footer/Footer";
 import ScrollToTop from "../components/ScrollToTop.jsx";
 import PropTypes from "prop-types";
 
-const BlogDetails = ({ authState, loginStatus }) => {
+const BlogDetails = () => {
   const [blogData, setBlogData] = useState([]);
 
   const getBlogData = async () => {
@@ -32,7 +32,7 @@ const BlogDetails = ({ authState, loginStatus }) => {
   return (
     <React.Fragment>
       <SEO title="Nextgen || Blog Details" />
-      <Header authState={authState} loginStatus={loginStatus} />
+      <Header />
       <Breadcrumb
         image="images/bg/breadcrumb-bg-four.jpg"
         title={post.length ? post[0].title : ""}

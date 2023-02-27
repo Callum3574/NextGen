@@ -1,24 +1,19 @@
 import React from "react";
-import { useState, useEffect } from "react";
 import SEO from "../components/SEO";
 import Header from "../partials/header/Header";
 import IntroThree from "../container/IntroSlider/IntroThree";
-import HomeAboutThree from "../container/About/HomeAboutThree";
-import Funfact from "../container/Funfact/Funfact";
+
 import ServiceIconBox from "../container/service/ServiceIconBox";
 import Faq from "../container/Faq/Faq";
-import PortfolioTwo from "../container/Portfolio/PortfolioTwo";
-import Team from "../container/Team/Team";
+
 import TestimonialContainer from "../container/Testimonial/TestimonialContainer";
-import CallToAction from "../container/CallToAction/CallToAction";
-import ContactInformation from "../container/ContactInformation/ContactInformation";
-import BrandContainer from "../container/Brand/BrandContainer";
+
 import Footer from "../container/Footer/Footer";
 import ScrollToTop from "../components/ScrollToTop.jsx";
 import "../assets/css/animations.css";
 import "../assets/css/custom.css";
 
-const Home = ({ loginStatus, authState, userType }) => {
+const Home = () => {
   const [isVisible, setIsVisible] = React.useState(false);
 
   React.useEffect(() => {
@@ -29,7 +24,7 @@ const Home = ({ loginStatus, authState, userType }) => {
     <div>
       <React.Fragment>
         <SEO title="Nextgen || Home" />
-        <Header authState={authState} loginStatus={loginStatus} />
+        <Header />
 
         <div
           style={{
@@ -39,19 +34,10 @@ const Home = ({ loginStatus, authState, userType }) => {
               "background-color 1s ease-in-out, opacity 1.3s ease-in-out",
           }}
         >
-          <IntroThree userType={userType} />
-          {/* <HomeAboutThree /> */}
+          <IntroThree />
           <ServiceIconBox />
-          <Funfact classOption="section-padding" />
-
+          <Faq />
           <TestimonialContainer />
-
-          {/* <Team /> */}
-
-          {/* <CallToAction /> */}
-          {/* <HomeBlog /> */}
-          {/* <ContactInformation classOption="bg-primary-blue" /> */}
-          {/* <BrandContainer classOption="section-padding" /> */}
           <Footer />
           <ScrollToTop />
         </div>

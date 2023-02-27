@@ -7,10 +7,10 @@ import "../../assets/css/animations.css";
 import Faq from "../../container/Faq/Faq";
 import HomeAbout from "../About/HomeAbout";
 
-function SectorsMain({ sectorDetails }) {
+function SectorsMain({ sectorDetails, selectedSector }) {
   return (
     <div className="d-flex container p-8">
-      {sectorDetails.length > 0 ? (
+      {selectedSector.length ? (
         <div className="d-flex flex-column">
           <div className="d-flex flex-column">
             <div className="sector-title d-flex flex-row justify-content-start">
