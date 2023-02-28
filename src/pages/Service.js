@@ -24,18 +24,7 @@ const Service = () => {
         content="Home"
         contentTwo="Job-search"
       />
-
       <SearchFilter />
-      {/* <AddJob /> */}
-      {/* <Networking /> */}
-
-      {/* <PortfolioTwo /> */}
-
-      {/* <ServiceIconBoxTwo /> */}
-      {/* <ServiceSkill /> */}
-      {/* <AboutSix /> */}
-      {/* <FunfactTwo /> */}
-      {/* <ContactInformationThree /> */}
       <Footer />
       <ScrollToTop />
     </React.Fragment>
