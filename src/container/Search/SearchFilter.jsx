@@ -192,11 +192,8 @@ function SearchFilter() {
       <div>
         {allJobs.length > 0 ? (
           <div className="filter-res d-flex p-2 bd-highlight justify-content-center flex-row">
-            <div
-              className="d-flex justify-content-start flex-column mt-5  "
-              style={{ marginLeft: "3rem" }}
-            >
-              <div className="filter-results border  d-flex flex-column mt-8 rounded ">
+            <div className="filter-box d-flex justify-content-start flex-column mt-5  ">
+              <div className="container filter-results border  d-flex flex-column mt-8 rounded ">
                 <h2 className="filter-results-text p-2 m-2">Filter Results</h2>
 
                 <div className="p-2 m-2 ">

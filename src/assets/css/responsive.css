@@ -1,25 +1,30 @@
 @media (max-width: 650px) {
-    .filter-res {
-        flex-direction: column !important
+  .filter-res {
+    flex-direction: column !important;
+  }
 
-    }
+  .search-nav {
+    flex-direction: column;
+    text-align: center;
+  }
 
-    .search-nav {
-        flex-direction: column;
-        text-align: center;
-    }
+  .loc-bar {
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+  }
 
-    .loc-bar {
-        margin-top: 1.5rem;
-        margin-bottom: 1rem
-    }
-
-    .filter-results{
-        flex-direction: row !important;
-        max-width: 450px;
-        overflow-x: scroll;
-        margin-right: 25px
-    
-    }
-    
+  .filter-results {
+    max-width: 310px;
+    overflow-x: scroll;
+    max-height: 300px;
+    margin-right: 2rem;
+    padding: 0;
+    margin: 0;
+  }
+  .job-card {
+    max-width: 500px;
+    max-height: 300px;
+    overflow-x: scroll;
+    font-size: medium;
+  }
 }

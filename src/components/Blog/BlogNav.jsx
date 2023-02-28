@@ -66,7 +66,9 @@ const BlogNav = ({
           place
           onChange={handleTagChoice}
         >
-          <option>Select tag(s)</option>
+          <option value="" disabled selected hidden>
+            Select tag(s)
+          </option>
           {blogTags.map((tag) => {
             return <option value={tag}>{tag}</option>;
           })}
@@ -76,7 +78,9 @@ const BlogNav = ({
         {/* <InputLabel>Category</InputLabel> */}
         <label>Category</label>
         <NativeSelect style={{ color: "white" }} onChange={handleCateChoice}>
-          <option>Select categories</option>
+          <option value="" disabled selected hidden>
+            Select categories
+          </option>
           {cateTags.map((cate) => {
             return <option value={cate}>{cate}</option>;
           })}

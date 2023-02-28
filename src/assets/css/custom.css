@@ -53,6 +53,9 @@ h6 {
 .filter-results-text {
   color: rgb(70, 133, 142);
 }
+.filter-box {
+  margin-left: 2rem;
+}
 
 .job-card {
   background-color: #feffff;
