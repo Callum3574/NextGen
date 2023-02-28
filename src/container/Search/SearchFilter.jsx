@@ -14,6 +14,7 @@ import { Link } from "react-router-dom";
 import "../../assets/css/responsive.css";
 import LinearProgress from "@mui/material/LinearProgress";
 import NativeSelect from "@mui/material/NativeSelect";
+import Alert from "@mui/material/Alert";
 
 function SearchFilter() {
   const [allJobs, setAllJobs] = useState([]);
@@ -39,6 +40,7 @@ function SearchFilter() {
       "IT & Engineering",
     ],
   });
+  const [emptyResult, setEmptyResult] = useState(false);
 
   const baseURL = "http://localhost:8000";
   const baseURLDeploy = "https://top-fork-production.up.railway.app";
@@ -105,7 +107,6 @@ function SearchFilter() {
         );
       })
     );
-    console.log(filteredJobs);
   };
 
   const handleClearFilterButton = () => {
@@ -211,27 +212,36 @@ function SearchFilter() {
                   <label>Job Type</label>
 
                   <NativeSelect
-
-                  // onChange={handleTagChoice}
+                    name="type"
+                    onChange={handleFilterTypeAndCategory}
                   >
                     <option value="" disabled selected hidden>
                       Select Job Type
                     </option>
                     {filterOptions.type.map((type) => {
-                      return <option>{type}</option>;
+                      return (
+                        <option name={type} value={type}>
+                          {type}
+                        </option>
+                      );
                     })}
                   </NativeSelect>
                 </FormControl>
                 <FormControl fullWidth>
                   <label>Sectors</label>
                   <NativeSelect
-                  // onChange={handleCateChoice}
+                    name="job_category"
+                    onChange={handleFilterTypeAndCategory}
                   >
                     <option value="" disabled selected hidden>
                       Select Sector
                     </option>
                     {filterOptions.sector.map((sector) => {
-                      return <option>{sector}</option>;
+                      return (
+                        <option value={sector} name={sector}>
+                          {sector}
+                        </option>
+                      );
                     })}
                   </NativeSelect>
                   <div className="button-filter p-2 m-2 d-flex ">
@@ -265,6 +275,15 @@ function SearchFilter() {
                     </div>
                   </div>
                 </FormControl>
+                {emptyResult && (
+                  <Alert
+                    className="mb-3 w-100 d-flex justify-content-center"
+                    variant="outlined"
+                    severity="error"
+                  >
+                    No results found!
+                  </Alert>
+                )}
               </div>
               {/* <div className="container filter-results border  d-flex flex-column mt-8 rounded ">
                 <h2 className="filter-results-text p-2 m-2">Filter Results</h2>

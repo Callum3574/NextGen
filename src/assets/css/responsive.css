@@ -1,4 +1,4 @@
-@media (max-width: 650px) {
+@media (max-width: 765px) {
   .filter-res {
     flex-direction: column !important;
   }
@@ -24,6 +24,8 @@
     display: none;
   }
   .job-card {
+    max-height: 400px;
+    overflow-x: scroll;
   }
 
   .headline {
