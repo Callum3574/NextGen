@@ -5,6 +5,8 @@ import PropTypes from "prop-types";
 import ApplyJob from "./ApplyJob";
 import FullJobCard from "./FullJobCard";
 import "../../assets/css/custom.css";
+import "../../assets/css/responsive.css";
+
 import { storage } from "../../firebase";
 import { ref, uploadBytes } from "firebase/storage";
 import BookmarkIcon from "@mui/icons-material/Bookmark";
@@ -79,7 +81,7 @@ function JobCard({
 
   return (
     <div
-      className={`job-card d-flex flex-column container-sm mb-5 border w-100  ${classOption}`}
+      className={`job-card d-flex flex-column container mb-5 border  ${classOption}`}
     >
       <div>
         <ApplyJob

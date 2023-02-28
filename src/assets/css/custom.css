@@ -53,6 +53,12 @@ h6 {
 .filter-results-text {
   color: rgb(70, 133, 142);
 }
+.filter-box {
+  margin-left: 2rem;
+}
+.filter-title {
+  margin-top: 1rem;
+}
 
 .job-card {
   background-color: #feffff;
@@ -201,4 +207,8 @@ h6 {
 
 .headline {
   filter: drop-shadow(0 0 0.6rem rgb(0, 0, 0));
+}
+
+.job-count {
+  padding: 2px;
 }
