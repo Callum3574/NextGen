@@ -2,7 +2,6 @@ import React from "react";
 import { slugify } from "../../utils";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
-import { BASE_URL } from "../../networking";
 
 const BlogClassic = ({ data }) => {
   const cate = data.categories.map((value, i) => {

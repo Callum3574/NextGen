@@ -22,7 +22,7 @@ const IntroThree = ({ userType }) => {
           overflow: "hidden",
         }}
       >
-        <svg
+        {/* <svg
           viewBox="0 0 500 90"
           preserveAspectRatio="none"
           style={{ height: "100%", width: "100%" }}
@@ -31,7 +31,7 @@ const IntroThree = ({ userType }) => {
             d="M0.00,49.99 C350.00,150.00 349.20,-49.99 500.00,49.99 L500.00,150.00 L0.00,150.00 Z"
             style={{ stroke: "none", fill: "white" }}
           ></path>
-        </svg>
+        </svg> */}
       </div>
       <div className="container">
         <div className="row row-cols-lg-1 row-cols-1">

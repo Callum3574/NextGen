@@ -23,7 +23,7 @@ a:hover {
   border-bottom: none !important;
 }
 
-.text-container {
+/* .text-container {
   opacity: 0;
   transition: opacity 1s;
   width: 100%;
@@ -31,7 +31,7 @@ a:hover {
 
 .text-container.loaded {
   opacity: 1;
-}
+} */
 
 .headline {
   font-family: "Audiowide", cursive;
@@ -141,6 +141,13 @@ h6 {
 
 .search-button {
   border-radius: 10px;
+}
+
+.search-title {
+  display: flex !important;
+  justify-content: center !important;
+  flex-direction: row !important;
+  width: 100% !important;
 }
 
 .sector-list:hover {
