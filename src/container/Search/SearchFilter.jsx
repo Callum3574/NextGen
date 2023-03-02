@@ -24,6 +24,8 @@ import SearchIcon from "@mui/icons-material/Search";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import { BASE_URL } from "../../networking";
 
+console.log(BASE_URL);
+
 function SearchFilter() {
   const [allJobs, setAllJobs] = useState([]);
   const [searchInput, setSearchInput] = useState({
@@ -52,7 +54,10 @@ function SearchFilter() {
 
   const fetchPosts = async () => {
     try {
-      const res = await fetch(BASE_URL + "/all-jobs");
+      const res = await fetch(
+        "https://top-fork-production.up.railway.app/all-jobs"
+      );
+      console.log(res);
       const data = await res.json();
       console.log(data);
       setAllJobs(data);
