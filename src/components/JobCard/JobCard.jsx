@@ -9,8 +9,8 @@ import "../../assets/css/responsive.css";
 
 import { storage } from "../../firebase";
 import { ref, uploadBytes } from "firebase/storage";
-import BookmarkIcon from "@mui/icons-material/Bookmark";
-import BookmarkBorderIcon from "@mui/icons-material/BookmarkBorder";
+// import BookmarkIcon from "@mui/icons-material/Bookmark";
+// import BookmarkBorderIcon from "@mui/icons-material/BookmarkBorder";
 function JobCard({
   classOption,
   role,

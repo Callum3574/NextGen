@@ -22,6 +22,8 @@ import InputAdornment from "@mui/material/InputAdornment";
 import AccountCircle from "@mui/icons-material/AccountCircle";
 import SearchIcon from "@mui/icons-material/Search";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
+import { BASE_URL } from "../../networking";
+
 function SearchFilter() {
   const [allJobs, setAllJobs] = useState([]);
   const [searchInput, setSearchInput] = useState({
@@ -48,12 +50,9 @@ function SearchFilter() {
   });
   const [emptyResult, setEmptyResult] = useState(false);
 
-  const baseURL = "http://localhost:8000";
-  const baseURLDeploy = "https://top-fork-production.up.railway.app";
-
   const fetchPosts = async () => {
     try {
-      const res = await fetch(baseURL + "/all-jobs");
+      const res = await fetch(BASE_URL + "/all-jobs");
       const data = await res.json();
       console.log(data);
       setAllJobs(data);
