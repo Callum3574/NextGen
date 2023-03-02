@@ -24,8 +24,6 @@ import SearchIcon from "@mui/icons-material/Search";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import { BASE_URL } from "../../networking";
 
-console.log(BASE_URL);
-
 function SearchFilter() {
   const [allJobs, setAllJobs] = useState([]);
   const [searchInput, setSearchInput] = useState({
@@ -54,9 +52,7 @@ function SearchFilter() {
 
   const fetchPosts = async () => {
     try {
-      const res = await fetch(
-        "https://top-fork-production.up.railway.app/all-jobs"
-      );
+      const res = await fetch(BASE_URL + "/all-jobs");
       console.log(res);
       const data = await res.json();
       console.log(data);
@@ -162,17 +158,15 @@ function SearchFilter() {
           noValidate
           autoComplete="on"
         >
-          <div className=" mb-3 search-title d-flex justify-content-center flex-row w-100">
-            <div className="d-flex">
-              <h4
-                style={{
-                  color: "white",
-                  textDecoration: "underline rgb(70, 133, 142)",
-                }}
-              >
-                Start your job search
-              </h4>
-            </div>
+          <div className="search-title  ">
+            <h4
+              style={{
+                color: "white",
+                textDecoration: "underline rgb(70, 133, 142)",
+              }}
+            >
+              Start your job search
+            </h4>
             <div></div>
           </div>
           <div className="search-nav search-border container d-flex justify-content-start w-100 bg-blue">
@@ -296,7 +290,7 @@ function SearchFilter() {
                       style={{
                         height: "2rem",
                         color: "black",
-                        borderColor: "rgb(30, 150, 190)",
+                        borderColor: "rgb(70, 133, 142)",
                       }}
                       variant="outlined"
                       className="search-button mt-1"
@@ -310,7 +304,7 @@ function SearchFilter() {
                       style={{
                         height: "2rem",
                         color: "black",
-                        borderColor: "rgb(30, 150, 190)",
+                        borderColor: "rgb(70, 133, 142)",
                       }}
                       variant="outlined"
                       className="search-button mt-1"
@@ -332,7 +326,7 @@ function SearchFilter() {
             </div>
             <div className="segregation"></div>
 
-            <div className="d-flex flex-column   container-md p-2 mt-1 ">
+            <div className="jobs-section d-flex flex-column   container-md p-2 mt-1 ">
               <div className="job-count">{displayJobsCount()}</div>
               {filteredJobs.length === 0
                 ? allJobs.slice(0, jobsVisible).map((job) => {

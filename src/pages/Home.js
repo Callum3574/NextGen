@@ -26,14 +26,7 @@ const Home = () => {
         <SEO title="Nextgen || Home" />
         <Header />
 
-        <div
-          style={{
-            backgroundColor: isVisible ? "transparent" : "red",
-            opacity: isVisible ? 1 : 0,
-            transition:
-              "background-color 1s ease-in-out, opacity 1.3s ease-in-out",
-          }}
-        >
+        <div>
           <IntroThree />
 
           <ServiceIconBox />
