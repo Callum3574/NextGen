@@ -6,6 +6,7 @@ import PropTypes from "prop-types";
 import Form from "react-bootstrap/Form";
 import "../../assets/css/custom.css";
 import "../../assets/css/animations.css";
+
 function FullJobCard({
   lgShow,
   setLgShow,

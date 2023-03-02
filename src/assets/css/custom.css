@@ -26,6 +26,7 @@ a:hover {
 .text-container {
   opacity: 0;
   transition: opacity 1s;
+  width: 100%;
 }
 
 .text-container.loaded {
@@ -49,20 +50,26 @@ h6 {
 .filter-results {
   background-color: #ffffff;
 }
+.filter-container {
+  width: 100%;
+}
 
 .filter-results-text {
   color: rgb(70, 133, 142);
 }
+
 .filter-box {
   margin-left: 2rem;
 }
 .filter-title {
   margin-top: 1rem;
+  width: 50%;
 }
 
 .job-card {
   background-color: #feffff;
   color: rgb(0, 0, 0);
+  padding: 2rem;
 }
 
 .type-category {
@@ -78,15 +85,14 @@ h6 {
   overflow-y: scroll;
 }
 
-.search-border {
-  /* border: 0.5px solid rgb(139, 139, 139); */
-}
 .text-filter {
   height: 2rem;
 }
 
 .search-box-jobs {
   background-color: #0f1e32;
+}
+.jobs-container {
 }
 
 .sect-container {
@@ -211,4 +217,8 @@ h6 {
 
 .job-count {
   padding: 2px;
+}
+
+.textfield-label {
+  color: white !important;
 }

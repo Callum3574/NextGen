@@ -40,12 +40,16 @@
     margin-left: 10px;
   }
   .button-filter {
-    justify-content: center;
+    justify-content: start;
   }
   .filter-box {
-    padding: 0;
+    padding: 0px;
     height: 50%;
     margin-top: 5rem;
+    margin-left: 2rem;
+    width: 100%;
+  }
+  .segregation {
     border-bottom: 3px solid transparent;
     border-image: linear-gradient(
         to right,
@@ -54,6 +58,7 @@
         rgb(255, 255, 255)
       )
       1;
+    width: 100%;
   }
 
   .filter-title {
@@ -71,5 +76,18 @@
 
   .filter-container {
     margin-right: 1rem;
+  }
+  .res-container {
+    flex-direction: column;
+  }
+  .res-search {
+    margin-bottom: 1rem;
+  }
+  .res-search-button {
+    text-align: center;
+  }
+  .full-card-apply-modal {
+    max-height: 700px;
+    overflow-y: scroll;
   }
 }
