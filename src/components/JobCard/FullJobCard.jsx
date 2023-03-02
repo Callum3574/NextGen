@@ -6,7 +6,6 @@ import PropTypes from "prop-types";
 import Form from "react-bootstrap/Form";
 import "../../assets/css/custom.css";
 import "../../assets/css/animations.css";
-
 function FullJobCard({
   lgShow,
   setLgShow,
@@ -81,31 +80,21 @@ function FullJobCard({
               </div>
             </div>
 
-            <div className="d-flex mt-1 flex-row">
-              <div className="d-flex flex-row">
-                <p>
-                  <strong>Location : </strong>
-                  {location}
-                </p>
-              </div>
-              <div className="px-20">
-                <p>
-                  <strong>Salary : </strong> {salary}
-                </p>
-              </div>
-            </div>
-            <div className="d-flex flex-row">
-              <div className="mt-2">
-                <p>
-                  <strong>Industry : </strong>
-                  {industry}
-                </p>
-              </div>
-              <div className="mt-2 px-30">
-                <p>
-                  <strong>Reference: {job_ref}</strong>
-                </p>
-              </div>
+            <div className="job-item-container mt-1">
+              <p className="job-item">
+                <strong>Location : </strong>
+                {location}
+              </p>
+              <p className="job-item">
+                <strong>Salary : </strong> {salary}
+              </p>
+              <p className="job-item">
+                <strong>Industry : </strong>
+                {industry}
+              </p>
+              <p className="job-item">
+                <strong>Reference: {job_ref}</strong>
+              </p>
             </div>
             <hr className="search-underline" />
             <h3>Description</h3>

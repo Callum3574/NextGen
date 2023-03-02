@@ -41,6 +41,7 @@
   }
   .button-filter {
     justify-content: start;
+    padding: 0;
   }
   .filter-box {
     padding: 0px;
@@ -89,5 +90,8 @@
   .full-card-apply-modal {
     max-height: 700px;
     overflow-y: scroll;
+  }
+  .job-item-container {
+    flex-direction: column;
   }
 }

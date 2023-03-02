@@ -92,7 +92,13 @@ h6 {
 .search-box-jobs {
   background-color: #0f1e32;
 }
-.jobs-container {
+.job-item {
+  margin-right: 2rem;
+}
+
+.job-item-container {
+  display: flex;
+  flex-direction: row;
 }
 
 .sect-container {
