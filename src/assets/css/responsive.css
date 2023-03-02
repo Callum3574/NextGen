@@ -1,4 +1,4 @@
-@media (max-width: 820px) {
+@media (max-width: 885px) {
   .filter-res {
     flex-direction: column !important;
   }
@@ -18,13 +18,13 @@
     max-width: 310px;
     overflow-x: scroll;
     max-height: 300px;
-    margin-right: 2rem;
+    margin-right: 1rem;
     padding: 0;
     margin: 0;
     display: none;
   }
   .job-card {
-    max-height: 400px;
+    max-height: 450px;
     overflow-x: scroll;
     /* border: 0.5px solid rgb(70, 133, 142) !important; */
     width: 90% !important;
@@ -42,14 +42,18 @@
     margin-left: 10px;
   }
   .button-filter {
+    display: flex;
     justify-content: start;
+    margin-bottom: 2rem;
+    margin-top: 1rem;
+
     padding: 0;
   }
   .filter-box {
     padding: 0px;
     height: 50%;
     margin-top: 5rem;
-    margin-left: 2rem;
+    margin-left: 3rem !important;
     width: 100%;
   }
 
@@ -67,6 +71,7 @@
 
   .filter-title {
     margin-bottom: 20rem;
+    margin-right: 0rem !important;
   }
   html {
     width: 100%;
@@ -83,15 +88,16 @@
   .filter-container {
     margin-right: 1rem;
   }
-  .res-container {
-    flex-direction: column;
-    margin-right: 1.5rem;
+  .search-nav {
+    margin-left: 2rem !important;
   }
+
   .res-search {
-    margin-bottom: 1rem;
+    margin-bottom: 0rem;
   }
   .res-search-button {
     text-align: start;
+    margin-left: 1rem !important;
   }
   .full-card-apply-modal {
     max-height: 700px;
@@ -101,8 +107,28 @@
     flex-direction: column;
   }
 
+  h4,
   .search-title {
-    justify-content: start !important;
-    margin-left: 2rem !important;
+    font-size: medium !important;
+    margin-right: 9rem;
+  }
+
+  .type-category,
+  .text-container {
+    font-size: small;
+  }
+
+  .role-title {
+    font-size: medium;
+  }
+  .job-card-button {
+    font-size: x-small !important;
+  }
+  .search-title {
+    margin-left: 20px !important;
+  }
+  .res-container {
+    flex-direction: column;
+    margin-right: 1.5rem;
   }
 }

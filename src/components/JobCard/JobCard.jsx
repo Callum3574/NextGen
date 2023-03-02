@@ -176,7 +176,7 @@ function JobCard({
                 borderColor: "rgb(70, 133, 142)",
               }}
               variant="outlined"
-              className="search-button mt-1"
+              className="job-card-button search-button mt-1"
             >
               APPLY NOW
             </Button>
@@ -190,7 +190,7 @@ function JobCard({
                 borderColor: "rgb(70, 133, 142)",
               }}
               variant="outlined"
-              className="search-button mt-1"
+              className="job-card-button search-button mt-1"
             >
               MORE INFO
             </Button>

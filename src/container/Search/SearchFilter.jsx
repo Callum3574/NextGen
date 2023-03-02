@@ -160,6 +160,7 @@ function SearchFilter() {
         >
           <div className="search-title  ">
             <h4
+              className="search-title"
               style={{
                 color: "white",
                 textDecoration: "underline rgb(70, 133, 142)",
@@ -231,7 +232,7 @@ function SearchFilter() {
                   borderColor: "rgb(70, 133, 142)",
                 }}
                 variant="outlined"
-                className="search-button mt-7 px-6 m-2"
+                className="search-button-res mt-7 px-6 m-2"
               >
                 SEARCH
               </Button>
@@ -244,8 +245,9 @@ function SearchFilter() {
         {allJobs.length > 0 ? (
           <div className="filter-res d-flex  bd-highlight justify-content-center p-1 flex-row">
             <div className="filter-box d-flex justify-content-start flex-column mt-2  ">
-              <h4 className="filter-title mb-5">Filter Results</h4>
+              <div></div>
               <FormControl fullWidth>
+                <h4 className="filter-title mb-5">Filter Results</h4>
                 <label>Job Type</label>
 
                 <NativeSelect
@@ -283,35 +285,31 @@ function SearchFilter() {
                     );
                   })}
                 </NativeSelect>
-                <div className="button-filter p-2 m-2 d-flex ">
-                  <div>
-                    <Button
-                      onClick={handleFilterTypeAndCategorySearch}
-                      style={{
-                        height: "2rem",
-                        color: "black",
-                        borderColor: "rgb(70, 133, 142)",
-                      }}
-                      variant="outlined"
-                      className="search-button mt-1"
-                    >
-                      Apply
-                    </Button>
-                  </div>
-                  <div className="px-2">
-                    <Button
-                      onClick={handleClearFilterButton}
-                      style={{
-                        height: "2rem",
-                        color: "black",
-                        borderColor: "rgb(70, 133, 142)",
-                      }}
-                      variant="outlined"
-                      className="search-button mt-1"
-                    >
-                      CLEAR
-                    </Button>
-                  </div>
+                <div className="button-filter  ">
+                  <Button
+                    onClick={handleFilterTypeAndCategorySearch}
+                    style={{
+                      height: "2rem",
+                      color: "black",
+                      borderColor: "rgb(70, 133, 142)",
+                    }}
+                    variant="outlined"
+                    className="search-button mt-1"
+                  >
+                    Apply
+                  </Button>
+                  <Button
+                    onClick={handleClearFilterButton}
+                    style={{
+                      height: "2rem",
+                      color: "black",
+                      borderColor: "rgb(70, 133, 142)",
+                    }}
+                    variant="outlined"
+                    className="search-button mt-1"
+                  >
+                    CLEAR
+                  </Button>
                 </div>
               </FormControl>
               {emptyResult && (
