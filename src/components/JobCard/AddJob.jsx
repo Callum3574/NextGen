@@ -1,9 +1,6 @@
 import React, { useState } from "react";
-
+import { BASE_URL } from "../../networking";
 function AddJob() {
-  const baseURL = "http://localhost:8000";
-  const baseURLDeploy = "https://top-fork-production.up.railway.app";
-
   const [jobDetails, setJobDetails] = useState({
     title: "",
     type: "",
@@ -26,7 +23,7 @@ function AddJob() {
   };
 
   const postJobs = async () => {
-    const res = await fetch(baseURL + "/post-job", {
+    const res = await fetch(BASE_URL + "/post-job", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(jobDetails),

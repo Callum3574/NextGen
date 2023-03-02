@@ -2,22 +2,19 @@ import React, { useEffect } from "react";
 import { slugify } from "../../utils";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
-
+import { BASE_URL } from "../../networking";
 const BlogDetailsFull = ({ post }) => {
   const increaseViewCount = async () => {
-    const res = await fetch(
-      "https://top-fork-production.up.railway.app/view_count",
-      {
-        method: "PATCH",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          view: parseInt(post[0].view) + 1,
-          id: post[0].id,
-        }),
-      }
-    );
+    const res = await fetch(BASE_URL + "/view_count", {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        view: parseInt(post[0].view) + 1,
+        id: post[0].id,
+      }),
+    });
   };
 
   useEffect(() => {

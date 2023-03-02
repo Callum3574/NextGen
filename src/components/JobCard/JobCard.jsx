@@ -9,8 +9,8 @@ import "../../assets/css/responsive.css";
 
 import { storage } from "../../firebase";
 import { ref, uploadBytes } from "firebase/storage";
-import BookmarkIcon from "@mui/icons-material/Bookmark";
-import BookmarkBorderIcon from "@mui/icons-material/BookmarkBorder";
+// import BookmarkIcon from "@mui/icons-material/Bookmark";
+// import BookmarkBorderIcon from "@mui/icons-material/BookmarkBorder";
 function JobCard({
   classOption,
   role,
@@ -79,9 +79,11 @@ function JobCard({
     });
   };
 
+  console.log(description.join());
+
   return (
     <div
-      className={`job-card d-flex flex-column container mb-5 border  ${classOption}`}
+      className={`job-card d-flex flex-column container mb-5 border w-100  ${classOption}`}
     >
       <div>
         <ApplyJob
@@ -160,7 +162,7 @@ function JobCard({
         </div>
 
         <div className="mt-3">
-          <p>{limitTextLength(description, 300)}</p>
+          <p>{limitTextLength(description.join(), 200)}</p>
         </div>
 
         <div className="d-flex justify-content-start mt-5">

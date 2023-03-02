@@ -2,11 +2,12 @@ import React from "react";
 import { slugify } from "../../utils";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
+import { BASE_URL } from "../../networking";
 
 const BlogClassic = ({ data }) => {
   const cate = data.categories.map((value, i) => {
     return (
-      <Link to={process.env.PUBLIC_URL + `/category/${slugify(value)}`} key={i}>
+      <Link to={BASE_URL + `/category/${slugify(value)}`} key={i}>
         {value}
         {i !== data.categories.length - 1 && ","}
       </Link>
@@ -16,10 +17,7 @@ const BlogClassic = ({ data }) => {
   return (
     <div className="blog-3 col">
       <div className="thumbnail">
-        <Link
-          to={process.env.PUBLIC_URL + `/blog-details/${data.id}`}
-          className="image"
-        >
+        <Link to={BASE_URL + `/blog-details/${data.id}`} className="image">
           <img
             src={`${process.env.PUBLIC_URL}/${data.largeImage}`}
             alt="Blog "
@@ -45,15 +43,13 @@ const BlogClassic = ({ data }) => {
           </li>
         </ul>
         <h3 className="title">
-          <Link to={process.env.PUBLIC_URL + `/blog-details/${data.id}`}>
-            {data.title}
-          </Link>
+          <Link to={BASE_URL + `/blog-details/${data.id}`}>{data.title}</Link>
         </h3>
         <div className="desc">
           <p>{data.excerpt}</p>
         </div>
         <Link
-          to={process.env.PUBLIC_URL + `/blog-details/${data.id}`}
+          to={BASE_URL + `/blog-details/${data.id}`}
           className="btn btn-primary btn-hover-secondary mt-6"
         >
           Read More

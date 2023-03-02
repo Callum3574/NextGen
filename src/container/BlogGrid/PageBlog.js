@@ -1,14 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import BlogClassicData from "../../data/blog/BlogClassic.json";
 import BlogItem from "../../components/Blog/BlogItem";
 import BlogNav from "../../components/Blog/BlogNav.jsx";
-import "../../assets/css/custom.css";
-import "../../assets/css/animations.css";
-import Typography from "@mui/material/Typography";
 import Breadcrumbs from "@mui/material/Breadcrumbs";
 import LinearProgress from "@mui/material/LinearProgress";
 import Alert from "@mui/material/Alert";
+import { BASE_URL } from "../../networking";
+import "../../assets/css/custom.css";
+import "../../assets/css/animations.css";
 
 const PageBlog = () => {
   const [blogData, setBlogData] = useState([]);
@@ -22,7 +20,7 @@ const PageBlog = () => {
 
   const getBlogData = async () => {
     try {
-      const response = await fetch("http://localhost:8000/blog_posts");
+      const response = await fetch(BASE_URL + "/blog_posts");
       const jsonData = await response.json();
       console.log(jsonData);
       setBlogData(jsonData);

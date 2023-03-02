@@ -2,11 +2,6 @@ import { useEffect, Suspense, lazy, useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import AOS from "aos";
 import NavScrollTop from "./components/NavScrollTop";
-import data from "./data//blog/BlogClassic.json";
-import LoginPage from "./pages/LoginPage.jsx";
-import { RequireAuth } from "react-auth-kit";
-import { useIsAuthenticated } from "react-auth-kit";
-import { Navigate } from "react-router-dom";
 
 const Home = lazy(() => import("./pages/Home"));
 const About = lazy(() => import("./pages/About"));
@@ -16,9 +11,6 @@ const WorkDetails = lazy(() => import("./pages/WorkDetails"));
 const BlogGrid = lazy(() => import("./pages/BlogGrid"));
 const Contact = lazy(() => import("./pages/Contact"));
 const BlogDetails = lazy(() => import("./pages/BlogDetails"));
-const Signup = lazy(() => import("./pages/SignUp"));
-const Login = lazy(() => import("./pages/LoginPage"));
-const Dashboard = lazy(() => import("./pages/Dashboard"));
 
 function App() {
   useEffect(() => {

@@ -18,17 +18,17 @@ const IntroThree = ({ userType }) => {
           bottom: 0,
           left: 0,
           right: 0,
-          height: "150px",
+          height: "50px",
           overflow: "hidden",
         }}
       >
         <svg
-          viewBox="0 0 500 150"
+          viewBox="0 0 500 90"
           preserveAspectRatio="none"
           style={{ height: "100%", width: "100%" }}
         >
           <path
-            d="M0.00,49.99 C150.00,150.00 349.20,-49.99 500.00,49.99 L500.00,150.00 L0.00,150.00 Z"
+            d="M0.00,49.99 C350.00,150.00 349.20,-49.99 500.00,49.99 L500.00,150.00 L0.00,150.00 Z"
             style={{ stroke: "none", fill: "white" }}
           ></path>
         </svg>
