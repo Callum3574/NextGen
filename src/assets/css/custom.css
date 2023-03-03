@@ -23,16 +23,6 @@ a:hover {
   border-bottom: none !important;
 }
 
-/* .text-container {
-  opacity: 0;
-  transition: opacity 1s;
-  width: 100%;
-}
-
-.text-container.loaded {
-  opacity: 1;
-} */
-
 .headline {
   font-family: "Audiowide", cursive;
   font-size: 2.5rem;
@@ -123,10 +113,6 @@ h6 {
     background-position: 0% 50%;
   }
 }
-/* .section,
-.section-padding-t90-b100 {
-  border-bottom-right-radius: 15rem;
-} */
 
 .text-filter {
   height: 2.5rem;
@@ -205,9 +191,26 @@ h6 {
   height: 30rem;
 }
 
-/* .logo-sector {
-  height: 100px;
-  width: 300px;
+.blog-nav {
+  margin-bottom: 20px;
+}
+
+.blog-button-nav {
+  margin-top: 0.5rem;
+  margin-left: 2rem;
+}
+
+.blog-select-control {
+  display: flex;
+  justify-content: space-between;
+}
+
+.cate-filter {
+  margin-left: 2rem !important;
+}
+
+/* .tag-filter {
+  margin-right: 2rem !important;
 } */
 
 .stats-sector {

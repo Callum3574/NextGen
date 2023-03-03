@@ -160,7 +160,7 @@ function SearchFilter() {
   };
 
   return (
-    <div className=" wrapper bg-primary-blue">
+    <div className="wrapper bg-primary-blue">
       <div className=" search-box-jobs d-flex p-2 bd-highlight justify-content-center">
         <Box
           component="form"
