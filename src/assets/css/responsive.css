@@ -31,7 +31,7 @@
   }
 
   .headline {
-    font-size: 1.5rem;
+    font-size: 1.5rem !important;
   }
 
   .home-button {
@@ -99,8 +99,9 @@
     text-align: start;
     margin-left: 1rem !important;
   }
-  .full-card-apply-modal {
-    max-height: 700px;
+  .full-card-apply-modal,
+  .apply-modal {
+    max-height: 500px;
     overflow-y: scroll;
   }
   .job-item-container {
@@ -130,5 +131,14 @@
   .res-container {
     flex-direction: column;
     margin-right: 1.5rem;
+  }
+  .full-card-apply-modal {
+    font-size: x-small;
+  }
+  .modal-title {
+    font-size: medium;
+  }
+  .job-title-header {
+    font-size: medium;
   }
 }

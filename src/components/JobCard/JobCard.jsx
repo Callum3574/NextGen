@@ -50,7 +50,6 @@ function JobCard({
 
   const handleUserApply = (e) => {
     setUserApplying({ ...userApplying, [e.target.name]: e.target.value });
-    console.log(userApplying);
   };
 
   useEffect(() => {
@@ -78,8 +77,6 @@ function JobCard({
       resetUserApplying();
     });
   };
-
-  console.log(description.join());
 
   return (
     <div

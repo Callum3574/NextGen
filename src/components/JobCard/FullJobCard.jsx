@@ -6,6 +6,8 @@ import PropTypes from "prop-types";
 import Form from "react-bootstrap/Form";
 import "../../assets/css/custom.css";
 import "../../assets/css/animations.css";
+import "../../assets/css/responsive.css";
+
 function FullJobCard({
   lgShow,
   setLgShow,
@@ -66,7 +68,7 @@ function FullJobCard({
           <Modal.Body>
             <div className="d-flex">
               <div>
-                <h5>{type}</h5>
+                <h5 className="job-title-header">{type}</h5>
               </div>
 
               <div>
@@ -76,7 +78,7 @@ function FullJobCard({
               </div>
 
               <div className="px-4">
-                <h5>{job_category}</h5>
+                <h5 className="job-title-header">{job_category}</h5>
               </div>
             </div>
 
@@ -97,10 +99,10 @@ function FullJobCard({
               </p>
             </div>
             <hr className="search-underline" />
-            <h3>Description</h3>
+            <h3 className="job-title-header">Description</h3>
             <div dangerouslySetInnerHTML={{ __html: description }}></div>
             <hr className="search-underline" />
-            <h3>Skills:</h3>
+            <h3 className="job-title-header">Skills:</h3>
             {skills.map((skill, index) => {
               return (
                 <div
@@ -112,7 +114,7 @@ function FullJobCard({
 
             <hr className="search-underline" />
 
-            <h3>Responsibilities:</h3>
+            <h3 className="job-title-header">Responsibilities:</h3>
             {responsibilities.map((responsibility, index) => {
               return (
                 <div

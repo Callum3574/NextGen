@@ -2,7 +2,6 @@ import React from "react";
 import { createRoot } from "react-dom/client";
 import App from "./App";
 import { AuthProvider } from "react-auth-kit";
-// CSS File Here
 import "swiper/css";
 import "aos/dist/aos.css";
 import "react-modal-video/scss/modal-video.scss";

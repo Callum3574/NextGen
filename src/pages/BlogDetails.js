@@ -7,19 +7,17 @@ import BlogDetailsContainer from "../container/BlogGrid/BlogDetailsContainer";
 import Footer from "../container/Footer/Footer";
 import ScrollToTop from "../components/ScrollToTop.jsx";
 import PropTypes from "prop-types";
+import { BASE_URL } from "../networking";
 
 const BlogDetails = () => {
   const [blogData, setBlogData] = useState([]);
 
   const getBlogData = async () => {
     try {
-      const response = await fetch("http://localhost:8000/blog_posts");
+      const response = await fetch(BASE_URL + "/blog_posts");
       const jsonData = await response.json();
-      console.log(jsonData.title);
       setBlogData(jsonData);
-    } catch (err) {
-      console.error(err.message);
-    }
+    } catch (err) {}
   };
 
   useEffect(() => {
@@ -28,7 +26,6 @@ const BlogDetails = () => {
   let { id } = useParams();
   const blogId = parseInt(id, 10);
   const post = blogData.filter((blog) => blog.id === blogId);
-  console.log(post);
   return (
     <React.Fragment>
       <SEO title="Nextgen || Blog Details" />

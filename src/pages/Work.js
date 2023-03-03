@@ -17,7 +17,6 @@ const Work = () => {
 
   const handleSector = (e) => {
     const name = e.target.getAttribute("data-name");
-    console.log(name);
     setSelectedSector(name);
   };
 
@@ -36,7 +35,6 @@ const Work = () => {
 
   useEffect(() => {
     sectorIndex();
-    console.log(";he");
   }, [selectedSector]);
 
   useEffect(() => {}, [sectorDetails]);
