@@ -5,6 +5,7 @@ import Modal from "react-bootstrap/Modal";
 import ReactVivus from "react-vivus";
 import PropTypes from "prop-types";
 import "../../assets/css/animations.css";
+import "../../assets/css/responsive.css";
 
 function ApplyJob({
   show,
@@ -21,7 +22,7 @@ function ApplyJob({
         show={show}
         onHide={handleClose}
       >
-        <div className="p-5">
+        <div className="apply-modal p-5">
           <Modal.Header closeButton style={{ zIndex: "100" }}>
             <Modal.Title>Apply now</Modal.Title>
             <div className={` text-center`}>
