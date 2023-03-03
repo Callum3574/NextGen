@@ -49,7 +49,7 @@ function SearchFilter() {
         setEmptyResult(true);
         setTimeout(() => {
           setEmptyResult(false);
-        }, 2000);
+        }, 5000);
       }
     };
     if (filtered) {
@@ -395,7 +395,7 @@ function SearchFilter() {
             </div>
           </div>
         ) : (
-          <div className="loading">
+          <div className="loading w-100 ">
             <h4>Loading ...</h4>
             <LinearProgress />
           </div>

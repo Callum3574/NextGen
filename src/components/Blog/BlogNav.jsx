@@ -4,11 +4,10 @@ import InputLabel from "@mui/material/InputLabel";
 import FormControl from "@mui/material/FormControl";
 import NativeSelect from "@mui/material/NativeSelect";
 import Alert from "@mui/material/Alert";
-
 import { useState, useEffect } from "react";
 import Button from "@mui/material/Button";
-
 import "../../assets/css/custom.css";
+import "../../assets/css/responsive.css";
 
 const BlogNav = ({
   blogData,

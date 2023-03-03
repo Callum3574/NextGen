@@ -22,10 +22,9 @@ const PageBlog = () => {
     try {
       const response = await fetch(BASE_URL + "/blog_posts");
       const jsonData = await response.json();
-      console.log(jsonData);
       setBlogData(jsonData);
     } catch (err) {
-      console.error(err.message);
+      return err;
     }
   };
 
@@ -35,19 +34,24 @@ const PageBlog = () => {
 
   const handleTagChoice = (e) => {
     const selectedTags = e.target.value;
-    setFiltered((prev) => {
-      return { ...prev, tags: [...filtered.tags, selectedTags] };
-    });
-    console.log(filtered);
+    if (filtered.tags.includes(selectedTags)) {
+      return;
+    } else {
+      setFiltered((prev) => {
+        return { ...prev, tags: [...filtered.tags, selectedTags] };
+      });
+    }
   };
 
   const handleCateChoice = (e) => {
     const selectedCate = e.target.value;
-    console.log(selectedCate);
-    setFiltered((prev) => {
-      return { ...prev, category: [...filtered.category, selectedCate] };
-    });
-    console.log(filtered);
+    if (filtered.category.includes(selectedCate)) {
+      return;
+    } else {
+      setFiltered((prev) => {
+        return { ...prev, category: [...filtered.category, selectedCate] };
+      });
+    }
   };
 
   const handleFilterSearch = () => {
@@ -171,7 +175,7 @@ const PageBlog = () => {
           </div>
         </div>
       ) : (
-        <div className="loading">
+        <div className="loading w-100 ">
           <h4>Loading ...</h4>
           <LinearProgress />
         </div>
