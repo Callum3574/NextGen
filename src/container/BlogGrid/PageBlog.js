@@ -7,6 +7,7 @@ import Alert from "@mui/material/Alert";
 import { BASE_URL } from "../../networking";
 import "../../assets/css/custom.css";
 import "../../assets/css/animations.css";
+import "../../assets/css/responsive.css";
 
 const PageBlog = () => {
   const [blogData, setBlogData] = useState([]);
@@ -22,10 +23,9 @@ const PageBlog = () => {
     try {
       const response = await fetch(BASE_URL + "/blog_posts");
       const jsonData = await response.json();
-      console.log(jsonData);
       setBlogData(jsonData);
     } catch (err) {
-      console.error(err.message);
+      return err;
     }
   };
 
@@ -35,19 +35,24 @@ const PageBlog = () => {
 
   const handleTagChoice = (e) => {
     const selectedTags = e.target.value;
-    setFiltered((prev) => {
-      return { ...prev, tags: [...filtered.tags, selectedTags] };
-    });
-    console.log(filtered);
+    if (filtered.tags.includes(selectedTags)) {
+      return;
+    } else {
+      setFiltered((prev) => {
+        return { ...prev, tags: [...filtered.tags, selectedTags] };
+      });
+    }
   };
 
   const handleCateChoice = (e) => {
     const selectedCate = e.target.value;
-    console.log(selectedCate);
-    setFiltered((prev) => {
-      return { ...prev, category: [...filtered.category, selectedCate] };
-    });
-    console.log(filtered);
+    if (filtered.category.includes(selectedCate)) {
+      return;
+    } else {
+      setFiltered((prev) => {
+        return { ...prev, category: [...filtered.category, selectedCate] };
+      });
+    }
   };
 
   const handleFilterSearch = () => {
@@ -78,7 +83,6 @@ const PageBlog = () => {
         }, 5000);
       }
     }
-    console.log(filteredData);
 
     setFilteredResults(filteredData);
   };
@@ -95,17 +99,17 @@ const PageBlog = () => {
 
   return (
     <div>
-      <div className="search-box-jobs d-flex flex-column p-1 bd-highlight align-items-center">
+      <div className="blog-nav search-box-jobs d-flex flex-column p-2 bd-highlight align-items-center">
         <div className="d-flex justify-content-center flex-row w-100">
           <div className="blog-title m-2">
-            <h4 style={{ color: "white" }}>Browse Our Blogs</h4>
-          </div>
-
-          <div className="mt-2 px-2">
-            <i
-              className="fa fa-search"
-              style={{ color: "rgb(30, 150, 190)" }}
-            ></i>
+            <h4
+              style={{
+                textDecoration: "underline rgb(70, 133, 142)",
+                color: "white",
+              }}
+            >
+              Browse Our Blogs
+            </h4>
           </div>
         </div>
         <div>
@@ -126,7 +130,10 @@ const PageBlog = () => {
           <div>
             {filtered.tags.length > 0 && (
               <Breadcrumbs className="mb-2" style={{ color: "white" }}>
-                <p className="breadcrumb-anim" style={{ color: "#1D96BE" }}>
+                <p
+                  className="breadcrumb-anim"
+                  style={{ color: "rgb(70, 133, 142)" }}
+                >
                   Tags
                 </p>
                 {filtered.tags.map((item) => {
@@ -138,7 +145,10 @@ const PageBlog = () => {
           <div>
             {filtered.category.length > 0 && (
               <Breadcrumbs className="mb-2" style={{ color: "white" }}>
-                <p className="breadcrumb-anim" style={{ color: "#1D96BE" }}>
+                <p
+                  className="breadcrumb-anim"
+                  style={{ color: "rgb(70, 133, 142)" }}
+                >
                   Categories
                 </p>
                 {filtered.category.map((item) => {
@@ -171,7 +181,7 @@ const PageBlog = () => {
           </div>
         </div>
       ) : (
-        <div className="loading">
+        <div className="loading w-100 ">
           <h4>Loading ...</h4>
           <LinearProgress />
         </div>

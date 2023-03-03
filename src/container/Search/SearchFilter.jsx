@@ -49,7 +49,7 @@ function SearchFilter() {
         setEmptyResult(true);
         setTimeout(() => {
           setEmptyResult(false);
-        }, 2000);
+        }, 5000);
       }
     };
     if (filtered) {
@@ -160,7 +160,7 @@ function SearchFilter() {
   };
 
   return (
-    <div className=" wrapper bg-primary-blue">
+    <div className="wrapper bg-primary-blue">
       <div className=" search-box-jobs d-flex p-2 bd-highlight justify-content-center">
         <Box
           component="form"
@@ -395,7 +395,7 @@ function SearchFilter() {
             </div>
           </div>
         ) : (
-          <div className="loading">
+          <div className="loading w-100 ">
             <h4>Loading ...</h4>
             <LinearProgress />
           </div>
