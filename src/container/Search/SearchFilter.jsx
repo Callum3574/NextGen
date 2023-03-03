@@ -53,12 +53,10 @@ function SearchFilter() {
   const fetchPosts = async () => {
     try {
       const res = await fetch(BASE_URL + "/all-jobs");
-      console.log(res);
       const data = await res.json();
-      console.log(data);
       setAllJobs(data);
     } catch (e) {
-      console.error(e);
+      return e;
     }
   };
 
@@ -72,7 +70,6 @@ function SearchFilter() {
 
   const handleSearchInput = (e) => {
     setSearchInput({ ...searchInput, [e.target.name]: e.target.value });
-    console.log(searchInput);
   };
 
   //* handles the search button click
@@ -118,6 +115,15 @@ function SearchFilter() {
   const handleClearFilterButton = () => {
     setFiltered(false);
     setFilteredJobs([]);
+    setFilterTypeAndCategory({
+      type: "",
+      job_category: "",
+    });
+    setSearchInput({
+      jobTitle: "",
+      location: "",
+    });
+    console.log(filterTypeAndCategory);
   };
 
   const displayJobsCount = () => {
@@ -175,6 +181,7 @@ function SearchFilter() {
               <div className="res-search px-1">
                 <TextField
                   onChange={handleSearchInput}
+                  value={searchInput.jobTitle}
                   name="jobTitle"
                   placeholder="Job title or Keywords"
                   id="input-with-icon-textfield"
@@ -199,6 +206,7 @@ function SearchFilter() {
               </div>
               <div className="res-search px-1">
                 <TextField
+                  value={searchInput.location}
                   onChange={handleSearchInput}
                   name="location"
                   placeholder="Location"
@@ -251,11 +259,12 @@ function SearchFilter() {
                 <label>Job Type</label>
 
                 <NativeSelect
+                  value={filterTypeAndCategory.type}
                   name="type"
                   onChange={handleFilterTypeAndCategory}
                   className="w-75"
                 >
-                  <option value="" disabled selected hidden>
+                  <option name="" value="" disabled selected hidden>
                     Select Job Type
                   </option>
                   {filterOptions.type.map((type) => {
@@ -271,6 +280,7 @@ function SearchFilter() {
                 <label>Sectors</label>
                 <NativeSelect
                   name="job_category"
+                  value={filterTypeAndCategory.job_category}
                   onChange={handleFilterTypeAndCategory}
                   className="w-75"
                 >
@@ -295,6 +305,7 @@ function SearchFilter() {
                     }}
                     variant="outlined"
                     className="search-button mt-1"
+                    type="submit"
                   >
                     Apply
                   </Button>
@@ -307,6 +318,7 @@ function SearchFilter() {
                     }}
                     variant="outlined"
                     className="search-button mt-1"
+                    type="submit"
                   >
                     CLEAR
                   </Button>

@@ -5,9 +5,6 @@ import HeaderSearch from "../../components/HeaderSearch/HeaderSearch";
 import Btn from "../../components/Btn/Btn";
 import MobileMenu from "../../components/NavBar/MobileMenu";
 import MainSearch from "../../components/NavBar/MainSearch";
-import LoginButton from "../../components/Auth/LoginButton.js";
-import LogoutButton from "../../components/Auth/LogoutButton.js";
-import SignedIn from "../../components/Auth/SignedIn";
 
 const Header = ({ loginStatus, authState }) => {
   const [ofcanvasShow, setOffcanvasShow] = useState(false);
