@@ -1,28 +1,21 @@
 import * as React from "react";
+import { BASE_URL } from "../../networking";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
-import Radio from "@mui/material/Radio";
-import RadioGroup from "@mui/material/RadioGroup";
-import FormControlLabel from "@mui/material/FormControlLabel";
 import FormControl from "@mui/material/FormControl";
-import FormLabel from "@mui/material/FormLabel";
-import "../../assets/css/custom.css";
 import JobCard from "../../components/JobCard/JobCard.jsx";
 import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
-import "../../assets/css/responsive.css";
 import LinearProgress from "@mui/material/LinearProgress";
 import NativeSelect from "@mui/material/NativeSelect";
 import Alert from "@mui/material/Alert";
 import TextField from "@mui/material/TextField";
-import Input from "@mui/material/Input";
-import InputLabel from "@mui/material/InputLabel";
 import InputAdornment from "@mui/material/InputAdornment";
-import AccountCircle from "@mui/icons-material/AccountCircle";
 import SearchIcon from "@mui/icons-material/Search";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
-import { BASE_URL } from "../../networking";
+import "../../assets/css/responsive.css";
+import "../../assets/css/custom.css";
 
 function SearchFilter() {
   const [allJobs, setAllJobs] = useState([]);
@@ -50,6 +43,19 @@ function SearchFilter() {
   });
   const [emptyResult, setEmptyResult] = useState(false);
 
+  useEffect(() => {
+    const manageEmptyResult = () => {
+      if (filteredJobs.length === 0 && filtered) {
+        setEmptyResult(true);
+        setTimeout(() => {
+          setEmptyResult(false);
+        }, 2000);
+      }
+    };
+    if (filtered) {
+      manageEmptyResult();
+    }
+  }, [filteredJobs]);
   const fetchPosts = async () => {
     try {
       const res = await fetch(BASE_URL + "/all-jobs");
@@ -92,13 +98,12 @@ function SearchFilter() {
       ...filterTypeAndCategory,
       [e.target.name]: e.target.value,
     });
-    console.log(filterTypeAndCategory);
   };
   //* handles the apply button click
-  const handleFilterTypeAndCategorySearch = () => {
+  const handleFilterTypeAndCategorySearch = async () => {
     setFiltered(true);
 
-    setFilteredJobs(
+    await setFilteredJobs(
       allJobs.filter((job) => {
         return (
           job.type
@@ -110,6 +115,7 @@ function SearchFilter() {
         );
       })
     );
+    console.log(await filteredJobs.length);
   };
 
   const handleClearFilterButton = () => {
@@ -326,7 +332,7 @@ function SearchFilter() {
               </FormControl>
               {emptyResult && (
                 <Alert
-                  className="mb-3 w-100 d-flex justify-content-center"
+                  className="mt-3 w-75 d-flex justify-content-center"
                   variant="outlined"
                   severity="error"
                 >
