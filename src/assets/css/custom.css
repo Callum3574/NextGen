@@ -145,7 +145,7 @@ h6 {
 }
 
 .sector-titles {
-  border-bottom: 3px solid transparent;
+  border-bottom: 2px solid transparent;
   border-image: linear-gradient(
       to right,
       #ffffff,
@@ -154,6 +154,43 @@ h6 {
       rgb(255, 255, 255)
     )
     1;
+}
+
+.sector-jobs-carousel {
+  margin-bottom: 10rem;
+}
+
+.sect-break {
+  display: none;
+}
+.sector-areas {
+  margin-top: 1.4rem;
+  display: flex;
+  justify-content: start;
+}
+
+.sect-areas-list {
+  width: 500px !important;
+}
+
+.sectors-border {
+  border-bottom: 3.5px solid transparent;
+  border-image: linear-gradient(
+      to right,
+      #ffffff,
+      rgb(1, 94, 141),
+      rgb(1, 94, 141),
+      rgb(255, 255, 255)
+    )
+    1;
+}
+
+.sectors {
+  display: flex;
+  flex-direction: row;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  justify-content: center;
 }
 
 .search-underline {
@@ -170,7 +207,7 @@ h6 {
 
 .back-arrow-sectors {
   cursor: pointer;
-  margin-top: 1.4rem;
+  margin-top: 2rem;
 }
 
 .back-arrow-sectors:hover {
@@ -220,7 +257,7 @@ h6 {
 }
 
 .break-titles {
-  border: 3px solid transparent;
+  border: 2px solid transparent;
   border-image: linear-gradient(
       to bottom,
       #ffffff,
@@ -240,4 +277,21 @@ h6 {
 
 .textfield-label {
   color: white !important;
+}
+.res-sector-title {
+  display: none;
+}
+
+.animation-lottie {
+  display: flex;
+  height: 300px;
+  margin-left: 10rem;
+  border-radius: 30px;
+  justify-content: space-around;
+  margin-bottom: 2rem;
+}
+
+.sector-section-res {
+  display: flex;
+  justify-content: space-between;
 }

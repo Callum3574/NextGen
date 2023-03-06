@@ -34,7 +34,7 @@ function SectorsMain({ sectorDetails, selectedSector }) {
             </div>
             <hr className="mt-10 sector-titles" />
 
-            <div className="d-flex justify-content-between">
+            <div className="sector-section-res">
               <div className=" sector-text w-25 d-flex flex-column justify-content-start mt-10 w-100">
                 <h4>Areas we cover: </h4>
                 <ul>
