@@ -31,6 +31,7 @@
 
   .headline {
     font-size: 1.5rem !important;
+    font-size: 1.5rem !important;
   }
 
   .home-button {
@@ -101,6 +102,10 @@
   .full-card-apply-modal,
   .apply-modal {
     max-height: 500px;
+  }
+  .full-card-apply-modal,
+  .apply-modal {
+    max-height: 500px;
     overflow-y: scroll;
   }
   .job-item-container {
@@ -156,5 +161,39 @@
   }
   .blog-button-nav {
     margin: -0.5rem;
+  }
+  .sector-areas {
+    display: flex;
+    flex-direction: column !important;
+  }
+  .sect-img {
+    margin-top: 3rem;
+  }
+  .sect-break {
+    display: flex;
+  }
+  .sector-section-res {
+    display: flex;
+    flex-direction: column !important;
+  }
+}
+
+@media (max-width: 420px) {
+  .back-arrow-sectors {
+    margin-top: 2.9rem;
+    display: none;
+  }
+
+  .sectors {
+    display: flex !important;
+    flex-direction: column !important;
+    margin-bottom: 2rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .sectors {
+    flex-direction: column !important;
+    text-align: center !important;
   }
 }

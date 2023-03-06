@@ -2,12 +2,9 @@ import React from "react";
 import SEO from "../components/SEO";
 import Header from "../partials/header/Header";
 import IntroThree from "../container/IntroSlider/IntroThree";
-
 import ServiceIconBox from "../container/service/ServiceIconBox";
 import Faq from "../container/Faq/Faq";
-
 import TestimonialContainer from "../container/Testimonial/TestimonialContainer";
-
 import Footer from "../container/Footer/Footer";
 import ScrollToTop from "../components/ScrollToTop.jsx";
 import "../assets/css/animations.css";
