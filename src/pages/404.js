@@ -2,13 +2,14 @@ import React, { Component } from "react";
 import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
 import "../assets/css/custom.css";
+import "../assets/css/responsive.css";
 
 class error404 extends Component {
   render() {
     return (
-      <div className="not-found">
+      <div className="container-fluid not-found">
         <img
-          className="h-25"
+          className="not-found-logo"
           alt="logo"
           src="/images/logo/NEXTGEN_LOGO.png"
         ></img>
