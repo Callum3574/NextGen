@@ -6,7 +6,9 @@ import ContactInformation from "../container/ContactInformation/ContactInformati
 import ContactFromContainer from "../container/ContactFromContainer/ContactFromContainer";
 import Footer from "../container/Footer/Footer";
 import ScrollToTop from "../components/ScrollToTop.jsx";
+import Calendify from "../container/Calendify/Calendify";
 
+import "../assets/css/custom.css";
 const Contact = () => {
   return (
     <React.Fragment>
@@ -14,12 +16,17 @@ const Contact = () => {
       <Header />
       <Breadcrumb
         image="images/bg/breadcrumb-bg-five.jpg"
-        title="NEXTGEN TALENT SOLUTIONS"
+        title="NEXTGEN TALENT SOLUTIONS CONTACT"
         content="Home"
         contentTwo="Contact Us"
       />
-      <ContactFromContainer />
-      <ContactInformation />
+
+      {/* <ContactFromContainer /> */}
+      <div>
+        <Calendify />
+        <ContactInformation />
+      </div>
+
       <Footer />
       <ScrollToTop />
     </React.Fragment>

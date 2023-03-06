@@ -62,7 +62,7 @@ const IntroThree = ({ userType }) => {
               <div>
                 <div className="home-button d-flex w-100 justify-content-center">
                   <Link
-                    to={process.env.PUBLIC_URL + "/"}
+                    to={process.env.PUBLIC_URL + "/contact"}
                     className="home-button btn btn-outline-white btn-hover-primary w-25"
                     style={{ backgroundColor: "#D0F5F2", color: "black" }}
                   >

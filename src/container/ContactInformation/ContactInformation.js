@@ -19,13 +19,7 @@ const ContactInformation = ({ classOption }) => {
   return (
     <div className={`section section-padding-t90-b100 ${classOption}`}>
       <div className="container shape-animate">
-        <SectionTitle
-          titleOption="section-title text-center mb-lg-12 mb-sm-8 mb-xs-8"
-          title="We are a full-service recruitment agency providing comprehensive services for all your hiring needs."
-          subTitle="Our team of recruitment specialists are dedicated to finding the perfect fit for your company, and strive for excellence in every aspect of their work."
-        />
-
-        <div className="row row-cols-lg-3 row-cols-md-2 row-cols-sm-2 row-cols-1 mb-n6">
+        <div className="row row-cols-lg-3 row-cols-md-2 row-cols-sm-2 row-cols-1 mb-n6 ">
           {contactData &&
             contactData.map((single, key) => {
               return (

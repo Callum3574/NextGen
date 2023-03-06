@@ -31,6 +31,7 @@
     "react-auth-kit": "^2.7.1",
     "react-bootstrap": "^2.5.0",
     "react-bootstrap-sidebar-menu": "^2.0.3",
+    "react-calendly": "^4.1.1",
     "react-countup": "^6.3.1",
     "react-dom": "^18.2.0",
     "react-helmet": "^6.1.0",

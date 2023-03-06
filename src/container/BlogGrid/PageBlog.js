@@ -101,7 +101,7 @@ const PageBlog = () => {
     <div>
       <div className="blog-nav search-box-jobs d-flex flex-column p-2 bd-highlight align-items-center">
         <div className="d-flex justify-content-center flex-row w-100">
-          <div className="blog-title m-2">
+          <div className="blog-title search-title m-2">
             <h4
               style={{
                 textDecoration: "underline rgb(70, 133, 142)",
