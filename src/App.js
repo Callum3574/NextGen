@@ -10,6 +10,7 @@ const Work = lazy(() => import("./pages/Work"));
 const WorkDetails = lazy(() => import("./pages/WorkDetails"));
 const BlogGrid = lazy(() => import("./pages/BlogGrid"));
 const Contact = lazy(() => import("./pages/Contact"));
+const Error404 = lazy(() => import("./pages/404"));
 const BlogDetails = lazy(() => import("./pages/BlogDetails"));
 
 function App() {
@@ -62,6 +63,7 @@ function App() {
               path={`${process.env.PUBLIC_URL + "/contact"}`}
               element={<Contact />}
             />
+            <Route path="*" element={<Error404 />} />
           </Routes>
         </Suspense>
       </NavScrollTop>
