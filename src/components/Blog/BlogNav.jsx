@@ -69,8 +69,12 @@ const BlogNav = ({
             <option value="" disabled selected hidden>
               Select tag(s)
             </option>
-            {blogTags.map((tag) => {
-              return <option value={tag}>{tag}</option>;
+            {blogTags.map((tag, i) => {
+              return (
+                <option key={i} value={tag}>
+                  {tag}
+                </option>
+              );
             })}
           </NativeSelect>
         </FormControl>
@@ -80,8 +84,12 @@ const BlogNav = ({
             <option value="" disabled selected hidden>
               Select categories
             </option>
-            {cateTags.map((cate) => {
-              return <option value={cate}>{cate}</option>;
+            {cateTags.map((cate, i) => {
+              return (
+                <option key={i} value={cate}>
+                  {cate}
+                </option>
+              );
             })}
           </NativeSelect>
         </FormControl>
