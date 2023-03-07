@@ -156,6 +156,11 @@ h6 {
     1;
 }
 
+.sector-title {
+  display: flex;
+  justify-content: start;
+}
+
 .sector-jobs-carousel {
   margin-bottom: 10rem;
 }

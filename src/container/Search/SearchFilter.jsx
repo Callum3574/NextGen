@@ -273,9 +273,9 @@ function SearchFilter() {
                   <option name="" value="" disabled selected hidden>
                     Select Job Type
                   </option>
-                  {filterOptions.type.map((type) => {
+                  {filterOptions.type.map((type, i) => {
                     return (
-                      <option name={type} value={type}>
+                      <option key={i} name={type} value={type}>
                         {type}
                       </option>
                     );
@@ -293,9 +293,9 @@ function SearchFilter() {
                   <option value="" disabled selected hidden>
                     Select Sector
                   </option>
-                  {filterOptions.sector.map((sector) => {
+                  {filterOptions.sector.map((sector, i) => {
                     return (
-                      <option value={sector} name={sector}>
+                      <option key={i} value={sector} name={sector}>
                         {sector}
                       </option>
                     );
@@ -345,9 +345,10 @@ function SearchFilter() {
             <div className="jobs-section d-flex flex-column   container-md p-2 mt-1 ">
               <div className="job-count">{displayJobsCount()}</div>
               {filteredJobs.length === 0
-                ? allJobs.slice(0, jobsVisible).map((job) => {
+                ? allJobs.slice(0, jobsVisible).map((job, i) => {
                     return (
                       <JobCard
+                        key={i}
                         role={job.role}
                         description={job.job_description}
                         salary={job.salary}
@@ -364,9 +365,10 @@ function SearchFilter() {
                       />
                     );
                   })
-                : filteredJobs.slice(0, jobsVisible).map((job) => {
+                : filteredJobs.slice(0, jobsVisible).map((job, i) => {
                     return (
                       <JobCard
+                        key={i}
                         role={job.role}
                         description={job.job_description}
                         salary={job.salary}

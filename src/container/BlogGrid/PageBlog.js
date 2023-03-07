@@ -136,8 +136,12 @@ const PageBlog = () => {
                 >
                   Tags
                 </p>
-                {filtered.tags.map((item) => {
-                  return <p className="breadcrumb-anim">{item}</p>;
+                {filtered.tags.map((item, i) => {
+                  return (
+                    <p key={i} className="breadcrumb-anim">
+                      {item}
+                    </p>
+                  );
                 })}
               </Breadcrumbs>
             )}
@@ -151,8 +155,12 @@ const PageBlog = () => {
                 >
                   Categories
                 </p>
-                {filtered.category.map((item) => {
-                  return <p className="breadcrumb-anim">{item}</p>;
+                {filtered.category.map((item, i) => {
+                  return (
+                    <p key={i} className="breadcrumb-anim">
+                      {item}
+                    </p>
+                  );
                 })}
               </Breadcrumbs>
             )}

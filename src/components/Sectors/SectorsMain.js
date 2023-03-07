@@ -1,10 +1,6 @@
 import React, { useEffect } from "react";
-import SectorImg from "./SectorImg";
-import sectors from "../../data/Sectors/sectors.json";
-import PropTypes from "prop-types";
-import ReactVivus from "react-vivus";
+
 import "../../assets/css/animations.css";
-import Faq from "../../container/Faq/Faq";
 import HomeAbout from "../About/HomeAbout";
 import Divider from "@mui/material/Divider";
 import Paper from "@mui/material/Paper";
@@ -13,20 +9,12 @@ import { styled } from "@mui/material/styles";
 import Button from "react-bootstrap/Button";
 
 function SectorsMain({ sectorDetails, selectedSector }) {
-  const Item = styled(Paper)(({ theme }) => ({
-    backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
-    ...theme.typography.body2,
-    padding: theme.spacing(1),
-    textAlign: "center",
-    color: theme.palette.text.secondary,
-  }));
-
   return (
-    <div className="d-flex container p-8">
+    <div className="container sectors sectors-res d-flex container p-8">
       {selectedSector.length ? (
         <div className="d-flex flex-column">
           <div className="d-flex flex-column">
-            <div className="sector-title d-flex flex-row justify-content-start">
+            <div className="sector-title ">
               <h3>{sectorDetails[0].name}</h3>
             </div>
             <div className="sector-text">
