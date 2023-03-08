@@ -19,11 +19,13 @@ const Footer = () => {
               <div className="footer-widget-content">
                 <div className="content">
                   <p>
-                    <Link to={process.env.PUBLIC_URL + "/"}>07344343343</Link>
+                    <Link to={process.env.PUBLIC_URL + "/"}>
+                      +44-7722203063
+                    </Link>
                   </p>
                   <p>
                     <Link to={process.env.PUBLIC_URL + "/"}>
-                      hello@nextgentalentsolutions.com
+                      info@nextgentalentsolutions.co.uk
                     </Link>{" "}
                   </p>
                 </div>
