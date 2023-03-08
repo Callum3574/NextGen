@@ -50,9 +50,6 @@ const Header = ({ loginStatus, authState }) => {
                 <div className="menu-column-area d-none d-xl-block position-static">
                   <NavBar />
                 </div>
-                <div className="header-search-area ms-xl-7 ms-0">
-                  <HeaderSearch onClick={onSearchHandler} />
-                </div>
 
                 <div className="header-mobile-menu-toggle d-xl-none ms-sm-2">
                   <button
