@@ -14,7 +14,7 @@ const BlogGrid = () => {
       <Header />
       <Breadcrumb
         image="images/bg/breadcrumb-bg-four.jpg"
-        title="Find all our latest news, insights, and events"
+        title="Find All Our Latest News, Insights, And Events"
         content="Home"
         contentTwo="Blog"
       />

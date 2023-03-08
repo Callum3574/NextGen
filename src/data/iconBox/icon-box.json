@@ -2,15 +2,15 @@
   {
     "id": "1",
     "icon": "images/svg/linea/linea-software-transform-bezier.svg",
-    "title": "Specialization",
-    "desc": "We have a deep understanding of the latest technologies and trends, and we use this knowledge to find the best candidates for your specific needs.",
+    "title": "Specialisation",
+    "desc": "We use our deep understanding of the latest technologies and trends to find the best candidates for your specific needs",
     "link": "service"
   },
   {
     "id": "2",
     "icon": "images/svg/linea/linea-basic-picture-multiple.svg",
-    "title": "Personalization",
-    "desc": "We understand that every company and every hiring situation is unique, that's why we take a personalized approach to recruitment.",
+    "title": "Personalisation",
+    "desc": "We understand that every company and every hiring situation is unique, that's why we take a personalised approach to recruitment.",
     "link": "service"
   },
   {

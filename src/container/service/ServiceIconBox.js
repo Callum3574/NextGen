@@ -9,8 +9,8 @@ const ServiceIconBox = ({ classOption }) => {
     <div className={`section section-padding-t90-b100 ${classOption}`}>
       <div className="container">
         <SectionTitle
-          title="We create a unique action plan for recruitment "
-          subTitle="Get your company heading in the right direction with our specialist
+          title="WE CREATE A UNIQUE ACTION PLAN FOR RECRUITMENT "
+          subTitle="Get your company heading in the right direction with the help of our specialist
                     recruitment consultants"
         />
 

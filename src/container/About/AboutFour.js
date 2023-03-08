@@ -1,99 +1,68 @@
-import {useState, useEffect, useRef} from "react";
-import SectionTitleTwo from '../../components/SectionTitles/SectionTitleTwo';
-import Tilt from 'react-parallax-tilt';
-import Parallax from 'parallax-js';
-import CountUp from 'react-countup';
+import { useState, useEffect, useRef } from "react";
+import SectionTitleTwo from "../../components/SectionTitles/SectionTitleTwo";
+import Tilt from "react-parallax-tilt";
+import Parallax from "parallax-js";
+import CountUp from "react-countup";
 import VisibilitySensor from "react-visibility-sensor";
 
 const AboutFour = () => {
-    const [didViewCountUp, setDidViewCountUp] = useState(false);
-    const onVisibilityChange = isVisible => {
-        if (isVisible) {
-        setDidViewCountUp(true);
-        }
-    };
-    const [scale] = useState(1.04);
-    const sceneEl = useRef(null);
-    useEffect(() => {
-        const parallaxInstance = new Parallax(sceneEl.current, {
-        relativeInput: true,
-        })
-        
-        parallaxInstance.enable();
+  const [didViewCountUp, setDidViewCountUp] = useState(false);
+  const onVisibilityChange = (isVisible) => {
+    if (isVisible) {
+      setDidViewCountUp(true);
+    }
+  };
 
-        return () => parallaxInstance.disable();
-
-    }, [])
-    return (
-        <div className="section section-padding-top about-section-padding-bottom-200">
-            <div className="container">
-                <div className="row">
-
-                    <div className="col-xl-6 col-lg-6 col-12" data-aos="fade-up">
-                        <div className="about-content-area mt-0 mb-md-10 mb-10">
-                            <SectionTitleTwo 
-                                subTitle="Web design and digital marketing"
-                                title="We think strategy, UX design, and web development"
-                            />
-
-                            <div className="row row-cols-sm-2 row-cols-auto mb-n6">
-                                <div className="col mb-6">
-                                    <div className="about-funfact">
-                                        <div className="number">
-                                            <VisibilitySensor
-                                                    onChange={onVisibilityChange}
-                                                    offset={{ top: 10 }}
-                                                    delayedCall
-                                                    >
-                                                    <CountUp end={didViewCountUp ? 110 : 0} />
-                                            </VisibilitySensor>+
-                                        </div>
-                                        <h6 className="text">Happy Clients</h6>
-                                        <p>We help our clients increase profits by increasing their visibility online.</p>
-                                    </div>
-                                </div>
-                                <div className="col mb-6">
-                                    <div className="about-funfact">
-                                        <div className="number">
-                                            <VisibilitySensor
-                                                onChange={onVisibilityChange}
-                                                offset={{ top: 10 }}
-                                                delayedCall
-                                                >
-                                                <CountUp end={didViewCountUp ? 130 : 0} />
-                                            </VisibilitySensor>+
-                                        </div>
-                                        <h6 className="text">Completed projects</h6>
-                                        <p>We help our clients increase profits by increasing their visibility online.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className="col-xl-6 col-lg-6 col-12" data-aos="fade-up" data-aos-delay="300">
-                        <div className="about-image-area about-shape-animation right-0 me-0">
-                            <div className="about-image js-tilt">
-                                <Tilt scale={scale} transitionSpeed={4000}>
-                                    <img src={process.env.PUBLIC_URL + "images/about/about-1.jpg"} alt="" />
-                                </Tilt>
-                            </div>
-                            <div className="about-image js-tilt">
-                                <Tilt scale={scale} transitionSpeed={4000}>
-                                    <img src={process.env.PUBLIC_URL + "images/about/about-2.jpg"} alt="" />
-                                </Tilt>
-                            </div>
-                            <div className="shape shape-1" id="scene" ref={sceneEl}>
-                                <span data-depth="1"><img src={process.env.PUBLIC_URL + "images/shape-animation/video-shape-1.png"} alt="" /></span>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-
-            </div>
+  return (
+    <div className="about-us-main section section-padding-top about-section-padding-bottom-100 mb-10 p-4">
+      <div className="container">
+        <div>
+          <div>
+            <h4 className="mb-4">Welcome to Nextgen Talent Solutions</h4>
+            <p>
+              Welcome to our technology recruitment agency, where we specialize
+              in connecting top-notch tech talent with the best companies in the
+              industry. Our team of experienced recruiters has a deep
+              understanding of the rapidly evolving technology landscape and is
+              always up-to-date with the latest industry trends and
+              developments.{" "}
+            </p>
+            <p>
+              We take pride in our personalized approach to recruitment, taking
+              the time to understand our clients' and candidates' unique needs
+              and goals. Whether you are a candidate looking for your next big
+              career move or a company seeking top talent, we are here to help
+              you succeed.{" "}
+            </p>
+            <p>
+              Our mission is to help bridge the gap between talented tech
+              professionals and innovative companies by matching them with
+              opportunities that align with their values, skills, and
+              aspirations. We believe that a successful recruitment process
+              involves more than just matching resumes with job descriptions -
+              it's about finding the perfect cultural fit and building
+              long-lasting relationships.{" "}
+            </p>
+            <p>
+              At our agency, we understand the importance of diversity and
+              inclusion in the workplace and are committed to creating a
+              welcoming and inclusive environment for all. We work with a wide
+              range of clients across various tech industries, from startups to
+              established Fortune 500 companies, and are always on the lookout
+              for exceptional talent to add to our network.{" "}
+            </p>
+            <p>
+              With our extensive experience, industry expertise, and commitment
+              to excellence, you can trust us to help you achieve your
+              recruitment goals. Get in touch with us today to learn more about
+              how we can help you take your tech career or business to the next
+              level!”{" "}
+            </p>
+          </div>
         </div>
-    )
-}
+      </div>
+    </div>
+  );
+};
 
 export default AboutFour;
