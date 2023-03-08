@@ -6,25 +6,12 @@
     "name": "Thomas Smith",
     "position": "Software Engineer"
   },
-  {
-    "id": 2,
-    "image": "images/testimonial/90/author-2.png",
-    "desc": "We are completely satisfied with the quality of service that we get. Workers were respectful, efficient, accommodating, cleaned up thoroughly.",
-    "name": "Eloise Smith",
-    "position": "Software Engineer"
-  },
+
   {
     "id": 3,
     "image": "images/testimonial/90/author-2.png",
     "desc": "I love their flexibility. Even when my request is too complicated to handle. they could still suggest something useful for me.",
     "name": "Florence Themes",
     "position": "Frontend Developer"
-  },
-  {
-    "id": 1,
-    "image": "images/testimonial/90/author-2.png",
-    "desc": "I love their flexibility. Even when my request is too complicated to handle. they could still suggest something useful for me.",
-    "name": "Florence Themes",
-    "position": "IT Support Engineer"
   }
 ]

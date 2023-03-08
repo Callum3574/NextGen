@@ -14,7 +14,7 @@ const AboutFour = () => {
   };
 
   return (
-    <div className="about-us-main section section-padding-top about-section-padding-bottom-100 mb-10 p-4">
+    <div className="about-us-main section section-padding-top about-section-padding-bottom-100 mb-2 p-10">
       <div className="container">
         <div>
           <div>
