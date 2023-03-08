@@ -17,7 +17,7 @@ function ApplyJob({
   return (
     <div>
       <Modal
-        className="mt-10"
+        className="mt-1"
         style={{ zIndex: "9999" }}
         show={show}
         onHide={handleClose}

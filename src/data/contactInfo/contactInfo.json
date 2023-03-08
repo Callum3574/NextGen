@@ -1,20 +1,20 @@
 [
-    {
+  {
     "id": "1",
     "icon": "images/svg/linea/linea-basic-map.svg",
-    "title": "Our Locations",
-    "info": " 110 W 34th St, NYC. <br/> 67 Madison Avenue."
-    },
-    {
+    "title": "Our Location",
+    "info": "1 Initial Business Centre, Wilson Park, Manchester, M40 8WN"
+  },
+  {
     "id": "2",
     "icon": "images/svg/linea/linea-basic-message-txt.svg",
     "title": "Give Us A Call",
-    "info": "(+1) 212-946-2701 <br/> (+1) 212-946-2702"
-    },
-    {
+    "info": "+44-7572471738 <br/> +44-7722203063"
+  },
+  {
     "id": "3",
     "icon": "images/svg/linea/linea-basic-mail-open-text.svg",
     "title": "Help Desk",
-    "info": "hello@hasthemes.com <br/> sales@hasthemes.com"
-    }
+    "info": "info@nextgentalentsolutions.co.uk <br/> +44-7572471738"
+  }
 ]

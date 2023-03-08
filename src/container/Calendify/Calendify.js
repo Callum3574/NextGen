@@ -7,7 +7,7 @@ function Calendify() {
   return (
     <div>
       <PopupWidget
-        url="https://calendly.com/callumhall65"
+        url="https://calendly.com/nextgentalentsolutions"
         rootElement={document.getElementById("root")}
         text="Click here to schedule!"
         textColor="#ffffff"

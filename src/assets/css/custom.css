@@ -8,12 +8,12 @@
 
 .Typewriter__wrapper {
   color: #46858e;
-  text-decoration: underline white 2px;
   text-align: center;
 }
 .home-button {
   border-radius: 30px;
   filter: drop-shadow(0 0 0.75rem rgba(255, 255, 255, 0.421));
+  width: 25rem;
 }
 a:hover {
   color: #dadada !important;
@@ -74,7 +74,7 @@ h6 {
 }
 
 .full-card-apply-modal {
-  max-height: 600px;
+  max-height: 530px;
   overflow-y: scroll;
 }
 

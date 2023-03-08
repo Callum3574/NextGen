@@ -63,14 +63,14 @@ const IntroThree = ({ userType }) => {
                 <div className="home-button d-flex w-100 justify-content-center">
                   <Link
                     to={process.env.PUBLIC_URL + "/contact"}
-                    className="home-button btn btn-outline-white btn-hover-primary w-25"
+                    className="home-button btn btn-outline-white btn-hover-primary"
                     style={{ backgroundColor: "#D0F5F2", color: "black" }}
                   >
                     Find me a candidate
                   </Link>
                   <Link
                     to={process.env.PUBLIC_URL + "/job-search"}
-                    className="home-button  btn btn-outline-white btn-hover-primary w-25 mb-20"
+                    className="home-button  btn btn-outline-white btn-hover-primary mb-20"
                     style={{ backgroundColor: "#46858E", color: "white" }}
                   >
                     {" "}
