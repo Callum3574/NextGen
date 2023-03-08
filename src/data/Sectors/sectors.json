@@ -1,8 +1,8 @@
 {
   "fields": [
     {
-      "name": "Infrastructure & Support",
-      "description": "Infrastructure & Support is a critical aspect of any organization. This field focuses on the maintenance and upkeep of a company's technical infrastructure, which includes servers, networks, and other hardware systems. The primary goal of this field is to ensure that the infrastructure is running smoothly and efficiently, so that the company can focus on its core business. Professionals in this field are responsible for configuring, maintaining, and troubleshooting hardware and software systems, as well as ensuring that the infrastructure is secure and available at all times.",
+      "name": "IT Support & Infrastructure",
+      "description": "IT support and infrastructure play a critical role in ensuring the smooth functioning of any organisation. They provide technical assistance to employees, ensuring that hardware and software systems are functioning optimally. Highly skilled candidates should have a strong understanding of computer hardware, software, and networking systems, as well as the ability to diagnose and resolve technical issues quickly and effectively.",
       "areas": [
         "1st Line Support",
         "2nd Line Support",
@@ -16,7 +16,7 @@
     },
     {
       "name": "Networking & Security",
-      "description": "Networking & Security is a crucial field in today's digital world. This field deals with the design, implementation, and maintenance of a company's network systems and security measures to protect against cyber threats. Professionals in this field are responsible for ensuring the confidentiality, integrity, and availability of the organization's data, networks, and systems. They work with a range of technologies and tools to secure the organization's networks, including firewalls, intrusion detection systems, encryption, and access controls. They also perform regular security audits to identify and remediate vulnerabilities, and respond to security incidents as needed.",
+      "description": "With the increasing reliance on technology in business, it's essential to have robust networking systems in place to facilitate communication and collaboration among employees. Furthermore, with the growing threat of cyber attacks and data breaches, companies need to invest in robust security measures to protect their sensitive information and intellectual property. Organisations are looking for skilled candidates who display a strong understanding of network architecture, protocols, and security measures, as well as the ability to design, implement, and maintain secure systems. They should also be familiar with the latest security trends and best practices and be able to identify and mitigate potential risks.",
       "areas": [
         "1st Line Support",
         "2nd Line Support",
@@ -30,7 +30,7 @@
     },
     {
       "name": "Software Engineering",
-      "description": "Software Engineering is a field that focuses on the design, development, and testing of software systems. This field is concerned with ensuring that software systems meet the requirements of the business and that they are delivered on time, within budget, and with high quality. Software engineers are responsible for developing and maintaining software applications, and they use a range of tools and technologies to do so. They work with stakeholders to understand the business requirements, and they use this information to design, build, and test software systems that meet those requirements. Software engineers are also responsible for debugging and fixing any issues that arise during the software development lifecycle, and for ensuring that the software systems are reliable and secure.",
+      "description": "Software engineering is a highly dynamic and innovative field that plays a critical role in shaping the technology landscape. It involves designing, developing, testing, and maintaining software applications that are used in a variety of industries, from finance and healthcare to gaming and entertainment. To be successful in software engineering, candidates must have a strong foundation in computer programming languages, algorithms, and data structures. They must also be familiar with the latest software development methodologies and be able to work in a fast-paced, collaborative environment. Companies are always looking for talented software engineers who can bring their skills, creativity, and passion to the table.",
       "areas": [
         "Software Development",
         "Software Management",
@@ -43,7 +43,7 @@
     },
     {
       "name": "Cloud / DevOps",
-      "description": "Cloud / DevOps is a field that focuses on the delivery and management of software systems using cloud computing and DevOps practices. This field is concerned with ensuring that software systems are delivered quickly and reliably, and that they can be easily managed and updated. DevOps engineers are responsible for automating the deployment, testing, and delivery of software systems, and for ensuring that these systems are scalable, reliable, and secure. They work with a range of cloud computing platforms and technologies, such as AWS, Azure, and Google Cloud, and they use DevOps practices such as continuous integration, continuous delivery, and continuous deployment to deliver software systems quickly and efficiently.",
+      "description": "Two of the most in-demand areas of technology today. Cloud computing provides organizations with flexible and scalable computing resources. This eliminates the need for physical hardware, increases accessibility, and reduces costs. DevOps, on the other hand, is a software development methodology that enables organizations to develop, test, and release software faster and more efficiently. The combination of cloud and DevOps has revolutionized the way companies deliver software and has become a critical component of modern software development.",
       "areas": [
         "AWS / Azure / Cloud",
         "SaaS / PaaS / IaaS",
@@ -58,7 +58,7 @@
 
     {
       "name": "Senior Executive",
-      "description": "Senior Executives are the leaders of an organization, and they are responsible for setting the strategic direction of the company and ensuring that it is on track to achieve its goals. Senior Executives have a broad perspective on the company, and they use this perspective to make decisions that will have a significant impact on the company's future. They are responsible for leading the company's operations, finance, and human resources, and for working with other executives to ensure that the company is running smoothly. Senior Executives must be strong leaders, with excellent communication and interpersonal skills, and they must have a deep understanding of the company's industry and the marketplace.",
+      "description": "Senior executives are leaders or an organisation and are responsible for setting strategic direction, making key decisions, and ensuring that the company is positioned for success. In the technology industry, senior executives are expected to have a deep understanding of the latest trends and developments in their field, as well as the ability to develop and implement effective business strategies. Companies are looking for senior executives with a proven track record of success in the technology industry, as well as strong leadership skills and the ability to motivate and inspire teams. These executives should also have excellent communication and interpersonal skills, and the ability to navigate complex business issues and build relationships with key stakeholders.",
       "areas": [
         "Service Desk Manager ",
         "Technical Architect",
@@ -67,20 +67,6 @@
         "Applications Support"
       ],
       "img": "images/faq/faw-10.jpg"
-    },
-    {
-      "name": "IT support & Infrastructure",
-      "description": "IT support & Infrastructure is a critical aspect of any organization. This field focuses on the maintenance and upkeep of a company's technical infrastructure, which includes servers, networks, and other hardware systems. The primary goal of this field is to ensure that the infrastructure is running smoothly and efficiently, so that the company can focus on its core business. Professionals in this field are responsible for configuring, maintaining, and troubleshooting hardware and software systems, as well as ensuring that the infrastructure is secure and available at all times.",
-      "areas": [
-        "1st Line Support",
-        "2nd Line Support",
-        "3rd Line Support",
-        "Applications Support",
-        "Field Engineers",
-        "Service Desk Manager ",
-        "Technical Architect"
-      ],
-      "img": "images/faq/faw-9.jpg"
     }
   ]
 }

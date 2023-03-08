@@ -3,9 +3,7 @@ import React, { useEffect } from "react";
 import "../../assets/css/animations.css";
 import HomeAbout from "../About/HomeAbout";
 import Divider from "@mui/material/Divider";
-import Paper from "@mui/material/Paper";
 import Stack from "@mui/material/Stack";
-import { styled } from "@mui/material/styles";
 import Button from "react-bootstrap/Button";
 
 function SectorsMain({ sectorDetails, selectedSector }) {

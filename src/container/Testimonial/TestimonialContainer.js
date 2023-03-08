@@ -30,10 +30,7 @@ const TestimonialContainer = ({ classOption }) => {
         <SectionTitle
           headingOption="title fz-28"
           title="What our customers are saying about our services"
-          subTitle="Get your company heading in the right direction with our digital
-                        marketing strategist"
         />
-
         <Swiper
           className="testimonial-slider"
           data-aos="fade-up"

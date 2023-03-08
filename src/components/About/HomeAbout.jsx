@@ -22,7 +22,7 @@ const HomeAbout = () => {
     <div className="section section-padding-bottom-200 ">
       <div className="container ">
         <SectionTitle
-          title="We are a cutting-edge recruitment technology company
+          title="We are a cutting-edge technology recruitment company
 "
           subTitle="We are forward-thinking, always pushing boundaries, and approachable. Our drive, expertise, and passion for technology are matched with a focus on results and delivering exceptional customer experiences."
         />
@@ -79,8 +79,8 @@ const HomeAbout = () => {
               />
 
               <p>
-                Focused on using technology to streamline the recruitment
-                process and connect top talent with the right companies.
+                Using technology to streamline the recruitment process and
+                connect top talent with the right companies.
               </p>
 
               <Link

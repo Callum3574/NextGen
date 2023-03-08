@@ -2,10 +2,7 @@ import React, { useState } from "react";
 import "../../assets/css/custom.css";
 import "../../assets/css/animations.css";
 import "../../assets/css/responsive.css";
-
 import sectors from "../../data/Sectors/sectors.json";
-import ReactVivus from "react-vivus";
-import PropTypes from "prop-types";
 
 function Sectors({ handleSector, handleBackArrow }) {
   return (

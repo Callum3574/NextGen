@@ -14,12 +14,11 @@ const AboutUs = () => {
       <Header />
       <Breadcrumb
         image="images/bg/breadcrumb-bg.jpg"
-        title="We are an agency located in New York"
+        title="We are an agency based in Manchester"
         content="Home"
         contentTwo="About Us"
       />
       <AboutFour />
-      <CallToActionTwo />
       <Footer />
       <ScrollToTop />
     </React.Fragment>

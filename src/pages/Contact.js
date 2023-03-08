@@ -16,7 +16,7 @@ const Contact = () => {
       <Header />
       <Breadcrumb
         image="images/bg/breadcrumb-bg-five.jpg"
-        title="NEXTGEN TALENT SOLUTIONS CONTACT"
+        title="Nextgen Talent Solutions Contact"
         content="Home"
         contentTwo="Contact Us"
       />
