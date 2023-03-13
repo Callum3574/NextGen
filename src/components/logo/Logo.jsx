@@ -9,7 +9,7 @@ const Logo = ({ image }) => {
       <Link to={process.env.PUBLIC_URL + "/"}>
         <img
           className="dark-logo"
-          src={process.env.PUBLIC_URL + "images/logo/NEXTGEN_LOGO_White.svg"}
+          src={process.env.PUBLIC_URL + "images/logo/NEXTGEN_LOGO.png"}
           alt="Agency Logo"
         />
         {/* <h2 style={{ color: "white" }}>Nextgen</h2> */}

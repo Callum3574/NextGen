@@ -43,7 +43,7 @@ const Header = ({ loginStatus, authState }) => {
             <div className="row justify-content-between align-items-center">
               <div className="col-xl-2 col-auto order-0">
                 <Logo
-                  image={`${process.env.PUBLIC_URL}/images/logo/NEXTGEN_LOGO_WHITE.svg`}
+                  image={`${process.env.PUBLIC_URL}/images/logo/NEXTGEN_LOGO.png`}
                 />
               </div>
               <div className="col-auto col-xl d-flex align-items-center justify-content-xl-center justify-content-end order-2 order-xl-1">

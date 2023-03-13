@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
+import "../../assets/css/custom.css";
 const SidebarBanner = () => {
   return (
     <div className="sidebar-widget-content mt-5 mb-5">
@@ -11,8 +11,8 @@ const SidebarBanner = () => {
         }}
       >
         <img
-          className="w-75 mb-5"
-          src="/images/logo/NEXTGEN_LOGO_White.svg"
+          className="logo-img w-75 mb-5"
+          src="/images/logo/NEXTGEN_LOGO.png"
         ></img>
         <h3 className="title">Subscribe to our newsletter</h3>
         <p>
