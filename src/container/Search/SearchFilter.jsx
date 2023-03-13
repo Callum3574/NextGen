@@ -256,7 +256,7 @@ function SearchFilter() {
       </div>
 
       <div className="d-flex justify-content-center">
-        {allJobs.length > 0 ? (
+        {allJobs.length < 0 ? (
           <div className="filter-res d-flex  bd-highlight justify-content-center p-1 flex-row">
             <div className="filter-box d-flex justify-content-start flex-column mt-2  ">
               <div></div>

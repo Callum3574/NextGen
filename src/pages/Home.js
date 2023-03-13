@@ -28,7 +28,7 @@ const Home = () => {
 
           <ServiceIconBox />
           <Faq />
-          <TestimonialContainer />
+          {/* <TestimonialContainer /> */}
           <Footer />
           <ScrollToTop />
         </div>
