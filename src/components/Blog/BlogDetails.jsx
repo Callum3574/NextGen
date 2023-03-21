@@ -26,7 +26,7 @@ const BlogDetailsFull = ({ post }) => {
     cate = post[0].categories.map((value, i) => {
       return (
         <Link
-          to={process.env.PUBLIC_URL + `/category/${slugify(value)}`}
+          to={process.env.PUBLIC_URL + `/blog-details/${slugify(value)}`}
           key={i}
         >
           {value}

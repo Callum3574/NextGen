@@ -19,9 +19,7 @@ const Footer = () => {
               <div className="footer-widget-content">
                 <div className="content">
                   <p>
-                    <Link to={process.env.PUBLIC_URL + "/"}>
-                      +44-7722203063
-                    </Link>
+                    <Link to={process.env.PUBLIC_URL + "/"}>0161 5377 978</Link>
                   </p>
                   <p>
                     <Link to={process.env.PUBLIC_URL + "/"}>
@@ -33,8 +31,12 @@ const Footer = () => {
                   <a href="#">
                     <i className="fab fa-twitter-square"></i>
                   </a>
-                  <a href="#">
-                    <i className="fab fa-facebook-square"></i>
+                  <a
+                    target="_blank"
+                    rel="noreferrer"
+                    href="https://www.linkedin.com/company/nextgen-talent-solutions/"
+                  >
+                    <i className="fab fa-linkedin-in"></i>
                   </a>
                   <a href="#">
                     <i className="fab fa-instagram"></i>

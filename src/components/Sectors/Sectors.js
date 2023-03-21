@@ -13,9 +13,9 @@ function Sectors({ handleSector, handleBackArrow }) {
           className="back-arrow-sectors fa fa-arrow-left"
         ></i>
 
-        {sectors.fields.map((sector) => {
+        {sectors.fields.map((sector, i) => {
           return (
-            <div className="sector-list px-5 mt-4">
+            <div key={i} className="sector-list px-5 mt-4">
               <h5
                 onClick={handleSector}
                 data-name={sector.name}
