@@ -9,7 +9,6 @@ const SidebarPost = ({ blogData }) => {
       return b.view - a.view;
     });
     setTopPosts(topPostsSorted);
-    console.log(topPosts);
   };
 
   useEffect(() => {

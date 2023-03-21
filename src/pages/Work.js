@@ -27,7 +27,6 @@ const Work = () => {
 
   const handleBackArrow = () => {
     setSelectedSector("");
-    // setSectorDetails([]);
   };
 
   useEffect(() => {
@@ -43,7 +42,7 @@ const Work = () => {
 
       <Breadcrumb
         image="images/bg/breadcrumb-bg-two.jpg"
-        title="Sectors We Recruit For!"
+        title="Sectors We Recruit For"
         content="Home"
         contentTwo="Sectors"
       />

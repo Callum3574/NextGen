@@ -14,7 +14,7 @@ const AboutUs = () => {
       <Header />
       <Breadcrumb
         image="images/bg/breadcrumb-bg.jpg"
-        title="We are an agency based in Manchester"
+        title="We Are An Agency Based In Manchester"
         content="Home"
         contentTwo="About Us"
       />

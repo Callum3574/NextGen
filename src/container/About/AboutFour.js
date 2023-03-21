@@ -18,7 +18,7 @@ const AboutFour = () => {
       <div className="container">
         <div>
           <div>
-            <h4 className="mb-4">Welcome to Nextgen Talent Solutions</h4>
+            <h4 className="mb-4">Welcome To Nextgen Talent Solutions</h4>
             <p>
               Welcome to our technology recruitment agency, where we specialize
               in connecting top-notch tech talent with the best companies in the
