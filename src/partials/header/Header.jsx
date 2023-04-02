@@ -47,10 +47,10 @@ const Header = ({ loginStatus, authState }) => {
                 />
               </div>
               <div className="col-auto col-xl d-flex align-items-center justify-content-xl-center justify-content-end order-2 order-xl-1">
+                 
                 <div className="menu-column-area d-none d-xl-block position-static">
                   <NavBar />
                 </div>
-
                 <div className="header-mobile-menu-toggle d-xl-none ms-sm-2">
                   <button
                     type="button"
