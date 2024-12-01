@@ -1,6 +1,5 @@
 import React from "react";
 import Typewriter from "typewriter-effect";
-import { Link } from "react-router-dom";
 import "../../assets/css/custom.css";
 import "../../assets/css/responsive.css";
 
@@ -37,8 +36,8 @@ const IntroThree = ({ userType }) => {
         <div className="row row-cols-lg-1 row-cols-1">
           <div className="col align-self-center">
             <div className="intro-content-two headline-active text-center mt-xl-8 mt-lg-8 mt-md-8 mt-sm-8 mt-xs-9">
-              <div className="mt-1">
-                <h2 className="headline main-headline display-4 text-color ">
+              <div className="mt-1 text-bg-wrapper">
+                <h2 className="headline main-headline display-4 text-color">
                   RECRUITING FOR TOP TALENT IN THE FIELDS OF{" "}
                   <Typewriter
                     options={{
@@ -59,7 +58,7 @@ const IntroThree = ({ userType }) => {
 
               <div></div>
 
-              <div>
+              {/* <div>
                 <div className="home-button d-flex w-100 justify-content-center">
                   <Link
                     to={process.env.PUBLIC_URL + "/contact"}
@@ -87,7 +86,7 @@ const IntroThree = ({ userType }) => {
                     </Link>
                   )}
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

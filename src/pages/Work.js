@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
-import SEO from "../components/SEO";
-import Header from "../partials/header/Header";
-import Breadcrumb from "../container/Breadcrumb/Breadcrumb";
-import Footer from "../container/Footer/Footer";
 import ScrollToTop from "../components/ScrollToTop.jsx";
 import Sectors from "../components/Sectors/Sectors";
 import SectorsMain from "../components/Sectors/SectorsMain.js";
+import SEO from "../components/SEO";
+import Breadcrumb from "../container/Breadcrumb/Breadcrumb";
+import Footer from "../container/Footer/Footer";
 import sectors from "../data/Sectors/sectors.json";
+import Header from "../partials/header/Header";
 
 const Work = () => {
   const [selectedSector, setSelectedSector] = useState("");
@@ -33,11 +33,11 @@ const Work = () => {
     sectorIndex();
   }, [selectedSector]);
 
-  useEffect(() => {}, [sectorDetails]);
+  useEffect(() => { }, [sectorDetails]);
 
   return (
     <React.Fragment>
-      <SEO title="Nextgen || Sectors" />
+      <SEO title="Focus-Find || Sectors" />
       <Header />
 
       <Breadcrumb

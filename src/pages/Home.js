@@ -1,14 +1,13 @@
 import React from "react";
-import SEO from "../components/SEO";
-import Header from "../partials/header/Header";
-import IntroThree from "../container/IntroSlider/IntroThree";
-import ServiceIconBox from "../container/service/ServiceIconBox";
-import Faq from "../container/Faq/Faq";
-import TestimonialContainer from "../container/Testimonial/TestimonialContainer";
-import Footer from "../container/Footer/Footer";
-import ScrollToTop from "../components/ScrollToTop.jsx";
 import "../assets/css/animations.css";
 import "../assets/css/custom.css";
+import ScrollToTop from "../components/ScrollToTop.jsx";
+import SEO from "../components/SEO";
+import Faq from "../container/Faq/Faq";
+import Footer from "../container/Footer/Footer";
+import IntroThree from "../container/IntroSlider/IntroThree";
+import ServiceIconBox from "../container/service/ServiceIconBox";
+import Header from "../partials/header/Header";
 
 const Home = () => {
   const [isVisible, setIsVisible] = React.useState(false);
@@ -20,7 +19,7 @@ const Home = () => {
   return (
     <div>
       <React.Fragment>
-        <SEO title="Nextgen || Home" />
+        <SEO title="Focus-Find || Home" />
         <Header />
 
         <div>

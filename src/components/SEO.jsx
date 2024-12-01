@@ -8,7 +8,7 @@ const SEO = ({ title }) => {
       <meta charSet="utf-8" />
       <title>{title}</title>
       <meta name="robots" />
-      <meta name="description" content="Nextgen Talent Solutions" />
+      <meta name="description" content="Focus-Find" />
       <meta
         name="viewport"
         content="width=device-width, initial-scale=1, shrink-to-fit=no"

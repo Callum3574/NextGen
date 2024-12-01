@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { NavLink } from "react-router-dom";
 
 import "../../assets/css/custom.css";
@@ -20,11 +20,11 @@ const NavBar = () => {
             <span className="menu-text">About Us</span>
           </NavLink>
         </li>
-        <li>
+        {/* <li>
           <NavLink to={process.env.PUBLIC_URL + "/job-search"}>
             <span className="menu-text">Job Search</span>
           </NavLink>
-        </li>
+        </li> */}
         <li>
           <NavLink to={process.env.PUBLIC_URL + "/job-sectors"}>
             <span className="menu-text">Sectors</span>
@@ -33,14 +33,14 @@ const NavBar = () => {
             <i className="far fa-angle-down"></i>
           </span>
         </li>
-        <li>
+        {/* <li>
           <NavLink to={process.env.PUBLIC_URL + "/blog"}>
             <span className="menu-text">Blog</span>
           </NavLink>
           <span className="menu-toggle">
             <i className="far fa-angle-down"></i>
           </span>
-        </li>
+        </li> */}
         <li>
           <NavLink to={process.env.PUBLIC_URL + "/contact"}>
             <span className="menu-text">Contact Us</span>

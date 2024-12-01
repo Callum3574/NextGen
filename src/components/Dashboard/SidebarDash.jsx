@@ -1,5 +1,3 @@
-import React from "react";
-import SidebarMenu from "react-bootstrap-sidebar-menu";
 import {
   CDBSidebar,
   CDBSidebarContent,
@@ -8,8 +6,8 @@ import {
   CDBSidebarMenu,
   CDBSidebarMenuItem,
 } from "cdbreact";
+import React from "react";
 import { NavLink } from "react-router-dom";
-import { createBrowserHistory } from "history";
 
 function SidebarDash() {
   return (
@@ -24,7 +22,7 @@ function SidebarDash() {
               className="text-decoration-none"
               style={{ color: "inherit" }}
             >
-              NextGen Dashboard
+              Focus-Find Dashboard
             </a>
           </CDBSidebarHeader>
 

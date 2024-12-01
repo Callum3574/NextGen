@@ -1,6 +1,6 @@
-import { useEffect, Suspense, lazy, useState } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import AOS from "aos";
+import { Suspense, lazy, useEffect } from "react";
+import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import NavScrollTop from "./components/NavScrollTop";
 
 const Home = lazy(() => import("./pages/Home"));
@@ -38,27 +38,27 @@ function App() {
               path={`${process.env.PUBLIC_URL + "/about"}`}
               element={<About />}
             />
-            <Route
+            {/* <Route
               path={`${process.env.PUBLIC_URL + "/job-search"}`}
               element={<Service />}
-            />
+            /> */}
             <Route
               path={`${process.env.PUBLIC_URL + "/job-sectors"}`}
               element={<Work />}
             />
-            <Route
+            {/* <Route
               path={`${process.env.PUBLIC_URL + "/work-details/:id"}`}
               element={<WorkDetails />}
-            />
-            <Route
+            /> */}
+            {/* <Route
               path={`${process.env.PUBLIC_URL + "/blog"}`}
               element={<BlogGrid />}
-            />
+            /> */}
 
-            <Route
+            {/* <Route
               path={`${process.env.PUBLIC_URL + "/blog-details/:id"}`}
               element={<BlogDetails />}
-            />
+            /> */}
             <Route
               path={`${process.env.PUBLIC_URL + "/contact"}`}
               element={<Contact />}

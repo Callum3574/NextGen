@@ -1,16 +1,16 @@
 import React from "react";
+import ScrollToTop from "../components/ScrollToTop.jsx";
 import SEO from "../components/SEO";
-import Header from "../partials/header/Header";
-import Breadcrumb from "../container/Breadcrumb/Breadcrumb";
 import BlogClassicContainer from "../container/BlogGrid/BlogClassicContainer";
+import Breadcrumb from "../container/Breadcrumb/Breadcrumb";
 import CallToAction from "../container/CallToAction/CallToAction";
 import Footer from "../container/Footer/Footer";
-import ScrollToTop from "../components/ScrollToTop.jsx";
+import Header from "../partials/header/Header";
 
 const BlogClassic = () => {
   return (
     <React.Fragment>
-      <SEO title="Exomac || Blog" />
+      <SEO title="Focus-Find || Blog" />
       <Header />
       <Breadcrumb
         image="images/bg/breadcrumb-bg-four.jpg"

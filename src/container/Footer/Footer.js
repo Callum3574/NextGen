@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import FooterLinkItem from "../../components/Footer/FooterLinkItem.jsx";
 import Logo from "../../components/logo/Logo";
 import FooterData from "../../data/Footer/footerItem.json";
-import FooterLinkItem from "../../components/Footer/FooterLinkItem.jsx";
 
 const Footer = () => {
   return (
@@ -22,25 +22,25 @@ const Footer = () => {
                     <Link to={process.env.PUBLIC_URL + "/"}>0161 5377 978</Link>
                   </p>
                   <p>
-                    <Link to={process.env.PUBLIC_URL + "/"}>
-                      info@nextgentalentsolutions.co.uk
-                    </Link>{" "}
+                    <a href="mailto:hello@focus-find.co.uk">
+                      hello@focus-find.co.uk
+                    </a>
                   </p>
                 </div>
                 <div className="footer-social-inline">
-                  <a href="#">
+                  {/* <a href="#">
                     <i className="fab fa-twitter-square"></i>
-                  </a>
+                  </a> */}
                   <a
                     target="_blank"
                     rel="noreferrer"
-                    href="https://www.linkedin.com/company/nextgen-talent-solutions/"
+                    href="https://www.linkedin.com/company/focus-find"
                   >
                     <i className="fab fa-linkedin-in"></i>
                   </a>
-                  <a href="#">
+                  {/* <a href="#">
                     <i className="fab fa-instagram"></i>
-                  </a>
+                  </a> */}
                 </div>
               </div>
             </div>

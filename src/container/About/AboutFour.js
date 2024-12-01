@@ -1,9 +1,4 @@
-import { useState, useEffect, useRef } from "react";
-import SectionTitleTwo from "../../components/SectionTitles/SectionTitleTwo";
-import Tilt from "react-parallax-tilt";
-import Parallax from "parallax-js";
-import CountUp from "react-countup";
-import VisibilitySensor from "react-visibility-sensor";
+import { useState } from "react";
 
 const AboutFour = () => {
   const [didViewCountUp, setDidViewCountUp] = useState(false);
@@ -18,7 +13,7 @@ const AboutFour = () => {
       <div className="container">
         <div>
           <div>
-            <h4 className="mb-4">Welcome To Nextgen Talent Solutions</h4>
+            <h4 className="mb-4">Welcome To Focus Find</h4>
             <p>
               Welcome to our technology recruitment agency, where we specialize
               in connecting top-notch tech talent with the best companies in the
@@ -41,7 +36,7 @@ const AboutFour = () => {
               aspirations. We believe that a successful recruitment process
               involves more than just matching resumes with job descriptions -
               it's about finding the perfect cultural fit and building
-              long-lasting relationships.{" "}
+              long-lasting relationships.
             </p>
             <p>
               At our agency, we understand the importance of diversity and
@@ -49,14 +44,14 @@ const AboutFour = () => {
               welcoming and inclusive environment for all. We work with a wide
               range of clients across various tech industries, from startups to
               established Fortune 500 companies, and are always on the lookout
-              for exceptional talent to add to our network.{" "}
+              for exceptional talent to add to our network.
             </p>
             <p>
               With our extensive experience, industry expertise, and commitment
               to excellence, you can trust us to help you achieve your
               recruitment goals. Get in touch with us today to learn more about
               how we can help you take your tech career or business to the next
-              level!”{" "}
+              level!
             </p>
           </div>
         </div>

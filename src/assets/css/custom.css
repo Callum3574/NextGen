@@ -10,11 +10,13 @@
   color: #cff5f2;
   text-align: center;
 }
+
 .home-button {
   border-radius: 30px;
   filter: drop-shadow(0 0 0.75rem rgba(255, 255, 255, 0.421));
   width: 25rem;
 }
+
 a:hover {
   color: #dadada !important;
 }
@@ -40,6 +42,7 @@ h6 {
 .filter-results {
   background-color: #ffffff;
 }
+
 .filter-container {
   width: 100%;
 }
@@ -51,6 +54,7 @@ h6 {
 .filter-box {
   margin-left: 2rem;
 }
+
 .filter-title {
   margin-left: 0rem !important;
   font-size: large;
@@ -85,6 +89,7 @@ h6 {
 .search-box-jobs {
   background-color: #0f1e32;
 }
+
 .job-item {
   margin-right: 2rem;
 }
@@ -106,9 +111,11 @@ h6 {
   0% {
     background-position: 0% 50%;
   }
+
   50% {
     background-position: 100% 50%;
   }
+
   100% {
     background-position: 0% 50%;
   }
@@ -146,14 +153,11 @@ h6 {
 
 .sector-titles {
   border-bottom: 2px solid transparent;
-  border-image: linear-gradient(
-      to right,
+  border-image: linear-gradient(to right,
       #ffffff,
       rgb(1, 94, 141),
       rgb(1, 94, 141),
-      rgb(255, 255, 255)
-    )
-    1;
+      rgb(255, 255, 255)) 1;
 }
 
 .sector-title {
@@ -168,6 +172,7 @@ h6 {
 .sect-break {
   display: none;
 }
+
 .sector-areas {
   margin-top: 1.4rem;
   display: flex;
@@ -180,14 +185,11 @@ h6 {
 
 .sectors-border {
   border-bottom: 3.5px solid transparent;
-  border-image: linear-gradient(
-      to right,
+  border-image: linear-gradient(to right,
       #ffffff,
       rgb(1, 94, 141),
       rgb(1, 94, 141),
-      rgb(255, 255, 255)
-    )
-    1;
+      rgb(255, 255, 255)) 1;
 }
 
 .sectors {
@@ -200,14 +202,11 @@ h6 {
 
 .search-underline {
   border-bottom: 3px solid transparent;
-  border-image: linear-gradient(
-      to right,
+  border-image: linear-gradient(to right,
       #ffffff,
       rgb(70, 133, 142),
       rgb(70, 133, 142),
-      rgb(255, 255, 255)
-    )
-    1;
+      rgb(255, 255, 255)) 1;
 }
 
 .back-arrow-sectors {
@@ -263,13 +262,10 @@ h6 {
 
 .break-titles {
   border: 2px solid transparent;
-  border-image: linear-gradient(
-      to bottom,
+  border-image: linear-gradient(to bottom,
       #ffffff,
       rgb(18, 115, 150),
-      rgb(255, 255, 255)
-    )
-    1;
+      rgb(255, 255, 255)) 1;
 }
 
 .headline {
@@ -283,6 +279,7 @@ h6 {
 .textfield-label {
   color: white !important;
 }
+
 .res-sector-title {
   display: none;
 }
@@ -327,4 +324,41 @@ h6 {
 
 .contact-form-title {
   text-align: center;
+}
+
+
+.text-bg-wrapper {
+  position: relative;
+  display: inline-block;
+  padding: 2rem;
+  border-radius: 8px;
+  background: rgba(124, 124, 124, 0.4);
+  /* Semi-transparent black background */
+  backdrop-filter: blur(2px);
+  /* Apply blur to the backdrop */
+}
+
+.text-bg-wrapper::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  /* background: url('path-to-your-image.jpg'); */
+  /* Background image, if needed */
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+  /* Places the background behind the text */
+  filter: blur(50px);
+  /* Blur effect */
+}
+
+.headline {
+  position: relative;
+  z-index: 1;
+  /* Ensures the text stays on top of the background */
+  color: white;
+  font-weight: bold;
 }

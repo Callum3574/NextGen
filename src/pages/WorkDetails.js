@@ -1,12 +1,12 @@
 import React from "react";
 import { useParams } from "react-router-dom";
+import ScrollToTop from "../components/ScrollToTop.jsx";
 import SEO from "../components/SEO";
-import Header from "../partials/header/Header";
 import Breadcrumb from "../container/Breadcrumb/Breadcrumb";
 import Footer from "../container/Footer/Footer";
-import WorkData from "../data/work/workDetails.json";
 import WorkDetailsContainer from "../container/Work/WorkDetailsContainer";
-import ScrollToTop from "../components/ScrollToTop.jsx";
+import WorkData from "../data/work/workDetails.json";
+import Header from "../partials/header/Header";
 
 const WorkDetails = () => {
   let { id } = useParams();
@@ -14,7 +14,7 @@ const WorkDetails = () => {
   const data = WorkData.filter((work) => work.id === workId);
   return (
     <React.Fragment>
-      <SEO title="Nextgen || Work Details" />
+      <SEO title="Focus-Find || Work Details" />
       <Header />
       <Breadcrumb
         image="images/bg/breadcrumb-bg-two.jpg"
